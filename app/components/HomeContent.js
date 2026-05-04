@@ -1,0 +1,334 @@
+"use client";
+
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { faqItems } from "./faqData";
+
+const whatsappNumber = "9340595938";
+const whatsappLink = `https://wa.me/91${whatsappNumber}?text=Hello%2C%20I%20am%20interested%20in%20your%20premium%20companion%20service.`;
+
+export default function HomeContent() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
+  return (
+    <div className={`page-shell ${isLoaded ? "loaded" : ""}`}>
+      <section className="hero hero-grid">
+        <div className="hero-copy-block">
+          <p className="eyebrow animate-fade-in">
+            Genuine Male Companion Service
+          </p>
+          <h1 className="animate-slide-up">
+            Book a Discreet Male Companion Across India — Zero Hidden Charges
+          </h1>
+          <p className="hero-copy animate-fade-in-delay">
+            Safe Companion India offers an authentic male companion service for
+            women seeking genuine companionship. Available in{" "}
+            <span className="highlight-city">Bhopal</span>,{" "}
+            <span className="highlight-city">Indore</span>,{" "}
+            <span className="highlight-city">Mumbai</span>,{" "}
+            <span className="highlight-city">Delhi</span>,{" "}
+            <span className="highlight-city">Bangalore</span>,{" "}
+            <span className="highlight-city">Hyderabad</span>,{" "}
+            <span className="highlight-city">Pune</span>,{" "}
+            <span className="highlight-city">Ahmedabad</span>,{" "}
+            <span className="highlight-city">Kolkata</span>,{" "}
+            <span className="highlight-city">Chennai</span>, and 40+ cities. No
+            hidden charges. Transparent rates. Real service.
+          </p>
+
+          <div className="hero-actions animate-bounce-in">
+            <a
+              className="button primary"
+              href={whatsappLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span className="button-icon">💬</span>
+              Chat on WhatsApp
+            </a>
+            <Link className="button secondary" href="/contact">
+              <span className="button-icon">📝</span>
+              Book a Session
+            </Link>
+          </div>
+        </div>
+
+        <div className="hero-stats">
+          <div className="stat-card">
+            <span>50+ Cities</span>
+            <p>All India Coverage</p>
+          </div>
+          <div className="stat-card">
+            <span>No Extra Fees</span>
+            <p>Transparent Pricing</p>
+          </div>
+          <div className="stat-card">
+            <span>100% Genuine</span>
+            <p>Real Service</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="section service-grid">
+        <h2 className="section-title animate-fade-in">
+          Services Available in All Major Cities
+        </h2>
+        <div className="service-card float-animation">
+          <div className="service-icon">🏙️</div>
+          <h3>Discreet Meetings (All Cities)</h3>
+          <p>
+            Confidential meetings in Bhopal, Indore, Mumbai, Delhi, Bangalore,
+            Hyderabad — all major Indian cities. No hidden charges.
+          </p>
+          <a
+            className="button tertiary"
+            href={whatsappLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className="button-icon">📍</span>
+            Request Info
+          </a>
+        </div>
+        <div className="service-card float-animation">
+          <div className="service-icon">🎭</div>
+          <h3>Event Companion</h3>
+          <p>
+            Attend events, dinners, or outings with a polished, confident
+            partner.
+          </p>
+          <a
+            className="button tertiary"
+            href={whatsappLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className="button-icon">🎪</span>
+            Check Availability
+          </a>
+        </div>
+        <div className="service-card float-animation">
+          <div className="service-icon">⏰</div>
+          <h3>Personal Attention</h3>
+          <p>
+            Flexible and personalized time tailored to your comfort and
+            schedule.
+          </p>
+          <a
+            className="button tertiary"
+            href={whatsappLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className="button-icon">💝</span>
+            Send Request
+          </a>
+        </div>
+      </section>
+
+      <section id="features" className="section alt feature-section">
+        <div className="feature-panel">
+          <h2>Why Choose Safe Companion India — Genuine &amp; Trustworthy</h2>
+          <p>
+            Safe Companion India is a verified male companion service active
+            across 50+ Indian cities. Transparent pricing, no hidden charges,
+            real service. We are discreet, professional, and committed to
+            genuine companionship.
+          </p>
+          <ul className="feature-list">
+            <li>✓ Zero Hidden Charges — What You Quote Is What You Pay</li>
+            <li>✓ 100% Genuine Service Across All India</li>
+            <li>
+              ✓ Available in Bhopal, Indore, Mumbai, Delhi, Bangalore, and 40+
+              cities
+            </li>
+            <li>✓ Discreet, Professional, Trustworthy</li>
+            <li>✓ 24/7 WhatsApp Support with Instant Replies</li>
+          </ul>
+        </div>
+        <div className="feature-panel steps-panel" id="how-it-works">
+          <h2>How to Book (Simple 3 Steps)</h2>
+          <div className="step-card">
+            <strong>1. Share Details</strong>
+            <p>
+              Tell us your city (Bhopal, Indore, Delhi, etc.), date, time, and
+              what you&apos;re looking for.
+            </p>
+          </div>
+          <div className="step-card">
+            <strong>2. Get Transparent Quote</strong>
+            <p>
+              Receive a genuine quote with NO HIDDEN CHARGES. Full price upfront
+              with no surprise fees.
+            </p>
+          </div>
+          <div className="step-card">
+            <strong>3. Book &amp; Enjoy</strong>
+            <p>
+              Confirm booking and meet your discreet male companion. Genuine,
+              trustworthy service.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials" className="section testimonials-section">
+        <h2 className="section-title animate-fade-in">What Our Clients Say</h2>
+        <p className="section-subtitle animate-fade-in-delay">
+          Real reviews from satisfied clients across India
+        </p>
+        <div className="testimonial-grid">
+          <div className="testimonial-card">
+            <div className="stars">★★★★★</div>
+            <p className="quote">
+              &quot;Amazing experience! The service was genuine and exactly as
+              described. No hidden charges, very professional and discreet.
+              Highly recommend for anyone in Delhi.&quot;
+            </p>
+            <p className="author">Priya S., Delhi</p>
+          </div>
+          <div className="testimonial-card">
+            <div className="stars">★★★★★</div>
+            <p className="quote">
+              &quot;Booked for an event in Mumbai. My companion was charming,
+              well-mannered, and made the evening perfect. Transparent pricing,
+              no surprises. Will book again!&quot;
+            </p>
+            <p className="author">Anjali M., Mumbai</p>
+          </div>
+          <div className="testimonial-card">
+            <div className="stars">★★★★★</div>
+            <p className="quote">
+              &quot;First time trying this service in Bangalore. Was nervous but
+              the team was very professional. Genuine service, no extra
+              charges. Felt safe and respected.&quot;
+            </p>
+            <p className="author">Kavita R., Bangalore</p>
+          </div>
+          <div className="testimonial-card">
+            <div className="stars">★★★★★</div>
+            <p className="quote">
+              &quot;Outstanding companion service in Pune. Very discreet,
+              professional, and the pricing was exactly as quoted. No hidden
+              fees whatsoever. Great experience!&quot;
+            </p>
+            <p className="author">Sneha K., Pune</p>
+          </div>
+          <div className="testimonial-card">
+            <div className="stars">★★★★★</div>
+            <p className="quote">
+              &quot;As a guy looking for genuine companionship, I found this
+              service to be authentic and trustworthy. No scams, transparent
+              rates. Highly satisfied with the experience.&quot;
+            </p>
+            <p className="author">Rahul V., Hyderabad</p>
+          </div>
+          <div className="testimonial-card">
+            <div className="stars">★★★★★</div>
+            <p className="quote">
+              &quot;Booked in Chennai for a special occasion. The companion was
+              perfect - charming, respectful, and professional. No hidden
+              charges, genuine service. Would recommend to friends.&quot;
+            </p>
+            <p className="author">Meera L., Chennai</p>
+          </div>
+          <div className="testimonial-card">
+            <div className="stars">★★★★★</div>
+            <p className="quote">
+              &quot;Great service in Kolkata. Very discreet and professional.
+              The pricing was transparent with no extra fees. Had a wonderful
+              time and felt completely safe.&quot;
+            </p>
+            <p className="author">Rina D., Kolkata</p>
+          </div>
+          <div className="testimonial-card">
+            <div className="stars">★★★★★</div>
+            <p className="quote">
+              &quot;As a male client, I was impressed by the genuine approach.
+              No fake profiles or scams. Transparent pricing and professional
+              service. Definitely worth it.&quot;
+            </p>
+            <p className="author">Arjun P., Ahmedabad</p>
+          </div>
+          <div className="testimonial-card">
+            <div className="stars">★★★★★</div>
+            <p className="quote">
+              &quot;Booked in Jaipur for a weekend. The companion was amazing -
+              respectful, fun, and professional. No hidden charges, genuine
+              service. Had an unforgettable experience.&quot;
+            </p>
+            <p className="author">Poonam T., Jaipur</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="section faq-section">
+        <h2 className="section-title">Frequently Asked Questions</h2>
+        <p className="section-subtitle">
+          Everything you need to know before booking with Safe Companion India.
+        </p>
+        <div className="faq-list">
+          {faqItems.map((item, idx) => (
+            <details className="faq-item" key={idx}>
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section className="section contact-section">
+        <h2>Book Your Genuine Male Companion Now</h2>
+        <p>
+          Authentic companion service for women across India — Bhopal, Indore,
+          Mumbai, Delhi, Bangalore, Hyderabad, Pune, and 40+ cities. No extra
+          charges. Transparent rates. Real service. Start your booking today.
+        </p>
+        <div className="hero-actions">
+          <a
+            className="button primary"
+            href={whatsappLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Send WhatsApp Message
+          </a>
+          <Link className="button secondary" href="/contact">
+            Fill Contact Form
+          </Link>
+        </div>
+        <p className="privacy-note">
+          You can also view our <Link href="/privacy">Privacy Policy</Link> for
+          secure handling.
+        </p>
+      </section>
+
+      <section className="section cities-section">
+        <h2>Available Across 50+ Indian Cities</h2>
+        <p>Genuine, transparent service with NO HIDDEN CHARGES in:</p>
+        <div className="cities-grid">
+          <span className="city-badge">Bhopal</span>
+          <span className="city-badge">Indore</span>
+          <span className="city-badge">Mumbai</span>
+          <span className="city-badge">Delhi</span>
+          <span className="city-badge">Bangalore</span>
+          <span className="city-badge">Hyderabad</span>
+          <span className="city-badge">Pune</span>
+          <span className="city-badge">Ahmedabad</span>
+          <span className="city-badge">Kolkata</span>
+          <span className="city-badge">Chennai</span>
+          <span className="city-badge">Jaipur</span>
+          <span className="city-badge">Lucknow</span>
+          <span className="city-badge">Chandigarh</span>
+          <span className="city-badge">Surat</span>
+          <span className="city-badge">Nagpur</span>
+          <span className="city-badge">And 35+ more cities</span>
+        </div>
+      </section>
+    </div>
+  );
+}
