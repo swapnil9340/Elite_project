@@ -1160,7 +1160,29 @@ h1 {
 }
 
 .logo {
-  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  line-height: 0;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  filter: drop-shadow(0 4px 16px rgba(59, 130, 246, 0.25));
+}
+
+.logo:hover {
+  transform: translateY(-1px);
+  filter: drop-shadow(0 6px 22px rgba(139, 92, 246, 0.45));
+}
+
+.logo img {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    height: 36px;
+  }
 }
 
 .nav a {

@@ -165,6 +165,15 @@ export const metadata = {
   verification: {
     google: "92d3a666e2b38f5e",
   },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
+  manifest: "/site.webmanifest",
   formatDetection: {
     email: false,
     address: false,

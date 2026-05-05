@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function Header() {
@@ -9,7 +10,15 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header-container">
-        <div className="logo">Companion</div>
+        <Link href="/" className="logo" aria-label="Safe Companion India – Home">
+          <Image
+            src="/logo.svg"
+            alt="Safe Companion India"
+            width={200}
+            height={54}
+            priority
+          />
+        </Link>
 
         {/* Desktop Menu */}
         <nav className="nav desktop">

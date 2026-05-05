@@ -1,0 +1,12 @@
+{
+  "name": "Safe Companion India",
+  "short_name": "Safe Companion",
+  "description": "Verified male companion service across 50+ Indian cities. No hidden charges.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070b14",
+  "theme_color": "#3b82f6",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
