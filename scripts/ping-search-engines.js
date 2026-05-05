@@ -26,11 +26,30 @@ const cities = [
   "jodhpur", "goa",
 ];
 
+const blogSlugs = [
+  "how-to-become-a-gigolo-in-india",
+  "playboy-job-salary-india",
+  "callboy-job-legal-status-india",
+  "how-to-find-genuine-male-escort-india",
+  "gigolo-job-near-me",
+  "boyfriend-on-rent-india",
+  "callboy-vs-gigolo-vs-playboy",
+  "how-much-do-male-escorts-charge-india",
+  "is-it-safe-to-book-male-companion",
+  "playboy-job-apply-online",
+];
+
+const jobSlugs = ["gigolo-job", "playboy-job", "callboy-job", "male-escort-job"];
+
 function buildAllUrls() {
   const urls = [
     `${SITE_URL}/`,
+    `${SITE_URL}/hi`,
+    `${SITE_URL}/about`,
     `${SITE_URL}/services`,
     `${SITE_URL}/city`,
+    `${SITE_URL}/blog`,
+    `${SITE_URL}/join`,
     `${SITE_URL}/contact`,
     `${SITE_URL}/privacy`,
     `${SITE_URL}/sitemap-html`,
@@ -40,6 +59,8 @@ function buildAllUrls() {
     urls.push(`${SITE_URL}/city/${c}`);
     for (const s of services) urls.push(`${SITE_URL}/city/${c}/${s}`);
   }
+  for (const b of blogSlugs) urls.push(`${SITE_URL}/blog/${b}`);
+  for (const j of jobSlugs) urls.push(`${SITE_URL}/join/${j}`);
   return urls;
 }
 

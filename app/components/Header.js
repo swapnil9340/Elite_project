@@ -25,8 +25,11 @@ export default function Header() {
           <Link href="/">Home</Link>
           <Link href="/services">Services</Link>
           <Link href="/city">Cities</Link>
-          <Link href="/#features">Why Us</Link>
+          <Link href="/join">Apply Job</Link>
+          <Link href="/blog">Blog</Link>
+          <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
+          <Link href="/hi">हिन्दी</Link>
         </nav>
 
         {/* Mobile Hamburger */}
@@ -41,8 +44,11 @@ export default function Header() {
           <Link href="/" onClick={() => setOpen(false)}>Home</Link>
           <Link href="/services" onClick={() => setOpen(false)}>Services</Link>
           <Link href="/city" onClick={() => setOpen(false)}>Cities</Link>
-          <Link href="/#features" onClick={() => setOpen(false)}>Why Us</Link>
+          <Link href="/join" onClick={() => setOpen(false)}>Apply Job</Link>
+          <Link href="/blog" onClick={() => setOpen(false)}>Blog</Link>
+          <Link href="/about" onClick={() => setOpen(false)}>About</Link>
           <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
+          <Link href="/hi" onClick={() => setOpen(false)}>हिन्दी</Link>
         </div>
       )}
     </header>

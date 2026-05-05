@@ -1,5 +1,7 @@
 import { services } from "../../data/services";
 import { cities } from "../../data/cities";
+import { posts } from "../../data/blog";
+import { jobs } from "../../data/jobs";
 
 const SITE_URL = "https://www.safecompanion.in";
 const HOST = "www.safecompanion.in";
@@ -9,8 +11,12 @@ const KEY_LOCATION = `${SITE_URL}/${KEY}.txt`;
 function buildAllUrls() {
   const urls = [
     `${SITE_URL}/`,
+    `${SITE_URL}/hi`,
+    `${SITE_URL}/about`,
     `${SITE_URL}/services`,
     `${SITE_URL}/city`,
+    `${SITE_URL}/blog`,
+    `${SITE_URL}/join`,
     `${SITE_URL}/contact`,
     `${SITE_URL}/privacy`,
     `${SITE_URL}/sitemap-html`,
@@ -22,6 +28,8 @@ function buildAllUrls() {
       urls.push(`${SITE_URL}/city/${c.slug}/${s.slug}`);
     }
   }
+  for (const p of posts) urls.push(`${SITE_URL}/blog/${p.slug}`);
+  for (const j of jobs) urls.push(`${SITE_URL}/join/${j.slug}`);
   return urls;
 }
 

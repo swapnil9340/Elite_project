@@ -1,5 +1,7 @@
 import { services } from "./data/services";
 import { cities } from "./data/cities";
+import { posts } from "./data/blog";
+import { jobs } from "./data/jobs";
 
 const SITE_URL = "https://www.safecompanion.in";
 
@@ -12,6 +14,18 @@ export default function sitemap() {
       lastModified,
       changeFrequency: "weekly",
       priority: 1.0,
+    },
+    {
+      url: `${SITE_URL}/hi`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
+      url: `${SITE_URL}/about`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
     {
       url: `${SITE_URL}/contact`,
@@ -36,6 +50,24 @@ export default function sitemap() {
       lastModified,
       changeFrequency: "weekly",
       priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/blog`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/join`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
+      url: `${SITE_URL}/sitemap-html`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.7,
     },
     {
       url: `${SITE_URL}/#services`,
@@ -101,10 +133,26 @@ export default function sitemap() {
     }
   }
 
+  const blogEntries = posts.map((p) => ({
+    url: `${SITE_URL}/blog/${p.slug}`,
+    lastModified: new Date(p.date),
+    changeFrequency: "monthly",
+    priority: 0.75,
+  }));
+
+  const jobEntries = jobs.map((j) => ({
+    url: `${SITE_URL}/join/${j.slug}`,
+    lastModified,
+    changeFrequency: "weekly",
+    priority: 0.9,
+  }));
+
   return [
     ...staticEntries,
     ...serviceEntries,
     ...cityEntries,
     ...cityServiceEntries,
+    ...blogEntries,
+    ...jobEntries,
   ];
 }

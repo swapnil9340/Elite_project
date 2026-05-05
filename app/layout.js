@@ -270,6 +270,10 @@ export default function RootLayout({ children }) {
     <html lang="en-IN">
       <head>
         <link rel="canonical" href={SITE_URL} />
+        <link rel="alternate" hrefLang="en-IN" href={SITE_URL} />
+        <link rel="alternate" hrefLang="hi-IN" href={`${SITE_URL}/hi`} />
+        <link rel="alternate" hrefLang="x-default" href={SITE_URL} />
+        <link rel="alternate" type="application/rss+xml" title="Safe Companion India RSS" href={`${SITE_URL}/feed.xml`} />
         <meta name="theme-color" content="#070b14" />
         <meta name="geo.region" content="IN" />
         <meta name="geo.placename" content="India" />
@@ -312,6 +316,18 @@ export default function RootLayout({ children }) {
                   </li>
                   <li>
                     <Link href="/city">All Cities</Link>
+                  </li>
+                  <li>
+                    <Link href="/join">Apply for Job</Link>
+                  </li>
+                  <li>
+                    <Link href="/blog">Blog</Link>
+                  </li>
+                  <li>
+                    <Link href="/about">About Us</Link>
+                  </li>
+                  <li>
+                    <Link href="/hi">हिन्दी (Hindi)</Link>
                   </li>
                   <li>
                     <Link href="/#how-it-works">How It Works</Link>

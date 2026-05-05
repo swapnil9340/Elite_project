@@ -92,6 +92,52 @@ export default function CityPage({ params }) {
       addressCountry: "IN",
     },
     areaServed: city.name,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "127",
+      bestRating: "5",
+      worstRating: "1",
+    },
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: `Is male companion service available in ${city.name}?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Yes, Safe Companion India offers verified male escort, gigolo, playboy and callboy services across all areas of ${city.name}, ${city.state}. Booking is available 24/7 via WhatsApp, Telegram or call.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: `How much does a male companion cost in ${city.name}?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Pricing in ${city.name} starts from ₹5,000 for short bookings and goes up to ₹1,00,000+ for premium overnight or travel companion bookings. All prices are transparent with no hidden charges.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: `How do I book a verified gigolo in ${city.name}?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Simply WhatsApp us with your requirement (date, time, area in ${city.name}, type of service). We send you a verified profile within minutes. Confirm booking, pay 50% advance, and meet your companion.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: `Is the service in ${city.name} discreet and safe?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Yes. We follow strict verification, confidentiality protocols, and safety standards. All companions in ${city.name} are Aadhaar-verified and background-checked.`,
+        },
+      },
+    ],
   };
 
   return (
@@ -105,6 +151,10 @@ export default function CityPage({ params }) {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(localBusinessJsonLd),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       <nav aria-label="Breadcrumb" className="breadcrumb">
@@ -201,6 +251,52 @@ export default function CityPage({ params }) {
             <strong>Email</strong>
             <span className="connect-sub">contact@safecompanion.in</span>
           </a>
+        </div>
+      </section>
+
+      <section className="section faq-section">
+        <h2 className="section-title">FAQ — {city.name} Companion Service</h2>
+        <div className="faq-list">
+          <details className="faq-item">
+            <summary>
+              Is male companion service available in {city.name}?
+            </summary>
+            <p>
+              Yes, Safe Companion India offers verified male escort, gigolo,
+              playboy and callboy services across all areas of {city.name},{" "}
+              {city.state}. Booking is available 24/7 via WhatsApp, Telegram or
+              call.
+            </p>
+          </details>
+          <details className="faq-item">
+            <summary>
+              How much does a male companion cost in {city.name}?
+            </summary>
+            <p>
+              Pricing in {city.name} starts from ₹5,000 for short bookings and
+              goes up to ₹1,00,000+ for premium overnight or travel companion
+              bookings. All prices are transparent with no hidden charges.
+            </p>
+          </details>
+          <details className="faq-item">
+            <summary>
+              How do I book a verified gigolo in {city.name}?
+            </summary>
+            <p>
+              Simply WhatsApp us with your requirement (date, time, area in{" "}
+              {city.name}, type of service). We send you a verified profile
+              within minutes. Confirm booking, pay 50% advance, and meet your
+              companion.
+            </p>
+          </details>
+          <details className="faq-item">
+            <summary>Is the service in {city.name} discreet and safe?</summary>
+            <p>
+              Yes. We follow strict verification, confidentiality protocols,
+              and safety standards. All companions in {city.name} are
+              Aadhaar-verified and background-checked.
+            </p>
+          </details>
         </div>
       </section>
 

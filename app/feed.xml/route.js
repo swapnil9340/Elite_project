@@ -1,5 +1,7 @@
 import { services } from "../data/services";
 import { cities } from "../data/cities";
+import { posts } from "../data/blog";
+import { jobs } from "../data/jobs";
 
 const SITE_URL = "https://www.safecompanion.in";
 
@@ -41,6 +43,24 @@ export function GET() {
         pubDate: now,
       });
     }
+  }
+
+  for (const p of posts) {
+    items.push({
+      title: p.title,
+      link: `${SITE_URL}/blog/${p.slug}`,
+      description: p.excerpt,
+      pubDate: new Date(p.date).toUTCString(),
+    });
+  }
+
+  for (const j of jobs) {
+    items.push({
+      title: j.title,
+      link: `${SITE_URL}/join/${j.slug}`,
+      description: j.intro,
+      pubDate: now,
+    });
   }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
