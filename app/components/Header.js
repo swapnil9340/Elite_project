@@ -14,8 +14,9 @@ export default function Header() {
         {/* Desktop Menu */}
         <nav className="nav desktop">
           <Link href="/">Home</Link>
-          <Link href="#services">Services</Link>
-          <Link href="#features">Why Us</Link>
+          <Link href="/services">Services</Link>
+          <Link href="/city">Cities</Link>
+          <Link href="/#features">Why Us</Link>
           <Link href="/contact">Contact</Link>
         </nav>
 
@@ -29,8 +30,9 @@ export default function Header() {
       {open && (
         <div className="mobile-menu">
           <Link href="/" onClick={() => setOpen(false)}>Home</Link>
-          <Link href="#services" onClick={() => setOpen(false)}>Services</Link>
-          <Link href="#features" onClick={() => setOpen(false)}>Why Us</Link>
+          <Link href="/services" onClick={() => setOpen(false)}>Services</Link>
+          <Link href="/city" onClick={() => setOpen(false)}>Cities</Link>
+          <Link href="/#features" onClick={() => setOpen(false)}>Why Us</Link>
           <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
         </div>
       )}

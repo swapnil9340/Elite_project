@@ -3,9 +3,15 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { faqItems } from "./faqData";
+import { services } from "../data/services";
+import { cities } from "../data/cities";
 
 const whatsappNumber = "9340595938";
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=Hello%2C%20I%20am%20interested%20in%20your%20premium%20companion%20service.`;
+const telegramLink = `https://t.me/+91${whatsappNumber}`;
+const callLink = `tel:+91${whatsappNumber}`;
+const smsLink = `sms:+91${whatsappNumber}?body=Hello%2C%20I%20want%20to%20book%20a%20companion%20service.`;
+const emailLink = `mailto:contact@safecompanion.in?subject=Companion%20Booking%20Request&body=Hello%2C%20I%20would%20like%20to%20book%20a%20companion%20service.%20Please%20share%20details.`;
 
 export default function HomeContent() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -281,6 +287,56 @@ export default function HomeContent() {
         </div>
       </section>
 
+      <section id="connect" className="section connect-section">
+        <h2 className="section-title">Connect With Us — 5 Easy Ways</h2>
+        <p className="section-subtitle">
+          Choose your preferred channel. Reply within minutes, fully discreet
+          and confidential.
+        </p>
+        <div className="connect-grid">
+          <a
+            className="connect-card whatsapp"
+            href={whatsappLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className="connect-icon">💬</span>
+            <strong>WhatsApp</strong>
+            <span className="connect-sub">Fastest reply · 24/7</span>
+          </a>
+          <a className="connect-card call" href={callLink}>
+            <span className="connect-icon">📞</span>
+            <strong>Direct Call</strong>
+            <span className="connect-sub">Talk to us now</span>
+          </a>
+          <a
+            className="connect-card telegram"
+            href={telegramLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className="connect-icon">✈️</span>
+            <strong>Telegram</strong>
+            <span className="connect-sub">Private &amp; secure</span>
+          </a>
+          <a className="connect-card sms" href={smsLink}>
+            <span className="connect-icon">✉️</span>
+            <strong>SMS</strong>
+            <span className="connect-sub">Quick text booking</span>
+          </a>
+          <a className="connect-card email" href={emailLink}>
+            <span className="connect-icon">📧</span>
+            <strong>Email</strong>
+            <span className="connect-sub">contact@safecompanion.in</span>
+          </a>
+          <Link className="connect-card form" href="/contact">
+            <span className="connect-icon">📝</span>
+            <strong>Booking Form</strong>
+            <span className="connect-sub">Fill &amp; submit</span>
+          </Link>
+        </div>
+      </section>
+
       <section className="section contact-section">
         <h2>Book Your Genuine Male Companion Now</h2>
         <p>
@@ -304,6 +360,50 @@ export default function HomeContent() {
         <p className="privacy-note">
           You can also view our <Link href="/privacy">Privacy Policy</Link> for
           secure handling.
+        </p>
+      </section>
+
+      <section className="section internal-hub-section">
+        <h2 className="section-title">Browse All Services</h2>
+        <p className="section-subtitle">
+          Click any service to see full details, pricing &amp; city
+          availability.
+        </p>
+        <div className="cities-grid">
+          {services.map((s) => (
+            <Link
+              key={s.slug}
+              href={`/services/${s.slug}`}
+              className="city-badge"
+            >
+              {s.name}
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="section internal-hub-section">
+        <h2 className="section-title">Popular City + Service Pages</h2>
+        <p className="section-subtitle">
+          Direct links to the most-searched combinations across India.
+        </p>
+        <div className="cities-grid">
+          {cities.slice(0, 10).flatMap((c) =>
+            services.slice(0, 4).map((s) => (
+              <Link
+                key={`${c.slug}-${s.slug}`}
+                href={`/city/${c.slug}/${s.slug}`}
+                className="city-badge"
+              >
+                {s.name} in {c.name}
+              </Link>
+            ))
+          )}
+        </div>
+        <p style={{ textAlign: "center", marginTop: 16 }}>
+          <Link href="/sitemap-html" className="button tertiary">
+            View Complete HTML Sitemap →
+          </Link>
         </p>
       </section>
 

@@ -17,25 +17,104 @@ export const metadata = {
   description:
     "Safe Companion India offers a genuine, verified male escort & companion service across 50+ Indian cities including Bhopal, Indore, Mumbai, Delhi, Bangalore, Hyderabad, Pune, Kolkata & Chennai. 100% transparent pricing, no hidden charges, discreet bookings on WhatsApp.",
   keywords: [
+    // Brand
     "safe companion",
     "safe companion India",
+    "safecompanion.in",
+
+    // Core service keywords (English)
     "male escort service India",
+    "male escort for women",
+    "male escort for ladies",
     "male companion service",
+    "male companion for women",
     "genuine gigolo service",
-    "no hidden charges escort",
-    "verified male companion",
-    "Bhopal male escort",
-    "Indore male companion",
-    "Mumbai male escort service",
-    "Delhi gigolo",
-    "Bangalore male companion",
-    "Hyderabad escort",
-    "Pune male companion",
-    "Kolkata gigolo service",
-    "Chennai male escort",
+    "gigolo service India",
+    "gigolo near me",
+    "gigolo job India",
+    "gigolo job apply",
+    "playboy service India",
     "playboy job India",
+    "playboy job apply online",
+    "callboy service",
+    "callboy job",
+    "callboy service India",
+    "male callboy",
+    "male escort job",
+    "male model escort",
+    "handsome male companion",
+    "boyfriend on rent",
+    "rent a boyfriend India",
+    "male friendship club",
+    "male friend for ladies",
+    "male dating service",
+    "paid male companion",
+    "high profile male escort",
+    "VIP male companion",
+    "verified male companion",
+    "no hidden charges escort",
     "discreet companion booking",
     "WhatsApp companion booking",
+    "ladies companion service",
+    "female friendly escort",
+    "service for housewife",
+    "service for working women",
+    "service for college girls",
+    "service for divorcee women",
+
+    // Hindi / Hinglish keywords
+    "ladkiyon ke liye male companion",
+    "ladies ke liye playboy service",
+    "female ke liye gigolo",
+    "male escort ladkiyon ke liye",
+    "callboy ki jarurat hai",
+    "playboy chahiye",
+    "gigolo kaise bane",
+    "playboy kaise bane",
+    "callboy job hindi",
+    "ladkiyo ko khush karne wala",
+    "handsome ladka chahiye",
+    "ladies service India",
+    "mahilaon ke liye sathi",
+
+    // City + service combos
+    "Bhopal male escort",
+    "Bhopal gigolo service",
+    "Bhopal playboy job",
+    "Indore male companion",
+    "Indore gigolo service",
+    "Indore callboy",
+    "Mumbai male escort service",
+    "Mumbai gigolo",
+    "Mumbai playboy service",
+    "Mumbai callboy job",
+    "Delhi gigolo",
+    "Delhi male escort",
+    "Delhi playboy job",
+    "Delhi NCR callboy",
+    "Bangalore male companion",
+    "Bangalore gigolo service",
+    "Bangalore playboy",
+    "Hyderabad escort",
+    "Hyderabad gigolo",
+    "Hyderabad playboy job",
+    "Pune male companion",
+    "Pune gigolo service",
+    "Pune callboy",
+    "Kolkata gigolo service",
+    "Kolkata male escort",
+    "Kolkata playboy",
+    "Chennai male escort",
+    "Chennai gigolo",
+    "Ahmedabad gigolo",
+    "Ahmedabad playboy",
+    "Jaipur male companion",
+    "Jaipur gigolo service",
+    "Lucknow callboy",
+    "Lucknow playboy",
+    "Chandigarh male escort",
+    "Surat gigolo",
+    "Nagpur callboy",
   ],
   authors: [{ name: "Safe Companion India" }],
   creator: "Safe Companion India",
@@ -220,7 +299,10 @@ export default function RootLayout({ children }) {
                     <Link href="/">Home</Link>
                   </li>
                   <li>
-                    <Link href="/#services">Services</Link>
+                    <Link href="/services">All Services</Link>
+                  </li>
+                  <li>
+                    <Link href="/city">All Cities</Link>
                   </li>
                   <li>
                     <Link href="/#how-it-works">How It Works</Link>
@@ -237,14 +319,43 @@ export default function RootLayout({ children }) {
                   <li>
                     <Link href="/privacy">Privacy Policy</Link>
                   </li>
+                  <li>
+                    <Link href="/sitemap-html">HTML Sitemap</Link>
+                  </li>
+                  <li>
+                    <a href="/sitemap.xml">XML Sitemap</a>
+                  </li>
+                  <li>
+                    <a href="/feed.xml">RSS Feed</a>
+                  </li>
                 </ul>
               </div>
               <div className="footer-section">
-                <h3>Contact Us</h3>
+                <h3>Connect With Us</h3>
                 <p>
-                  WhatsApp:{" "}
+                  💬 WhatsApp:{" "}
                   <a href={whatsappLink} target="_blank" rel="noreferrer">
                     +91 93405 xxxxx
+                  </a>
+                </p>
+                <p>
+                  📞 Call:{" "}
+                  <a href={`tel:+91${whatsappNumber}`}>+91 93405 xxxxx</a>
+                </p>
+                <p>
+                  ✈️ Telegram:{" "}
+                  <a
+                    href={`https://t.me/+91${whatsappNumber}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Open Chat
+                  </a>
+                </p>
+                <p>
+                  📧 Email:{" "}
+                  <a href="mailto:contact@safecompanion.in">
+                    contact@safecompanion.in
                   </a>
                 </p>
                 <p>Available 24/7 for bookings</p>
