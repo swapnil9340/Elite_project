@@ -2,6 +2,7 @@ import { services } from "../data/services";
 import { cities } from "../data/cities";
 import { posts } from "../data/blog";
 import { jobs } from "../data/jobs";
+import { forWomenCities } from "../data/forWomen";
 
 const SITE_URL = "https://www.safecompanion.in";
 
@@ -59,6 +60,15 @@ export function GET() {
       title: j.title,
       link: `${SITE_URL}/join/${j.slug}`,
       description: j.intro,
+      pubDate: now,
+    });
+  }
+
+  for (const c of forWomenCities) {
+    items.push({
+      title: c.title,
+      link: `${SITE_URL}/for-women/${c.slug}`,
+      description: c.metaDescription,
       pubDate: now,
     });
   }

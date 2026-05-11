@@ -2,6 +2,7 @@ import { services } from "../../data/services";
 import { cities } from "../../data/cities";
 import { posts } from "../../data/blog";
 import { jobs } from "../../data/jobs";
+import { forWomenCities } from "../../data/forWomen";
 
 const SITE_URL = "https://www.safecompanion.in";
 const HOST = "www.safecompanion.in";
@@ -20,7 +21,9 @@ function buildAllUrls() {
     `${SITE_URL}/contact`,
     `${SITE_URL}/privacy`,
     `${SITE_URL}/sitemap-html`,
+    `${SITE_URL}/for-women`,
   ];
+  for (const c of forWomenCities) urls.push(`${SITE_URL}/for-women/${c.slug}`);
   for (const s of services) urls.push(`${SITE_URL}/services/${s.slug}`);
   for (const c of cities) {
     urls.push(`${SITE_URL}/city/${c.slug}`);

@@ -37,9 +37,16 @@ const blogSlugs = [
   "how-much-do-male-escorts-charge-india",
   "is-it-safe-to-book-male-companion",
   "playboy-job-apply-online",
+  "best-male-companion-service-bhopal-women",
+  "best-male-companion-service-indore-women",
+  "why-women-bhopal-indore-choose-male-companion",
+  "first-time-booking-male-companion-women-guide",
+  "ladies-special-discreet-meeting-tips",
 ];
 
 const jobSlugs = ["gigolo-job", "playboy-job", "callboy-job", "male-escort-job"];
+
+const forWomenSlugs = ["bhopal", "indore"];
 
 function buildAllUrls() {
   const urls = [
@@ -53,7 +60,9 @@ function buildAllUrls() {
     `${SITE_URL}/contact`,
     `${SITE_URL}/privacy`,
     `${SITE_URL}/sitemap-html`,
+    `${SITE_URL}/for-women`,
   ];
+  for (const c of forWomenSlugs) urls.push(`${SITE_URL}/for-women/${c}`);
   for (const s of services) urls.push(`${SITE_URL}/services/${s}`);
   for (const c of cities) {
     urls.push(`${SITE_URL}/city/${c}`);

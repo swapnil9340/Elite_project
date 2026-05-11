@@ -25,6 +25,7 @@ export default function Header() {
           <Link href="/">Home</Link>
           <Link href="/services">Services</Link>
           <Link href="/city">Cities</Link>
+          <Link href="/for-women">For Women</Link>
           <Link href="/join">Apply Job</Link>
           <Link href="/blog">Blog</Link>
           <Link href="/about">About</Link>
@@ -44,6 +45,7 @@ export default function Header() {
           <Link href="/" onClick={() => setOpen(false)}>Home</Link>
           <Link href="/services" onClick={() => setOpen(false)}>Services</Link>
           <Link href="/city" onClick={() => setOpen(false)}>Cities</Link>
+          <Link href="/for-women" onClick={() => setOpen(false)}>For Women</Link>
           <Link href="/join" onClick={() => setOpen(false)}>Apply Job</Link>
           <Link href="/blog" onClick={() => setOpen(false)}>Blog</Link>
           <Link href="/about" onClick={() => setOpen(false)}>About</Link>

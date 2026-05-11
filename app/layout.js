@@ -165,14 +165,6 @@ export const metadata = {
   verification: {
     google: "92d3a666e2b38f5e",
   },
-  icons: {
-    icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "any" },
-    ],
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
-  },
   manifest: "/site.webmanifest",
   formatDetection: {
     email: false,
@@ -316,6 +308,9 @@ export default function RootLayout({ children }) {
                   </li>
                   <li>
                     <Link href="/city">All Cities</Link>
+                  </li>
+                  <li>
+                    <Link href="/for-women">For Women (Bhopal &amp; Indore)</Link>
                   </li>
                   <li>
                     <Link href="/join">Apply for Job</Link>

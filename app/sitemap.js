@@ -2,6 +2,7 @@ import { services } from "./data/services";
 import { cities } from "./data/cities";
 import { posts } from "./data/blog";
 import { jobs } from "./data/jobs";
+import { forWomenCities } from "./data/forWomen";
 
 const SITE_URL = "https://www.safecompanion.in";
 
@@ -68,6 +69,12 @@ export default function sitemap() {
       lastModified,
       changeFrequency: "weekly",
       priority: 0.7,
+    },
+    {
+      url: `${SITE_URL}/for-women`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.95,
     },
     {
       url: `${SITE_URL}/#services`,
@@ -147,6 +154,14 @@ export default function sitemap() {
     priority: 0.9,
   }));
 
+  // Priority 0.95 — focus growth pages (Bhopal/Indore for-women)
+  const forWomenEntries = forWomenCities.map((c) => ({
+    url: `${SITE_URL}/for-women/${c.slug}`,
+    lastModified,
+    changeFrequency: "weekly",
+    priority: 0.95,
+  }));
+
   return [
     ...staticEntries,
     ...serviceEntries,
@@ -154,5 +169,6 @@ export default function sitemap() {
     ...cityServiceEntries,
     ...blogEntries,
     ...jobEntries,
+    ...forWomenEntries,
   ];
 }

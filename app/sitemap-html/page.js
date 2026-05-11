@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { services } from "../data/services";
 import { cities } from "../data/cities";
+import { forWomenCities } from "../data/forWomen";
 
 const SITE_URL = "https://www.safecompanion.in";
 
@@ -45,11 +46,28 @@ export default function HtmlSitemap() {
             <Link href="/city">All Cities</Link>
           </li>
           <li>
+            <Link href="/for-women">For Women — Bhopal &amp; Indore</Link>
+          </li>
+          <li>
             <Link href="/contact">Contact Us</Link>
           </li>
           <li>
             <Link href="/privacy">Privacy Policy</Link>
           </li>
+        </ul>
+      </section>
+
+      <section className="section">
+        <h2>For Women — Dedicated Female-Client Pages</h2>
+        <ul className="feature-list">
+          {forWomenCities.map((c) => (
+            <li key={c.slug}>
+              <Link href={`/for-women/${c.slug}`}>
+                Male Companion Service for Women in {c.name} —{" "}
+                {c.areas.slice(0, 4).join(", ")}…
+              </Link>
+            </li>
+          ))}
         </ul>
       </section>
 
