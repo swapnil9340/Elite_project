@@ -3,54 +3,45 @@ import { posts } from "../data/blog";
 import { jobs } from "../data/jobs";
 import { forWomenCities } from "../data/forWomen";
 import {
-  buildRss,
+  buildAtom,
   staggeredDate,
-  rssResponse,
+  atomResponse,
 } from "../data/feedBuilder";
 
 const SITE_URL = "https://www.safecompanion.in";
 
 export function GET() {
-  // Main feed = curated mix of highest-priority pages.
-  // Smaller feed = better Google crawler digestion.
   const items = [
-    // Highest priority pages first (recent dates)
     ...forWomenCities.map((c) => ({
       title: c.title,
       link: `${SITE_URL}/for-women/${c.slug}`,
       description: c.metaDescription,
-      content: `${c.tagline}. Areas covered: ${c.areas.join(", ")}.`,
+      content: c.tagline,
       pubDate: staggeredDate(`forwomen-${c.slug}`, 30),
       category: "For Women",
     })),
-
-    // Blog posts use their actual dates
     ...posts.map((p) => ({
       title: p.title,
       link: `${SITE_URL}/blog/${p.slug}`,
       description: p.excerpt,
       content: p.body
-        .filter((b) => b.type === "p" || b.type === "h2")
+        .filter((b) => b.type === "p")
         .slice(0, 5)
         .map((b) => b.text)
         .join("\n\n"),
       pubDate: new Date(p.date).toUTCString(),
       category: p.category,
     })),
-
-    // Jobs
     ...jobs.map((j) => ({
       title: j.title,
       link: `${SITE_URL}/join/${j.slug}`,
       description: j.intro,
-      content: `${j.intro} Earnings: ${j.earnings}, Monthly: ${j.monthly}.`,
+      content: j.intro,
       pubDate: staggeredDate(`job-${j.slug}`, 60),
       category: "Jobs",
     })),
-
-    // Services
     ...services.map((s) => ({
-      title: `${s.name} – Verified Service Across India`,
+      title: `${s.name} – Verified Service`,
       link: `${SITE_URL}/services/${s.slug}`,
       description: s.intro,
       content: s.intro,
@@ -59,17 +50,15 @@ export function GET() {
     })),
   ];
 
-  // Sort newest first (Google reads top-down)
   items.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
 
-  const xml = buildRss({
-    title: "Safe Companion India — Latest Updates",
+  const xml = buildAtom({
+    title: "Safe Companion India — Atom Feed",
     description:
-      "Latest male companion service updates, blog articles, city guides and job openings across India.",
-    selfPath: "/feed.xml",
+      "Atom feed of latest updates from Safe Companion India — verified male companion service across 40+ Indian cities.",
+    selfPath: "/atom.xml",
     items: items.slice(0, 50),
-    category: "Lifestyle",
   });
 
-  return rssResponse(xml);
+  return atomResponse(xml);
 }

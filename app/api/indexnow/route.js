@@ -22,6 +22,12 @@ function buildAllUrls() {
     `${SITE_URL}/privacy`,
     `${SITE_URL}/sitemap-html`,
     `${SITE_URL}/for-women`,
+    `${SITE_URL}/feed.xml`,
+    `${SITE_URL}/feed/blog.xml`,
+    `${SITE_URL}/feed/cities.xml`,
+    `${SITE_URL}/feed/services.xml`,
+    `${SITE_URL}/feed/jobs.xml`,
+    `${SITE_URL}/atom.xml`,
   ];
   for (const c of forWomenCities) urls.push(`${SITE_URL}/for-women/${c.slug}`);
   for (const s of services) urls.push(`${SITE_URL}/services/${s.slug}`);

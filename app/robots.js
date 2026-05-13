@@ -30,7 +30,18 @@ export default function robots() {
     ],
     sitemap: [
       `${SITE_URL}/sitemap.xml`,
+      `${SITE_URL}/sitemap/0.xml`,
+      `${SITE_URL}/sitemap/1.xml`,
+      `${SITE_URL}/sitemap/2.xml`,
+      `${SITE_URL}/sitemap/3.xml`,
+      `${SITE_URL}/sitemap/4.xml`,
+      `${SITE_URL}/sitemap/5.xml`,
       `${SITE_URL}/feed.xml`,
+      `${SITE_URL}/feed/blog.xml`,
+      `${SITE_URL}/feed/cities.xml`,
+      `${SITE_URL}/feed/services.xml`,
+      `${SITE_URL}/feed/jobs.xml`,
+      `${SITE_URL}/atom.xml`,
     ],
     host: SITE_URL,
   };

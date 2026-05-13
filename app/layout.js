@@ -265,7 +265,12 @@ export default function RootLayout({ children }) {
         <link rel="alternate" hrefLang="en-IN" href={SITE_URL} />
         <link rel="alternate" hrefLang="hi-IN" href={`${SITE_URL}/hi`} />
         <link rel="alternate" hrefLang="x-default" href={SITE_URL} />
-        <link rel="alternate" type="application/rss+xml" title="Safe Companion India RSS" href={`${SITE_URL}/feed.xml`} />
+        <link rel="alternate" type="application/rss+xml" title="Safe Companion India — Main RSS" href={`${SITE_URL}/feed.xml`} />
+        <link rel="alternate" type="application/rss+xml" title="Safe Companion India — Blog RSS" href={`${SITE_URL}/feed/blog.xml`} />
+        <link rel="alternate" type="application/rss+xml" title="Safe Companion India — Cities RSS" href={`${SITE_URL}/feed/cities.xml`} />
+        <link rel="alternate" type="application/rss+xml" title="Safe Companion India — Services RSS" href={`${SITE_URL}/feed/services.xml`} />
+        <link rel="alternate" type="application/rss+xml" title="Safe Companion India — Jobs RSS" href={`${SITE_URL}/feed/jobs.xml`} />
+        <link rel="alternate" type="application/atom+xml" title="Safe Companion India — Atom" href={`${SITE_URL}/atom.xml`} />
         <meta name="theme-color" content="#070b14" />
         <meta name="geo.region" content="IN" />
         <meta name="geo.placename" content="India" />
@@ -346,7 +351,22 @@ export default function RootLayout({ children }) {
                     <a href="/sitemap.xml">XML Sitemap</a>
                   </li>
                   <li>
-                    <a href="/feed.xml">RSS Feed</a>
+                    <a href="/feed.xml">Main RSS Feed</a>
+                  </li>
+                  <li>
+                    <a href="/feed/blog.xml">Blog RSS</a>
+                  </li>
+                  <li>
+                    <a href="/feed/cities.xml">Cities RSS</a>
+                  </li>
+                  <li>
+                    <a href="/feed/services.xml">Services RSS</a>
+                  </li>
+                  <li>
+                    <a href="/feed/jobs.xml">Jobs RSS</a>
+                  </li>
+                  <li>
+                    <a href="/atom.xml">Atom Feed</a>
                   </li>
                 </ul>
               </div>
