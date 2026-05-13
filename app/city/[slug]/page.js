@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { cities, getCityBySlug } from "../../data/cities";
 import { services } from "../../data/services";
+import { buildPageContent } from "../../data/cityServiceContent";
 
 const SITE_URL = "https://www.safecompanion.in";
 const whatsappNumber = "9340595938";
@@ -54,6 +55,13 @@ export function generateMetadata({ params }) {
 export default function CityPage({ params }) {
   const city = getCityBySlug(params.slug);
   if (!city) notFound();
+
+  // Pre-compute content variations once per page
+  const content0 = buildPageContent(city, services[0]);
+  const content1 = buildPageContent(city, services[1] || services[0]);
+  const content2 = buildPageContent(city, services[2] || services[0]);
+  const content3 = buildPageContent(city, services[3] || services[0]);
+  const content4 = buildPageContent(city, services[4] || services[0]);
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -164,10 +172,13 @@ export default function CityPage({ params }) {
       </nav>
 
       <section className="hero">
-        <p className="eyebrow">{city.name}, {city.state}</p>
+        <p className="eyebrow">{city.name}, {city.state} · {content0.profile.nick}</p>
         <h1>
           Male Escort, Gigolo, Playboy &amp; Callboy Service in {city.name}
         </h1>
+        <p className="hero-copy">
+          {content0.intro}
+        </p>
         <p className="hero-copy">
           Safe Companion India provides verified male companion service in{" "}
           {city.name}. Whether you&apos;re looking for a gigolo, playboy,
@@ -252,6 +263,27 @@ export default function CityPage({ params }) {
             <span className="connect-sub">contact@safecompanion.in</span>
           </a>
         </div>
+      </section>
+
+      <section className="section">
+        <h2>About {city.name} Companion Service</h2>
+        <p>{content1.whyUs}</p>
+      </section>
+
+      <section className="section feature-section">
+        <div className="feature-panel">
+          <h2>Pricing in {city.name}</h2>
+          <p>{content2.pricing}</p>
+        </div>
+        <div className="feature-panel">
+          <h2>Booking Flow for {city.name}</h2>
+          <p>{content3.booking}</p>
+        </div>
+      </section>
+
+      <section className="section">
+        <h2>Safety &amp; Discretion in {city.name}</h2>
+        <p>{content4.safety}</p>
       </section>
 
       <section className="section faq-section">
