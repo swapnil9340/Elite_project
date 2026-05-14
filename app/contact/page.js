@@ -85,7 +85,7 @@ const contactPageJsonLd = {
 
 export default function ContactPage() {
   return (
-    <main className="page-shell">
+    <main className="page-shell loaded">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}

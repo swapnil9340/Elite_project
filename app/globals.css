@@ -1019,8 +1019,26 @@ h1 {
   margin: 0;
 }
 
+/* Quick Links → 2 columns to keep footer compact when many entries */
+.footer-section.quick-links ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 18px;
+}
+
 .footer-section ul li {
   margin-bottom: 8px;
+}
+
+.footer-section.quick-links ul li {
+  margin-bottom: 0;
+}
+
+@media (max-width: 540px) {
+  .footer-section.quick-links ul {
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 12px;
+  }
 }
 
 .footer-section ul li a {

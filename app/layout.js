@@ -302,72 +302,22 @@ export default function RootLayout({ children }) {
                   hidden charges, transparent pricing, fully discreet bookings.
                 </p>
               </div>
-              <div className="footer-section">
+              <div className="footer-section quick-links">
                 <h3>Quick Links</h3>
                 <ul>
-                  <li>
-                    <Link href="/">Home</Link>
-                  </li>
-                  <li>
-                    <Link href="/services">All Services</Link>
-                  </li>
-                  <li>
-                    <Link href="/city">All Cities</Link>
-                  </li>
-                  <li>
-                    <Link href="/for-women">For Women (Bhopal &amp; Indore)</Link>
-                  </li>
-                  <li>
-                    <Link href="/join">Apply for Job</Link>
-                  </li>
-                  <li>
-                    <Link href="/blog">Blog</Link>
-                  </li>
-                  <li>
-                    <Link href="/about">About Us</Link>
-                  </li>
-                  <li>
-                    <Link href="/hi">हिन्दी (Hindi)</Link>
-                  </li>
-                  <li>
-                    <Link href="/#how-it-works">How It Works</Link>
-                  </li>
-                  <li>
-                    <Link href="/#testimonials">Reviews</Link>
-                  </li>
-                  <li>
-                    <Link href="/#faq">FAQ</Link>
-                  </li>
-                  <li>
-                    <Link href="/contact">Contact</Link>
-                  </li>
-                  <li>
-                    <Link href="/privacy">Privacy Policy</Link>
-                  </li>
-                  <li>
-                    <Link href="/sitemap-html">HTML Sitemap</Link>
-                  </li>
-                  <li>
-                    <a href="/sitemap.xml">XML Sitemap</a>
-                  </li>
-                  <li>
-                    <a href="/feed.xml">Main RSS Feed</a>
-                  </li>
-                  <li>
-                    <a href="/feed/blog.xml">Blog RSS</a>
-                  </li>
-                  <li>
-                    <a href="/feed/cities.xml">Cities RSS</a>
-                  </li>
-                  <li>
-                    <a href="/feed/services.xml">Services RSS</a>
-                  </li>
-                  <li>
-                    <a href="/feed/jobs.xml">Jobs RSS</a>
-                  </li>
-                  <li>
-                    <a href="/atom.xml">Atom Feed</a>
-                  </li>
+                  <li><Link href="/">Home</Link></li>
+                  <li><Link href="/services">All Services</Link></li>
+                  <li><Link href="/city">All Cities</Link></li>
+                  <li><Link href="/for-women">For Women</Link></li>
+                  <li><Link href="/join">Apply for Job</Link></li>
+                  <li><Link href="/blog">Blog</Link></li>
+                  <li><Link href="/about">About Us</Link></li>
+                  <li><Link href="/hi">हिन्दी (Hindi)</Link></li>
+                  <li><Link href="/#how-it-works">How It Works</Link></li>
+                  <li><Link href="/#testimonials">Reviews</Link></li>
+                  <li><Link href="/#faq">FAQ</Link></li>
+                  <li><Link href="/contact">Contact</Link></li>
+                  <li><Link href="/privacy">Privacy Policy</Link></li>
                 </ul>
               </div>
               <div className="footer-section">

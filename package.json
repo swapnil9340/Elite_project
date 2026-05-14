@@ -7,13 +7,15 @@
     "build": "next build",
     "start": "next start",
     "ping": "node scripts/ping-search-engines.js",
-    "postbuild": "node scripts/ping-search-engines.js || true"
+    "postbuild": "node scripts/ping-search-engines.js || true",
+    "db:check": "node scripts/db-check.js"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^9.0.0",
     "@mui/material": "^9.0.0",
+    "mysql2": "^3.22.3",
     "next": "14.2.5",
     "react": "18.3.1",
     "react-dom": "18.3.1"

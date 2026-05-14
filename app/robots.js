@@ -10,6 +10,8 @@ export default function robots() {
           "/api/",
           "/_next/",
           "/private/",
+          "/admin",
+          "/admin/",
           "/*?*", // block query-string URLs (don't waste crawl budget on params)
         ],
       },
