@@ -12,12 +12,13 @@ export default function robots() {
           "/private/",
           "/admin",
           "/admin/",
-          "/*?*", // block query-string URLs (don't waste crawl budget on params)
         ],
       },
-      { userAgent: "Googlebot", allow: "/", crawlDelay: 1 },
-      { userAgent: "Bingbot", allow: "/", crawlDelay: 1 },
-      { userAgent: "YandexBot", allow: "/", crawlDelay: 2 },
+      // No crawlDelay for Googlebot/Bingbot — they ignore it anyway,
+      // and any restriction makes Search Console report a "Crawl rate" warning.
+      { userAgent: "Googlebot", allow: "/" },
+      { userAgent: "Bingbot", allow: "/" },
+      { userAgent: "YandexBot", allow: "/" },
       { userAgent: "DuckDuckBot", allow: "/" },
       { userAgent: "Baiduspider", allow: "/" },
       { userAgent: "facebookexternalhit", allow: "/" },

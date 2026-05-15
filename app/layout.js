@@ -261,10 +261,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en-IN">
       <head>
-        <link rel="canonical" href={SITE_URL} />
-        <link rel="alternate" hrefLang="en-IN" href={SITE_URL} />
-        <link rel="alternate" hrefLang="hi-IN" href={`${SITE_URL}/hi`} />
-        <link rel="alternate" hrefLang="x-default" href={SITE_URL} />
+        {/* Canonical & hreflang are set per-page via Next.js metadata API.
+            Hardcoding them here would override every page's canonical with
+            the homepage URL — which makes Google treat all 412 pages as
+            duplicates of "/" and skip indexing them. */}
         <link rel="alternate" type="application/rss+xml" title="Safe Companion India — Main RSS" href={`${SITE_URL}/feed.xml`} />
         <link rel="alternate" type="application/rss+xml" title="Safe Companion India — Blog RSS" href={`${SITE_URL}/feed/blog.xml`} />
         <link rel="alternate" type="application/rss+xml" title="Safe Companion India — Cities RSS" href={`${SITE_URL}/feed/cities.xml`} />
