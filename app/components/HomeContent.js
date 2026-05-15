@@ -383,13 +383,82 @@ export default function HomeContent() {
       </section>
 
       <section className="section internal-hub-section">
-        <h2 className="section-title">Popular City + Service Pages</h2>
+        <h2 className="section-title">All Cities We Serve ({cities.length})</h2>
         <p className="section-subtitle">
-          Direct links to the most-searched combinations across India.
+          Click your city for verified male companion service in that area.
         </p>
         <div className="cities-grid">
-          {cities.slice(0, 10).flatMap((c) =>
-            services.slice(0, 4).map((s) => (
+          {cities.map((c) => (
+            <Link
+              key={c.slug}
+              href={`/city/${c.slug}`}
+              className="city-badge"
+            >
+              {c.name}
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="section internal-hub-section">
+        <h2 className="section-title">For Women — Dedicated Pages</h2>
+        <p className="section-subtitle">
+          Special female-client-focused pages with area-wise availability.
+        </p>
+        <div className="cities-grid">
+          <Link href="/for-women" className="city-badge">For Women — Index</Link>
+          <Link href="/for-women/bhopal" className="city-badge">Bhopal — Ladies</Link>
+          <Link href="/for-women/indore" className="city-badge">Indore — Ladies</Link>
+        </div>
+      </section>
+
+      <section className="section internal-hub-section">
+        <h2 className="section-title">Apply for Jobs</h2>
+        <p className="section-subtitle">
+          100% free registration, 48-hour verification.
+        </p>
+        <div className="cities-grid">
+          <Link href="/join" className="city-badge">All Job Roles</Link>
+          <Link href="/join/gigolo-job" className="city-badge">Gigolo Job</Link>
+          <Link href="/join/playboy-job" className="city-badge">Playboy Job</Link>
+          <Link href="/join/callboy-job" className="city-badge">Callboy Job</Link>
+          <Link href="/join/male-escort-job" className="city-badge">Male Escort Job</Link>
+        </div>
+      </section>
+
+      <section className="section internal-hub-section">
+        <h2 className="section-title">Read Our Latest Articles</h2>
+        <p className="section-subtitle">
+          Career guides, pricing, safety, legal status, city guides — all updated 2026.
+        </p>
+        <div className="cities-grid">
+          <Link href="/blog" className="city-badge">All Articles</Link>
+          <Link href="/blog/how-to-become-a-gigolo-in-india" className="city-badge">How to Become a Gigolo</Link>
+          <Link href="/blog/playboy-job-salary-india" className="city-badge">Playboy Salary in India</Link>
+          <Link href="/blog/callboy-job-legal-status-india" className="city-badge">Callboy Job Legal Status</Link>
+          <Link href="/blog/how-to-find-genuine-male-escort-india" className="city-badge">Find Genuine Male Escort</Link>
+          <Link href="/blog/gigolo-job-near-me" className="city-badge">Gigolo Job Near Me</Link>
+          <Link href="/blog/boyfriend-on-rent-india" className="city-badge">Boyfriend on Rent</Link>
+          <Link href="/blog/callboy-vs-gigolo-vs-playboy" className="city-badge">Callboy vs Gigolo vs Playboy</Link>
+          <Link href="/blog/how-much-do-male-escorts-charge-india" className="city-badge">Male Escort Pricing</Link>
+          <Link href="/blog/is-it-safe-to-book-male-companion" className="city-badge">Is It Safe to Book?</Link>
+          <Link href="/blog/playboy-job-apply-online" className="city-badge">Apply Playboy Online</Link>
+          <Link href="/blog/best-male-companion-service-bhopal-women" className="city-badge">Bhopal Women Guide</Link>
+          <Link href="/blog/best-male-companion-service-indore-women" className="city-badge">Indore Women Guide</Link>
+          <Link href="/blog/why-women-bhopal-indore-choose-male-companion" className="city-badge">Why Women Choose Us</Link>
+          <Link href="/blog/first-time-booking-male-companion-women-guide" className="city-badge">First-Time Booking Guide</Link>
+          <Link href="/blog/ladies-special-discreet-meeting-tips" className="city-badge">Discreet Meeting Tips</Link>
+        </div>
+      </section>
+
+      <section className="section internal-hub-section">
+        <h2 className="section-title">All Service × City Combinations ({cities.length * services.length})</h2>
+        <p className="section-subtitle">
+          Direct links to every city + service combo we serve.
+        </p>
+        <div className="cities-grid">
+          {cities.flatMap((c) =>
+            services.map((s) => (
               <Link
                 key={`${c.slug}-${s.slug}`}
                 href={`/city/${c.slug}/${s.slug}`}
@@ -405,29 +474,6 @@ export default function HomeContent() {
             View Complete HTML Sitemap →
           </Link>
         </p>
-      </section>
-
-      <section className="section cities-section">
-        <h2>Available Across 50+ Indian Cities</h2>
-        <p>Genuine, transparent service with NO HIDDEN CHARGES in:</p>
-        <div className="cities-grid">
-          <span className="city-badge">Bhopal</span>
-          <span className="city-badge">Indore</span>
-          <span className="city-badge">Mumbai</span>
-          <span className="city-badge">Delhi</span>
-          <span className="city-badge">Bangalore</span>
-          <span className="city-badge">Hyderabad</span>
-          <span className="city-badge">Pune</span>
-          <span className="city-badge">Ahmedabad</span>
-          <span className="city-badge">Kolkata</span>
-          <span className="city-badge">Chennai</span>
-          <span className="city-badge">Jaipur</span>
-          <span className="city-badge">Lucknow</span>
-          <span className="city-badge">Chandigarh</span>
-          <span className="city-badge">Surat</span>
-          <span className="city-badge">Nagpur</span>
-          <span className="city-badge">And 35+ more cities</span>
-        </div>
       </section>
     </div>
   );

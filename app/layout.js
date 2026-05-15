@@ -357,6 +357,15 @@ export default function RootLayout({ children }) {
                 &copy; {new Date().getFullYear()} Safe Companion India. All
                 rights reserved. | Genuine Service, No Hidden Charges
               </p>
+              <p style={{ fontSize: 12, opacity: 0.6, marginTop: 6 }}>
+                Last updated:{" "}
+                {new Date().toLocaleDateString("en-IN", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+                {" "}· Verified content
+              </p>
             </div>
           </div>
         </footer>
