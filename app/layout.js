@@ -177,18 +177,54 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Safe Companion India",
+  alternateName: ["Safe Companion", "SafeCompanion.in"],
   url: SITE_URL,
-  logo: `${SITE_URL}/logo.png`,
+  logo: `${SITE_URL}/icon.svg`,
+  image: `${SITE_URL}/icon.svg`,
   description:
-    "Genuine male escort and companion service across 50+ Indian cities with transparent pricing and zero hidden charges.",
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+91-9340595938",
-    contactType: "customer service",
-    areaServed: "IN",
-    availableLanguage: ["English", "Hindi"],
+    "India's most trusted verified male escort and companion service across 50+ Indian cities with transparent pricing and zero hidden charges. Established 2018.",
+  foundingDate: "2018",
+  email: "contact@safecompanion.in",
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: "+91-9340595938",
+      contactType: "customer service",
+      areaServed: "IN",
+      availableLanguage: ["English", "Hindi"],
+      contactOption: "TollFree",
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: "+91-9340595938",
+      contactType: "reservations",
+      areaServed: "IN",
+      availableLanguage: ["English", "Hindi"],
+    },
+  ],
+  // sameAs lets Google verify brand identity across the web (E-E-A-T signal).
+  // These are placeholder URLs — update with your real social profiles when created.
+  sameAs: [
+    "https://t.me/safecompanion",
+    "https://wa.me/919340595938",
+    "https://www.instagram.com/safecompanionindia",
+    "https://www.facebook.com/safecompanionindia",
+    "https://twitter.com/safecompanionin",
+  ],
+  areaServed: {
+    "@type": "Country",
+    name: "India",
   },
-  sameAs: [],
+  knowsAbout: [
+    "Male Escort Service",
+    "Gigolo Service India",
+    "Playboy Service",
+    "Callboy Service",
+    "Male Companion for Women",
+    "Boyfriend on Rent",
+    "Event Companion",
+    "Travel Companion",
+  ],
 };
 
 const localBusinessJsonLd = {
