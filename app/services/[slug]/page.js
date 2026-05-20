@@ -18,13 +18,23 @@ export function generateMetadata({ params }) {
   const service = getServiceBySlug(params.slug);
   if (!service) return {};
 
-  const title = `${service.name} India | Verified, Discreet & No Hidden Charges – Safe Companion`;
-  const description = `${service.intro} Available in 50+ Indian cities with transparent pricing.`;
+  const title = `Best ${service.name} India | Top Verified, Discreet & No Hidden Charges – Safe Companion`;
+  const description = `Best ${service.name.toLowerCase()} in India — top verified options. ${service.intro} Available in 50+ Indian cities with transparent pricing.`;
 
   return {
     title,
     description,
-    keywords: service.keywords,
+    keywords: [
+      `best ${service.name.toLowerCase()} India`,
+      `top ${service.name.toLowerCase()} India`,
+      `best ${service.name.toLowerCase()} near me`,
+      `top verified ${service.name.toLowerCase()}`,
+      `${service.name.toLowerCase()} contact number India`,
+      `cheap ${service.name.toLowerCase()} India`,
+      `online ${service.name.toLowerCase()} booking`,
+      `verified ${service.name.toLowerCase()} India`,
+      ...service.keywords,
+    ],
     alternates: { canonical: `/services/${service.slug}` },
     openGraph: {
       title,

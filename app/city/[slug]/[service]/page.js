@@ -25,13 +25,16 @@ export function generateMetadata({ params }) {
   const service = getServiceBySlug(params.service);
   if (!city || !service) return {};
 
-  const title = `${service.name} in ${city.name} | Verified, Discreet – Safe Companion India`;
-  const description = `Book a verified ${service.name.toLowerCase()} in ${city.name}, ${city.state}. ${service.intro} No hidden charges, instant WhatsApp & Telegram booking.`;
+  const title = `Best ${service.name} in ${city.name} | Top Verified, Discreet – Safe Companion India`;
+  const description = `Best ${service.name.toLowerCase()} in ${city.name}, ${city.state} — top verified options. ${service.intro} No hidden charges, instant WhatsApp & Telegram booking.`;
 
   return {
     title,
     description,
     keywords: [
+      `best ${service.name.toLowerCase()} in ${city.name}`,
+      `top ${service.name.toLowerCase()} ${city.name}`,
+      `best male service in ${city.name}`,
       `${service.name} in ${city.name}`,
       `${city.name} ${service.name.toLowerCase()}`,
       `${service.name.toLowerCase()} ${city.name}`,
@@ -39,9 +42,11 @@ export function generateMetadata({ params }) {
       `book ${service.name.toLowerCase()} ${city.name}`,
       `${city.name} ${service.name.toLowerCase()} contact`,
       `${city.name} ${service.name.toLowerCase()} number`,
-      `best ${service.name.toLowerCase()} in ${city.name}`,
       `${city.name} ${service.name.toLowerCase()} for ladies`,
       `${city.name} ${service.name.toLowerCase()} for women`,
+      `cheap ${service.name.toLowerCase()} ${city.name}`,
+      `verified ${service.name.toLowerCase()} ${city.name}`,
+      `online ${service.name.toLowerCase()} booking ${city.name}`,
       ...service.keywords,
     ],
     alternates: { canonical: `/city/${city.slug}/${service.slug}` },

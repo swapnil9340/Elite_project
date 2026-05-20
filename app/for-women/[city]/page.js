@@ -20,9 +20,18 @@ export function generateMetadata({ params }) {
   const city = getForWomenBySlug(params.city);
   if (!city) return {};
   return {
-    title: city.title,
+    title: `Best Male Service in ${city.name} for Women | ${city.title}`,
     description: city.metaDescription,
-    keywords: city.keywords,
+    keywords: [
+      `best male service in ${city.name} for women`,
+      `top male escort ${city.name} ladies`,
+      `best gigolo for women ${city.name}`,
+      `best playboy ${city.name} ladies`,
+      `top male companion ${city.name} for housewife`,
+      `${city.name} ladies male companion contact`,
+      `online male escort booking ${city.name} for women`,
+      ...city.keywords,
+    ],
     alternates: { canonical: `/for-women/${city.slug}` },
     openGraph: {
       title: city.title,

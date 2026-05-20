@@ -1,7 +1,11 @@
-// 10 SEO-optimized articles targeting high-volume informational queries.
-// Each article: ~600-900 words, FAQ-rich, internal links to service/city pages.
+// Hand-written + auto-generated city blogs.
+// 15 manual posts + 40 city-specific posts = 55 total blog articles.
+// Each article ~700-1200 words, FAQ-rich, internal links to service/city pages.
 
-export const posts = [
+import { cities } from "./cities";
+import { buildCityBlogPosts } from "./cityBlogs";
+
+const manualPosts = [
   {
     slug: "how-to-become-a-gigolo-in-india",
     title: "How to Become a Gigolo in India — Complete Beginner's Guide (2026)",
@@ -780,5 +784,12 @@ export const posts = [
     ],
   },
 ];
+
+// Merge manual posts with auto-generated city-specific blogs (40 unique).
+// Each city gets one blog with a distinct topic (8 topics rotated across 40 cities)
+// so structure varies city-to-city and content is fully unique per location.
+const cityPosts = buildCityBlogPosts(cities);
+
+export const posts = [...manualPosts, ...cityPosts];
 
 export const getPostBySlug = (slug) => posts.find((p) => p.slug === slug);

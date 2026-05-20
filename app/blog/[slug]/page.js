@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { posts, getPostBySlug } from "../../data/blog";
+import { cities, getCityBySlug } from "../../data/cities";
+import { services } from "../../data/services";
 import BlogContent from "../../components/BlogContent";
 
 const SITE_URL = "https://www.safecompanion.in";
@@ -124,6 +126,87 @@ export default function BlogPostPage({ params }) {
           </div>
         </section>
       )}
+
+      {/* City-specific internal linking — boosts crawl + page authority */}
+      {post.isCityBlog && post.city && (
+        <CityBlogLinks citySlug={post.city} />
+      )}
+
+      {/* Universal internal linking — services + popular cities */}
+      <UniversalBlogLinks />
     </main>
+  );
+}
+
+function CityBlogLinks({ citySlug }) {
+  const city = getCityBySlug(citySlug);
+  if (!city) return null;
+
+  return (
+    <>
+      <section className="section">
+        <h2>All Services in {city.name}</h2>
+        <p>
+          Browse every service we offer in {city.name}, {city.state}:
+        </p>
+        <div className="cities-grid">
+          <Link href={`/city/${city.slug}`} className="city-badge">
+            All {city.name} Services
+          </Link>
+          {services.map((s) => (
+            <Link
+              key={s.slug}
+              href={`/city/${city.slug}/${s.slug}`}
+              className="city-badge"
+            >
+              {s.name} in {city.name}
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <h2>Quick Connect for {city.name}</h2>
+        <p>
+          For direct booking, see our <Link href={`/city/${city.slug}`}>{city.name} main page</Link>{" "}
+          or read more <Link href="/blog">city guides on our blog</Link>.
+        </p>
+      </section>
+    </>
+  );
+}
+
+function UniversalBlogLinks() {
+  // Top 12 cities for cross-linking from any blog post
+  const popularCities = cities.slice(0, 12);
+
+  return (
+    <>
+      <section className="section">
+        <h2>Popular Service Cities</h2>
+        <div className="cities-grid">
+          {popularCities.map((c) => (
+            <Link key={c.slug} href={`/city/${c.slug}`} className="city-badge">
+              Best Male Service in {c.name}
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <h2>Our Verified Services</h2>
+        <div className="cities-grid">
+          {services.map((s) => (
+            <Link
+              key={s.slug}
+              href={`/services/${s.slug}`}
+              className="city-badge"
+            >
+              Best {s.name} India
+            </Link>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }

@@ -31,6 +31,11 @@ export default function robots() {
       { userAgent: "SemrushBot", disallow: "/" },
       { userAgent: "MJ12bot", disallow: "/" },
     ],
+    // Only declare actual XML sitemaps here.
+    // RSS/Atom feeds are NOT sitemaps — Google tries to treat them as such
+    // and reports "Discovered - currently not indexed" for every URL inside
+    // them, polluting Search Console. RSS feeds remain discoverable via
+    // <link rel="alternate"> tags in <head>.
     sitemap: [
       `${SITE_URL}/sitemap.xml`,
       `${SITE_URL}/sitemap/0.xml`,
@@ -39,12 +44,6 @@ export default function robots() {
       `${SITE_URL}/sitemap/3.xml`,
       `${SITE_URL}/sitemap/4.xml`,
       `${SITE_URL}/sitemap/5.xml`,
-      `${SITE_URL}/feed.xml`,
-      `${SITE_URL}/feed/blog.xml`,
-      `${SITE_URL}/feed/cities.xml`,
-      `${SITE_URL}/feed/services.xml`,
-      `${SITE_URL}/feed/jobs.xml`,
-      `${SITE_URL}/atom.xml`,
     ],
     host: SITE_URL,
   };

@@ -19,13 +19,19 @@ export function generateMetadata({ params }) {
   const city = getCityBySlug(params.slug);
   if (!city) return {};
 
-  const title = `${city.name} Male Escort, Gigolo, Playboy & Callboy Service | Safe Companion India`;
-  const description = `Verified male escort, gigolo, playboy and callboy service in ${city.name}, ${city.state}. Discreet bookings, transparent pricing, no hidden charges. WhatsApp & Telegram support 24/7.`;
+  const title = `Best Male Service in ${city.name} | Top Verified Gigolo, Playboy, Callboy & Male Escort — Safe Companion India`;
+  const description = `Best male service in ${city.name}, ${city.state} — verified gigolo, playboy, callboy & male escort. Top-rated, discreet bookings, transparent pricing, no hidden charges. WhatsApp & Telegram support 24/7.`;
 
   return {
     title,
     description,
     keywords: [
+      `best male service in ${city.name}`,
+      `top male escort ${city.name}`,
+      `best gigolo in ${city.name}`,
+      `best playboy ${city.name}`,
+      `best callboy service ${city.name}`,
+      `top male companion ${city.name}`,
       `${city.name} male escort`,
       `${city.name} gigolo`,
       `${city.name} gigolo service`,
@@ -40,6 +46,11 @@ export function generateMetadata({ params }) {
       `gigolo near me ${city.name}`,
       `playboy in ${city.name}`,
       `callboy in ${city.name}`,
+      `male service near me ${city.name}`,
+      `${city.name} male escort contact number`,
+      `${city.name} gigolo contact`,
+      `cheap male escort ${city.name}`,
+      `online male companion booking ${city.name}`,
     ],
     alternates: { canonical: `/city/${city.slug}` },
     openGraph: {
