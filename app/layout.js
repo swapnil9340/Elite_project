@@ -2,6 +2,16 @@ import Header from "./components/Header";
 import QuickActions from "./components/QuickActions";
 import "./globals.css";
 import Link from "next/link";
+import { Inter } from "next/font/google";
+
+// next/font auto-optimizes: self-hosted, no layout shift, no extra DNS lookup.
+// Direct Core Web Vitals improvement (CLS → 0, LCP faster).
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+  preload: true,
+});
 
 const SITE_URL = "https://www.safecompanion.in";
 const whatsappNumber = "9340595938";
@@ -166,6 +176,13 @@ export const metadata = {
     google: "92d3a666e2b38f5e",
   },
   manifest: "/site.webmanifest",
+  other: {
+    // Help mobile carriers render previews correctly
+    "format-detection": "telephone=yes",
+    "mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "black-translucent",
+  },
   formatDetection: {
     email: false,
     address: false,
@@ -293,14 +310,32 @@ const websiteJsonLd = {
   },
 };
 
+// Viewport metadata — Next.js 14 splits this out. Affects mobile rendering scores.
+export const viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#3b82f6" },
+    { media: "(prefers-color-scheme: dark)", color: "#070b14" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  colorScheme: "dark light",
+};
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en-IN">
+    <html lang="en-IN" className={inter.variable}>
       <head>
         {/* Canonical & hreflang are set per-page via Next.js metadata API.
             Hardcoding them here would override every page's canonical with
             the homepage URL — which makes Google treat all 412 pages as
             duplicates of "/" and skip indexing them. */}
+
+        {/* Performance hints — pre-resolve DNS for click-out destinations */}
+        <link rel="dns-prefetch" href="https://wa.me" />
+        <link rel="dns-prefetch" href="https://t.me" />
+        <link rel="preconnect" href="https://wa.me" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://t.me" crossOrigin="anonymous" />
         <link rel="alternate" type="application/rss+xml" title="Safe Companion India — Main RSS" href={`${SITE_URL}/feed.xml`} />
         <link rel="alternate" type="application/rss+xml" title="Safe Companion India — Blog RSS" href={`${SITE_URL}/feed/blog.xml`} />
         <link rel="alternate" type="application/rss+xml" title="Safe Companion India — Cities RSS" href={`${SITE_URL}/feed/cities.xml`} />

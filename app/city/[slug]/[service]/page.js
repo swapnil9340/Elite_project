@@ -130,6 +130,77 @@ export default function CityServicePage({ params }) {
     },
   };
 
+  // HowTo schema — Google shows numbered steps in SERP for high CTR
+  const howToJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: `How to Book ${service.name} in ${city.name}`,
+    description: `Step-by-step guide to book a verified ${service.name.toLowerCase()} in ${city.name}, ${city.state}.`,
+    totalTime: "PT15M",
+    estimatedCost: {
+      "@type": "MonetaryAmount",
+      currency: "INR",
+      value: "15000",
+    },
+    supply: [
+      { "@type": "HowToSupply", name: "WhatsApp / Telegram on phone" },
+      { "@type": "HowToSupply", name: "UPI app for 50% advance" },
+    ],
+    tool: [{ "@type": "HowToTool", name: "Smartphone with internet" }],
+    step: [
+      {
+        "@type": "HowToStep",
+        position: 1,
+        name: "Contact via WhatsApp or Telegram",
+        text: `Send a message with your ${city.name} area, preferred date, and ${service.name.toLowerCase()} requirement.`,
+        url: `${SITE_URL}/city/${city.slug}/${service.slug}#connect`,
+      },
+      {
+        "@type": "HowToStep",
+        position: 2,
+        name: "Receive verified profiles",
+        text: `Within 10 minutes, you receive 3-5 verified ${service.name.toLowerCase()} profiles matching your ${city.name} preferences.`,
+      },
+      {
+        "@type": "HowToStep",
+        position: 3,
+        name: "Choose and confirm",
+        text: `Select your preferred match, confirm time and venue in ${city.name}.`,
+      },
+      {
+        "@type": "HowToStep",
+        position: 4,
+        name: "Pay 50% advance via UPI",
+        text: "Secure your booking by paying 50% advance through UPI to our verified ID.",
+      },
+      {
+        "@type": "HowToStep",
+        position: 5,
+        name: "Meet at agreed venue",
+        text: `Companion arrives at your selected ${city.name} venue at the agreed time.`,
+      },
+      {
+        "@type": "HowToStep",
+        position: 6,
+        name: "Pay remaining 50% on arrival",
+        text: "Complete the payment in cash or UPI when the companion arrives.",
+      },
+    ],
+  };
+
+  // Speakable schema — voice assistants (Google Assistant) read these sections aloud
+  const speakableJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE_URL}/city/${city.slug}/${service.slug}#webpage`,
+    url: `${SITE_URL}/city/${city.slug}/${service.slug}`,
+    name: `${service.name} in ${city.name}`,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", ".hero-copy", "h2"],
+    },
+  };
+
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -165,6 +236,8 @@ export default function CityServicePage({ params }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       <nav aria-label="Breadcrumb" className="breadcrumb">

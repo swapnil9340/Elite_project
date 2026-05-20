@@ -38,26 +38,63 @@ export default function BlogPostPage({ params }) {
   const post = getPostBySlug(params.slug);
   if (!post) notFound();
 
+  // Full Article schema with Author + freshness signals (E-E-A-T)
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
     description: post.excerpt,
-    author: {
-      "@type": "Organization",
-      name: "Safe Companion India Editorial",
-      url: SITE_URL,
-    },
+    image: [`${SITE_URL}/og-image.jpg`, `${SITE_URL}/icon.svg`],
+    author: [
+      {
+        "@type": "Organization",
+        "@id": `${SITE_URL}/#editorial`,
+        name: "Safe Companion India Editorial",
+        url: `${SITE_URL}/about`,
+      },
+      {
+        "@type": "Person",
+        name: "Safe Companion Verified Editor",
+        jobTitle: "Senior Editor",
+        worksFor: { "@type": "Organization", name: "Safe Companion India" },
+        knowsAbout: post.keywords.slice(0, 5),
+      },
+    ],
     publisher: {
       "@type": "Organization",
+      "@id": `${SITE_URL}/#org`,
       name: "Safe Companion India",
       url: SITE_URL,
-      logo: { "@type": "ImageObject", url: `${SITE_URL}/icon.svg` },
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/icon.svg`,
+        width: 192,
+        height: 192,
+      },
     },
-    datePublished: post.date,
-    dateModified: post.date,
-    mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
+    datePublished: `${post.date}T09:00:00+05:30`,
+    dateModified: new Date().toISOString(),
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}` },
     keywords: post.keywords.join(", "),
+    articleSection: post.category,
+    wordCount: post.body
+      .filter((b) => b.type === "p")
+      .reduce((sum, b) => sum + (b.text || "").split(/\s+/).length, 0),
+    inLanguage: "en-IN",
+    isAccessibleForFree: true,
+    isFamilyFriendly: false,
+  };
+
+  // Speakable for blog posts — voice assistants read intro aloud
+  const speakableJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE_URL}/blog/${post.slug}#webpage`,
+    name: post.title,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", ".hero-copy", "h2"],
+    },
   };
 
   const breadcrumbJsonLd = {
@@ -89,6 +126,10 @@ export default function BlogPostPage({ params }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableJsonLd) }}
       />
       <script
         type="application/ld+json"
