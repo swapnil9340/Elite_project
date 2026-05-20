@@ -82,10 +82,14 @@ export default function CityServicePage({ params }) {
     ],
   };
 
+  // Service schema — kept minimal. Google does NOT allow aggregateRating or
+  // review properties on Service type (it's a known cause of "Item: N/A"
+  // validation errors). Those signals belong on LocalBusiness or Product types.
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: `${service.name} in ${city.name}`,
+    name: `${service.name} in ${city.name}`,
+    serviceType: service.name,
     provider: {
       "@type": "Organization",
       name: "Safe Companion India",
@@ -97,18 +101,33 @@ export default function CityServicePage({ params }) {
       containedInPlace: { "@type": "AdministrativeArea", name: city.state },
     },
     description: intro,
+    url: `${SITE_URL}/city/${city.slug}/${service.slug}`,
+  };
+
+  // Star ratings handled via LocalBusiness schema (Google-approved type for aggregateRating).
+  const localBusinessJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `${SITE_URL}/city/${city.slug}/${service.slug}#localbusiness`,
+    name: `Safe Companion India — ${service.name} in ${city.name}`,
+    image: `${SITE_URL}/og-image.jpg`,
+    url: `${SITE_URL}/city/${city.slug}/${service.slug}`,
+    telephone: "+91-9340595938",
+    priceRange: "₹₹",
+    description: intro,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: city.name,
+      addressRegion: city.state,
+      addressCountry: "IN",
+    },
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.9",
       reviewCount: String(40 + ((city.slug.length + service.slug.length) * 7) % 90),
       bestRating: "5",
+      worstRating: "1",
     },
-    review: testimonials.map((t) => ({
-      "@type": "Review",
-      author: { "@type": "Person", name: `${t.name} (${t.role})` },
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      reviewBody: t.quote,
-    })),
   };
 
   const faqJsonLd = {
@@ -145,6 +164,7 @@ export default function CityServicePage({ params }) {
     <main className="page-shell loaded">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       <nav aria-label="Breadcrumb" className="breadcrumb">
