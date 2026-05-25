@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 8080",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 8080",
     "ping": "node scripts/ping-search-engines.js",
     "postbuild": "node scripts/ping-search-engines.js || true",
     "db:check": "node scripts/db-check.js"
