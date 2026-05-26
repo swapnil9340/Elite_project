@@ -1,20 +1,30 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { faqItems } from "./faqData";
 import { services } from "../data/services";
 import { cities } from "../data/cities";
-
-const whatsappNumber = "not avalible ";
-const whatsappLink = `https://wa.me/91${whatsappNumber}?text=Hello%2C%20I%20am%20interested%20in%20your%20premium%20companion%20service.`;
-const telegramLink = `https://t.me/+91${whatsappNumber}`;
-const callLink = `tel:+91${whatsappNumber}`;
-const smsLink = `sms:+91${whatsappNumber}?body=Hello%2C%20I%20want%20to%20book%20a%20companion%20service.`;
-const emailLink = `mailto:contact@safecompanion.in?subject=Companion%20Booking%20Request&body=Hello%2C%20I%20would%20like%20to%20book%20a%20companion%20service.%20Please%20share%20details.`;
+import {
+  buildContactLinks,
+  isContactEnabled,
+  NOT_AVAILABLE_TEXT,
+} from "../lib/contactConfig";
 
 export default function HomeContent() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const pathname = usePathname() || "";
+  const contactEnabled = isContactEnabled(pathname);
+  const { whatsappLink, telegramLink, callLink, smsLink, emailLink } =
+    buildContactLinks(contactEnabled);
+
+  const guardClick = (e) => {
+    if (!contactEnabled) {
+      e.preventDefault();
+      alert(NOT_AVAILABLE_TEXT);
+    }
+  };
 
   useEffect(() => {
     setIsLoaded(true);
@@ -22,6 +32,22 @@ export default function HomeContent() {
 
   return (
     <div className={`page-shell ${isLoaded ? "loaded" : ""}`}>
+      {!contactEnabled && (
+        <div
+          style={{
+            background: "#fff3cd",
+            color: "#664d03",
+            padding: "10px 16px",
+            textAlign: "center",
+            borderBottom: "1px solid #ffe69c",
+            fontSize: 14,
+          }}
+        >
+          Direct call &amp; WhatsApp currently active only for{" "}
+          <strong>Indore</strong> &amp; <strong>Bhopal</strong>. Other cities
+          coming soon — please use the booking form.
+        </div>
+      )}
       <section className="hero hero-grid">
         <div className="hero-copy-block">
           <p className="eyebrow animate-fade-in">
@@ -52,6 +78,7 @@ export default function HomeContent() {
               href={whatsappLink}
               target="_blank"
               rel="noreferrer"
+              onClick={guardClick}
             >
               <span className="button-icon">💬</span>
               Chat on WhatsApp
@@ -95,6 +122,7 @@ export default function HomeContent() {
             href={whatsappLink}
             target="_blank"
             rel="noreferrer"
+            onClick={guardClick}
           >
             <span className="button-icon">📍</span>
             Request Info
@@ -112,6 +140,7 @@ export default function HomeContent() {
             href={whatsappLink}
             target="_blank"
             rel="noreferrer"
+            onClick={guardClick}
           >
             <span className="button-icon">🎪</span>
             Check Availability
@@ -129,6 +158,7 @@ export default function HomeContent() {
             href={whatsappLink}
             target="_blank"
             rel="noreferrer"
+            onClick={guardClick}
           >
             <span className="button-icon">💝</span>
             Send Request
@@ -299,30 +329,52 @@ export default function HomeContent() {
             href={whatsappLink}
             target="_blank"
             rel="noreferrer"
+            onClick={guardClick}
+            style={!contactEnabled ? { opacity: 0.55 } : undefined}
           >
             <span className="connect-icon">💬</span>
             <strong>WhatsApp</strong>
-            <span className="connect-sub">Fastest reply · 24/7</span>
+            <span className="connect-sub">
+              {contactEnabled ? "Fastest reply · 24/7" : NOT_AVAILABLE_TEXT}
+            </span>
           </a>
-          <a className="connect-card call" href={callLink}>
+          <a
+            className="connect-card call"
+            href={callLink}
+            onClick={guardClick}
+            style={!contactEnabled ? { opacity: 0.55 } : undefined}
+          >
             <span className="connect-icon">📞</span>
             <strong>Direct Call</strong>
-            <span className="connect-sub">Talk to us now</span>
+            <span className="connect-sub">
+              {contactEnabled ? "Talk to us now" : NOT_AVAILABLE_TEXT}
+            </span>
           </a>
           <a
             className="connect-card telegram"
             href={telegramLink}
             target="_blank"
             rel="noreferrer"
+            onClick={guardClick}
+            style={!contactEnabled ? { opacity: 0.55 } : undefined}
           >
             <span className="connect-icon">✈️</span>
             <strong>Telegram</strong>
-            <span className="connect-sub">Private &amp; secure</span>
+            <span className="connect-sub">
+              {contactEnabled ? "Private & secure" : NOT_AVAILABLE_TEXT}
+            </span>
           </a>
-          <a className="connect-card sms" href={smsLink}>
+          <a
+            className="connect-card sms"
+            href={smsLink}
+            onClick={guardClick}
+            style={!contactEnabled ? { opacity: 0.55 } : undefined}
+          >
             <span className="connect-icon">✉️</span>
             <strong>SMS</strong>
-            <span className="connect-sub">Quick text booking</span>
+            <span className="connect-sub">
+              {contactEnabled ? "Quick text booking" : NOT_AVAILABLE_TEXT}
+            </span>
           </a>
           <a className="connect-card email" href={emailLink}>
             <span className="connect-icon">📧</span>
@@ -350,6 +402,7 @@ export default function HomeContent() {
             href={whatsappLink}
             target="_blank"
             rel="noreferrer"
+            onClick={guardClick}
           >
             Send WhatsApp Message
           </a>
