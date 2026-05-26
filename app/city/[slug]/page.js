@@ -5,7 +5,7 @@ import { services } from "../../data/services";
 import { buildPageContent } from "../../data/cityServiceContent";
 
 const SITE_URL = "https://www.safecompanion.in";
-const whatsappNumber = "9340595938";
+const whatsappNumber = "not avalible ";
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=Hello%2C%20I%20am%20interested%20in%20your%20premium%20companion%20service.`;
 const telegramLink = `https://t.me/+91${whatsappNumber}`;
 const callLink = `tel:+91${whatsappNumber}`;
@@ -101,7 +101,7 @@ export default function CityPage({ params }) {
     name: `Safe Companion India – ${city.name}`,
     image: `${SITE_URL}/og-image.jpg`,
     url: `${SITE_URL}/city/${city.slug}`,
-    telephone: "+91-9340595938",
+    telephone: "+91-not avalible ",
     priceRange: "₹₹",
     description: `Verified male companion, gigolo, playboy and callboy service in ${city.name}, ${city.state}.`,
     address: {
