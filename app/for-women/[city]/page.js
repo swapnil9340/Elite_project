@@ -242,6 +242,17 @@ export default function ForWomenCityPage({ params }) {
         </div>
       </section>
 
+      {city.seoSections && (
+        <section className="section">
+          {city.seoSections.map((sec) => (
+            <div key={sec.heading} style={{ marginBottom: 24 }}>
+              <h2>{sec.heading}</h2>
+              <p>{sec.body}</p>
+            </div>
+          ))}
+        </section>
+      )}
+
       <section id="connect" className="section connect-section">
         <h2 className="section-title">
           Discreet Connect Options ({city.name})

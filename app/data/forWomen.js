@@ -98,6 +98,20 @@ export const forWomenCities = [
       "Lalghati",
       "Piplani",
     ],
+    seoSections: [
+      {
+        heading: "Bhopal Ke Har Area Mein Verified Male Companion Service",
+        body: "Safe Companion India Bhopal — City of Lakes — ke har major area mein ladies, housewives aur working women ke liye verified male companion, gigolo, playboy aur callboy service deta hai. MP Nagar, Arera Colony, New Market, Habibganj, Kolar Road, Shahpura, Bittan Market, TT Nagar aur Hoshangabad Road jaise central areas ke saath-saath Bairagarh, Bagmugaliya, Misrod, Ayodhya Nagar, Awadhpuri, Indrapuri, Govindpura, Saket Nagar, Lalghati aur Piplani tak — har jagah discreet meeting possible hai. Aap chahein to apne ghar ke paas, kisi safe cafe mein, ya DB City Mall / New Market area ke trusted hotel mein milkar quality time spend kar sakti hain. Har booking 100% confidential, transparent rate, aur no hidden charges ke saath.",
+      },
+      {
+        heading: "Bhopal Ki College Girls Aur Working Women Ke Liye Khaas",
+        body: "RGPV, Barkatullah University, LNCT, Sagar Institute aur People's University ke aas-paas ki college girls ke liye humare paas young, well-mannered aur age-appropriate male friends available hain — bilkul safe aur judgment-free. MP Nagar, Arera Colony aur Habibganj ke offices mein kaam karne wali working women ke liye polished male escorts hain jo events, dinner dates ya weekend outings ke liye perfect saathi hain. Bhopal mein boyfriend on rent, paid boyfriend ya male companion near me dhundh rahi hain? WhatsApp pe ek message bhejhein aur verified profiles minutes mein paayein.",
+      },
+      {
+        heading: "Bhopal Mein Discreet Booking, Night Companion Aur Home Service",
+        body: "Bhopal ki akeli, divorced ya single ladies ke liye genuine companionship aur emotional support sabse zyada matter karta hai. Hum aapko Aadhaar/PAN verified, background-checked companions ke saath connect karte hain — bilkul aapki terms pe. Night companion, hotel meeting, ya ghar baithe discreet booking — sab options available hain. Jehan Numa Palace, Courtyard Marriott jaise premium hotels se lekar aapke nazdiki safe location tak, hum aapki privacy ka pura dhyan rakhte hain. Bhopal mein safe gigolo service for women ke liye aaj hi WhatsApp ya Telegram pe contact karein.",
+      },
+    ],
     audienceSections: [
       {
         title: "For Housewives in Bhopal",
