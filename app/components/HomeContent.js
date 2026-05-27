@@ -6,7 +6,7 @@ import { faqItems } from "./faqData";
 import { services } from "../data/services";
 import { cities } from "../data/cities";
 
-const whatsappNumber = "9340595938";
+const whatsappNumber = "not avalible now ";
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=Hello%2C%20I%20am%20interested%20in%20your%20premium%20companion%20service.`;
 const telegramLink = `https://t.me/+91${whatsappNumber}`;
 const callLink = `tel:+91${whatsappNumber}`;
@@ -413,6 +413,25 @@ export default function HomeContent() {
       </section>
 
       <section className="section internal-hub-section">
+        <h2 className="section-title">Bhopal — Verified Service (Now Active)</h2>
+        <p className="section-subtitle">
+          Bhopal callboy, gigolo, playboy &amp; male escort service — sirf ladies,
+          housewives aur working women ke liye. MP Nagar, Arera Colony, New
+          Market, Kolar Road covered. 100% discreet, transparent rates.
+        </p>
+        <div className="cities-grid">
+          <Link href="/city/bhopal" className="city-badge">Bhopal Male Service</Link>
+          <Link href="/city/bhopal/callboy-service" className="city-badge">Bhopal Callboy Service</Link>
+          <Link href="/city/bhopal/gigolo-service" className="city-badge">Bhopal Gigolo Service</Link>
+          <Link href="/city/bhopal/playboy-service" className="city-badge">Bhopal Playboy Service</Link>
+          <Link href="/city/bhopal/male-escort-service" className="city-badge">Bhopal Male Escort Service</Link>
+          <Link href="/city/bhopal/boyfriend-on-rent" className="city-badge">Boyfriend on Rent Bhopal</Link>
+          <Link href="/for-women/bhopal" className="city-badge">Bhopal Service for Women</Link>
+          <Link href="/blog/boyfriend-on-rent-bhopal" className="city-badge">Bhopal Booking Guide 2026</Link>
+        </div>
+      </section>
+
+      <section className="section internal-hub-section">
         <h2 className="section-title">Apply for Jobs</h2>
         <p className="section-subtitle">
           100% free registration, 48-hour verification.
@@ -443,6 +462,7 @@ export default function HomeContent() {
           <Link href="/blog/how-much-do-male-escorts-charge-india" className="city-badge">Male Escort Pricing</Link>
           <Link href="/blog/is-it-safe-to-book-male-companion" className="city-badge">Is It Safe to Book?</Link>
           <Link href="/blog/playboy-job-apply-online" className="city-badge">Apply Playboy Online</Link>
+          <Link href="/blog/boyfriend-on-rent-bhopal" className="city-badge">Boyfriend on Rent in Bhopal</Link>
           <Link href="/blog/best-male-companion-service-bhopal-women" className="city-badge">Bhopal Women Guide</Link>
           <Link href="/blog/best-male-companion-service-indore-women" className="city-badge">Indore Women Guide</Link>
           <Link href="/blog/why-women-bhopal-indore-choose-male-companion" className="city-badge">Why Women Choose Us</Link>

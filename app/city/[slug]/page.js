@@ -3,9 +3,10 @@ import { notFound } from "next/navigation";
 import { cities, getCityBySlug } from "../../data/cities";
 import { services } from "../../data/services";
 import { buildPageContent } from "../../data/cityServiceContent";
+import { getFeaturedCitySeo } from "../../data/featuredCitySeo";
 
 const SITE_URL = "https://www.safecompanion.in";
-const whatsappNumber = "9340595938";
+const whatsappNumber = "not avalible now ";
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=Hello%2C%20I%20am%20interested%20in%20your%20premium%20companion%20service.`;
 const telegramLink = `https://t.me/+91${whatsappNumber}`;
 const callLink = `tel:+91${whatsappNumber}`;
@@ -19,6 +20,7 @@ export function generateMetadata({ params }) {
   const city = getCityBySlug(params.slug);
   if (!city) return {};
 
+  const featured = getFeaturedCitySeo(city.slug);
   const title = `Best Male Service in ${city.name} | Top Verified Gigolo, Playboy, Callboy & Male Escort — Safe Companion India`;
   const description = `Best male service in ${city.name}, ${city.state} — verified gigolo, playboy, callboy & male escort. Top-rated, discreet bookings, transparent pricing, no hidden charges. WhatsApp & Telegram support 24/7.`;
 
@@ -26,6 +28,7 @@ export function generateMetadata({ params }) {
     title,
     description,
     keywords: [
+      ...(featured?.extraKeywords || []),
       `best male service in ${city.name}`,
       `top male escort ${city.name}`,
       `best gigolo in ${city.name}`,
@@ -67,6 +70,8 @@ export default function CityPage({ params }) {
   const city = getCityBySlug(params.slug);
   if (!city) notFound();
 
+  const featured = getFeaturedCitySeo(city.slug);
+
   // Pre-compute content variations once per page
   const content0 = buildPageContent(city, services[0]);
   const content1 = buildPageContent(city, services[1] || services[0]);
@@ -101,7 +106,7 @@ export default function CityPage({ params }) {
     name: `Safe Companion India – ${city.name}`,
     image: `${SITE_URL}/og-image.jpg`,
     url: `${SITE_URL}/city/${city.slug}`,
-    telephone: "+91-9340595938",
+    telephone: "+91-not avalible now ",
     priceRange: "₹₹",
     description: `Verified male companion, gigolo, playboy and callboy service in ${city.name}, ${city.state}.`,
     address: {
@@ -280,6 +285,45 @@ export default function CityPage({ params }) {
         <h2>About {city.name} Companion Service</h2>
         <p>{content1.whyUs}</p>
       </section>
+
+      {featured && (
+        <section className="section">
+          {featured.intro && <p className="hero-copy">{featured.intro}</p>}
+          {featured.serviceSections.map((sec) => (
+            <div key={sec.heading} style={{ marginBottom: 24 }}>
+              <h2>{sec.heading}</h2>
+              <p>{sec.body}</p>
+            </div>
+          ))}
+          {/* Keyword-rich internal links pointing at this city's service pages */}
+          <h2>Popular Services in {city.name}</h2>
+          <div className="cities-grid">
+            <Link href={`/city/${city.slug}/callboy-service`} className="city-badge">
+              {city.name} Callboy Service
+            </Link>
+            <Link href={`/city/${city.slug}/gigolo-service`} className="city-badge">
+              {city.name} Gigolo Service
+            </Link>
+            <Link href={`/city/${city.slug}/playboy-service`} className="city-badge">
+              {city.name} Playboy Service
+            </Link>
+            <Link href={`/city/${city.slug}/male-escort-service`} className="city-badge">
+              {city.name} Male Escort Service
+            </Link>
+            <Link href={`/city/${city.slug}/boyfriend-on-rent`} className="city-badge">
+              Boyfriend on Rent in {city.name}
+            </Link>
+            <Link href={`/for-women/${city.slug}`} className="city-badge">
+              {city.name} Service for Women
+            </Link>
+            {city.slug === "bhopal" && (
+              <Link href="/blog/boyfriend-on-rent-bhopal" className="city-badge">
+                Bhopal Booking Guide 2026
+              </Link>
+            )}
+          </div>
+        </section>
+      )}
 
       <section className="section feature-section">
         <div className="feature-panel">
