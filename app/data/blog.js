@@ -113,7 +113,7 @@ const manualPosts = [
       { type: "h2", text: "How Payments Work" },
       {
         type: "p",
-        text: "Payment is made directly by the client to you — usually 50% advance via UPI before meeting and 50% on arrival. We don't take any commission from your earnings.",
+        text: "Payment is made directly by the client to you — after the service is completed on arrival. We don't take any commission from your earnings.",
       },
       { type: "h2", text: "Apply for Playboy Job" },
       {
@@ -191,7 +191,7 @@ const manualPosts = [
         type: "ol",
         items: [
           "Real WhatsApp number that responds quickly",
-          "No demands for large advance payments",
+          "No advance payments required — pay only after the service",
           "Clear, transparent pricing — no hidden charges",
           "Profile photos match the actual companion",
           "Has a proper website with SSL, privacy policy, contact details",
@@ -495,7 +495,7 @@ const manualPosts = [
         items: [
           "WhatsApp pe message bhejhein — apna area, time aur preference batayein",
           "Hum 5-10 minute mein verified profiles bhejhte hain (photos + details)",
-          "Aap pasand karein, 50% advance UPI pe karein",
+          "Aap pasand karein aur meeting confirm karein — koi advance nahi",
           "Companion aapke selected location pe milne aata hai (home, hotel ya cafe)",
           "Baki 50% meeting pe pay karein",
         ],
@@ -593,7 +593,7 @@ const manualPosts = [
       },
       {
         type: "p",
-        text: "Rate companion ke profile, experience, duration aur aapki specific requirement ke hisaab se vary karta hai. Standard practice hai 50% advance UPI pe booking confirm karne ke liye, aur baki 50% meeting pe directly companion ko. Hum aapse koi membership fee ya registration charge nahi lete — paisa seedha service ke liye hota hai.",
+        text: "Rate companion ke profile, experience, duration aur aapki specific requirement ke hisaab se vary karta hai. Koi advance nahi — pura payment service ke baad directly companion ko (cash ya UPI). Hum aapse koi membership fee ya registration charge nahi lete — paisa seedha service ke liye hota hai.",
       },
       { type: "h2", text: "Konsi Services Available Hain Bhopal Mein?" },
       {
@@ -612,7 +612,7 @@ const manualPosts = [
         items: [
           "WhatsApp ya Telegram pe message bhejhein — apna area (jaise MP Nagar, Kolar), preferred date/time aur service type batayein",
           "Hum 5-10 minute mein verified profiles share karte hain — photos + details ke saath",
-          "Aap profile pasand karein aur 50% advance UPI pe karein booking confirm karne ke liye",
+          "Aap profile pasand karein aur koi advance nahi — payment service ke baad booking confirm karne ke liye",
           "Companion aapke chune hue safe location (home, hotel ya cafe) pe milne aata hai",
           "Meeting ke time baki 50% directly pay karein — bilkul transparent",
           "Service ke baad aap feedback de sakti hain taaki quality maintain rahe",
@@ -661,7 +661,7 @@ const manualPosts = [
       { type: "h3", text: "Booking kaise aur kitni jaldi hoti hai?" },
       {
         type: "p",
-        text: "WhatsApp ya Telegram pe message bhejhein, hum 5-10 minute mein verified profiles bhejhte hain. Pasand karke 50% advance dein, baki meeting pe. Same-day booking bhi possible hai.",
+        text: "WhatsApp ya Telegram pe message bhejhein, hum 5-10 minute mein verified profiles bhejhte hain. Pasand karke meeting confirm karein. Koi advance nahi — payment service ke baad. Same-day booking bhi possible hai.",
       },
       { type: "h3", text: "Kya yeh safe aur confidential hai?" },
       {
@@ -741,7 +741,7 @@ const manualPosts = [
           "WhatsApp ya Telegram pe contact karein (number footer mein)",
           "Apna area in Indore (Vijay Nagar/Palasia/AB Road etc.) batayein",
           "Verified profiles 5-10 min mein milte hain",
-          "50% advance UPI, 50% meeting pe",
+          "koi advance nahi — pura payment service ke baad",
           "Bilkul confidential — aapki identity safe rahegi",
         ],
       },
@@ -862,7 +862,7 @@ const manualPosts = [
       { type: "h2", text: "Step 7 — Payment Safely Karein" },
       {
         type: "p",
-        text: "50% advance UPI pe karein (humare verified UPI ID pe). Baki 50% meeting pe cash/UPI. Cash de rahi hain to small denomination mein. Receipt zaroor lein.",
+        text: "Koi advance payment nahi — pura amount service ke baad cash ya UPI mein. Cash de rahi hain to small denomination mein. Receipt zaroor lein.",
       },
       { type: "h2", text: "What NOT to Do" },
       {

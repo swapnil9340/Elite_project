@@ -149,7 +149,6 @@ export default function CityServicePage({ params }) {
     },
     supply: [
       { "@type": "HowToSupply", name: "WhatsApp / Telegram on phone" },
-      { "@type": "HowToSupply", name: "UPI app for 50% advance" },
     ],
     tool: [{ "@type": "HowToTool", name: "Smartphone with internet" }],
     step: [
@@ -170,25 +169,19 @@ export default function CityServicePage({ params }) {
         "@type": "HowToStep",
         position: 3,
         name: "Choose and confirm",
-        text: `Select your preferred match, confirm time and venue in ${city.name}.`,
+        text: `Select your preferred match, confirm time and venue in ${city.name}. No advance payment required.`,
       },
       {
         "@type": "HowToStep",
         position: 4,
-        name: "Pay 50% advance via UPI",
-        text: "Secure your booking by paying 50% advance through UPI to our verified ID.",
-      },
-      {
-        "@type": "HowToStep",
-        position: 5,
         name: "Meet at agreed venue",
         text: `Companion arrives at your selected ${city.name} venue at the agreed time.`,
       },
       {
         "@type": "HowToStep",
-        position: 6,
-        name: "Pay remaining 50% on arrival",
-        text: "Complete the payment in cash or UPI when the companion arrives.",
+        position: 5,
+        name: "Pay after the service",
+        text: "Pay the full amount in cash or UPI to the companion once the service is completed — no advance required.",
       },
     ],
   };

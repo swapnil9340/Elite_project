@@ -106,7 +106,7 @@ export const featuredCitySeo = {
       },
       {
         q: "Bhopal mein playboy kaise book karein?",
-        a: "Bhopal mein playboy book karne ke liye WhatsApp ya Telegram pe humein message bhejhein. 5-10 minute mein verified profiles aapko bhejhe jayenge. Pasand karein, 50% UPI advance dein aur meeting confirm karein.",
+        a: "Bhopal mein playboy book karne ke liye WhatsApp ya Telegram pe humein message bhejhein. 5-10 minute mein verified profiles aapko bhejhe jayenge. Pasand karein aur meeting confirm karein. Koi advance nahi — payment service ke baad.",
       },
       {
         q: "Kya Bhopal callboy service sirf ladies ke liye hai?",
@@ -262,7 +262,7 @@ export const featuredCitySeo = {
       },
       {
         q: "Indore mein playboy kaise book karein?",
-        a: "WhatsApp ya Telegram pe message bhejhein. 5-10 minute mein verified profiles bhej diye jayenge. Pasand karein, 50% UPI advance dein aur meeting confirm karein.",
+        a: "WhatsApp ya Telegram pe message bhejhein. 5-10 minute mein verified profiles bhej diye jayenge. Pasand karein aur meeting confirm karein. Koi advance nahi — payment service ke baad.",
       },
       {
         q: "Kya Indore callboy service sirf ladies ke liye hai?",

@@ -1,4 +1,4 @@
-// City-specific blogs — 40 unique articles using 8 different topic templates.
+﻿// City-specific blogs — 40 unique articles using 8 different topic templates.
 // Each city assigned 1 topic via cityProfiles.topicSlug, so structure varies by topic
 // and content varies by city (areas, landmarks, hotels, demographic).
 
@@ -66,7 +66,7 @@ const TOPICS = {
           `WhatsApp ya Telegram pe message bhejhein — apna preferred ${p.CITY} area mention karein`,
           `Hum aapko 5-10 minutes mein verified profiles bhejhte hain jo us area mein available hain`,
           `Pasand karein, meeting venue confirm karein (hotel ya cafe in ${p.CITY})`,
-          `50% advance UPI pe karein`,
+          `koi advance nahi — payment service ke baad`,
           `Companion {AREA0}/{AREA1} jaise area mein milta hai aapke selected time pe`,
           `Baki 50% meeting pe pay karein`,
         ],
@@ -228,7 +228,7 @@ const TOPICS = {
       { type: "h2", text: `Payment Process` },
       {
         type: "p",
-        text: `50% advance via UPI within 30 minutes of booking confirmation. Remaining 50% paid in cash or UPI to the companion on arrival. We never ask for full advance, full payment via untraceable methods, or any fees beyond the quoted amount. If anyone does, it's a scam — report to us immediately.`,
+        text: `No advance payment is required. The full amount is paid in cash or UPI to the companion on arrival or after the service. We never ask for any payment before the service is completed, untraceable methods, or any fees beyond the quoted amount. If anyone does, it's a scam — report to us immediately.`,
       },
       { type: "h2", text: `${p.CITY} Booking Examples` },
       {
@@ -472,7 +472,7 @@ const TOPICS = {
       { type: "h2", text: `Step 7 — Payment` },
       {
         type: "p",
-        text: `50% advance via UPI (humare verified UPI ID pe) — full booking lock hota hai. 50% companion ko meeting pe — cash ya UPI. Anyone asking 100% advance is scam. We have no exceptions to this rule.`,
+        text: `Koi advance payment nahi — pura amount companion ko service ke baad cash ya UPI mein. Booking confirm karne ke liye sirf time aur area lock hota hai. Anyone asking for advance payment is a scam. We have no exceptions to this rule.`,
       },
       { type: "h2", text: `Step 8 — Meeting Day` },
       {

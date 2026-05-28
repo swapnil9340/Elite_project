@@ -145,7 +145,7 @@ export const forWomenCities = [
       },
       {
         q: "Booking kaise karein Bhopal mein?",
-        a: "Sirf 3 steps: (1) WhatsApp pe message bhejhein, (2) hum aapko verified profiles bhejhte hain, (3) aap pasand karke meeting confirm karein. Pre-paid 50% advance, baki meeting pe.",
+        a: "Sirf 3 steps: (1) WhatsApp pe message bhejhein, (2) hum aapko verified profiles bhejhte hain, (3) aap pasand karke meeting confirm karein. Koi advance nahi — payment service ke baad.",
       },
       {
         q: "Kya Bhopal ke alag-alag areas mein companions available hain?",
@@ -240,7 +240,7 @@ export const forWomenCities = [
       },
       {
         q: "Booking process kya hai Indore ke liye?",
-        a: "(1) WhatsApp ya Telegram pe message bhejhein, (2) hum 5-10 minute mein verified profiles share karte hain, (3) aap pasand karein, time aur place fix karein, (4) advance 50% UPI pe, baki meeting pe.",
+        a: "(1) WhatsApp ya Telegram pe message bhejhein, (2) hum 5-10 minute mein verified profiles share karte hain, (3) aap pasand karein, time aur place fix karein, (4) koi advance nahi — pura payment service ke baad.",
       },
       {
         q: "Vijay Nagar / Palasia ki ladies ke liye home delivery service?",

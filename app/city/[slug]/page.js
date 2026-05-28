@@ -150,7 +150,7 @@ export default function CityPage({ params }) {
         name: `How do I book a verified gigolo in ${city.name}?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `Simply WhatsApp us with your requirement (date, time, area in ${city.name}, type of service). We send you a verified profile within minutes. Confirm booking, pay 50% advance, and meet your companion.`,
+          text: `Simply WhatsApp us with your requirement (date, time, area in ${city.name}, type of service). We send you a verified profile within minutes. Confirm booking and meet your companion. Payment is made after the service is completed — no advance required.`,
         },
       },
       {
@@ -422,7 +422,7 @@ export default function CityPage({ params }) {
             <p>
               Simply WhatsApp us with your requirement (date, time, area in{" "}
               {city.name}, type of service). We send you a verified profile
-              within minutes. Confirm booking, pay 50% advance, and meet your
+              within minutes. Confirm booking, pay no advance — pay after service, and meet your
               companion.
             </p>
           </details>
