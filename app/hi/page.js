@@ -3,7 +3,7 @@ import { services } from "../data/services";
 import { cities } from "../data/cities";
 
 const SITE_URL = "https://www.safecompanion.in";
-const whatsappNumber = "not avalible now ";
+const whatsappNumber = "9340595938";
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=${encodeURIComponent(
   "Namaste, mujhe companion service book karni hai."
 )}`;

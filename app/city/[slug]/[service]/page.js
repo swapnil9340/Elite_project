@@ -5,7 +5,7 @@ import { services, getServiceBySlug } from "../../../data/services";
 import { buildPageContent } from "../../../data/cityServiceContent";
 
 const SITE_URL = "https://www.safecompanion.in";
-const whatsappNumber = "not avalible now ";
+const whatsappNumber = "9340595938";
 const telegramLink = `https://t.me/+91${whatsappNumber}`;
 const callLink = `tel:+91${whatsappNumber}`;
 const emailLink = `mailto:contact@safecompanion.in?subject=Companion%20Booking%20Request`;
@@ -112,7 +112,7 @@ export default function CityServicePage({ params }) {
     name: `Safe Companion India — ${service.name} in ${city.name}`,
     image: `${SITE_URL}/og-image.jpg`,
     url: `${SITE_URL}/city/${city.slug}/${service.slug}`,
-    telephone: "+91-not avalible now ",
+    telephone: "+91-9340595938",
     priceRange: "₹₹",
     description: intro,
     address: {
