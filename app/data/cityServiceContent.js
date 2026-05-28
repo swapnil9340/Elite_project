@@ -1,4 +1,4 @@
-// Content variation library — generates unique 700+ word content per
+﻿// Content variation library — generates unique 700+ word content per
 // (city, service) combination using deterministic hashing on slugs.
 // Uses string templates with token replacement to avoid function-in-data issues.
 // Tokens: {CITY}, {STATE}, {SERVICE}, {SERVICE_LC}, {NICK}, {AREA0}..{AREA4},
@@ -74,7 +74,7 @@ function makeDefaultProfile(city) {
 
 // String templates with tokens. No functions — pure data.
 const heroIntros = [
-  "{CITY} — often called the {NICK} — has a growing community of {DEMO} who are exploring modern, discreet companion services. Safe Companion India offers a verified {SERVICE_LC} experience in {CITY}, from the busy lanes of {AREA0} to the upscale circles of {AREA1}. Every companion is Aadhaar-verified, background-checked, and trained to respect your privacy completely.",
+  "{CITY} — often called the {NICK} — has a growing community of {DEMO} who are exploring modern, discreet companion services. Safe Companion India offers a verified {SERVICE_LC} experience in {CITY}, from the busy lanes of {AREA0} to the upscale circles of {AREA1}. Every companion is fully verified, background-checked, and trained to respect your privacy completely.",
   "If you are searching for a genuine {SERVICE_LC} in {CITY}, you have probably encountered fake profiles, advance-fee scams, and unreliable agencies. Safe Companion India changes that. We operate in {CITY} with a 100% verified roster — companions who have passed identity verification, background screening, and a personality interview. Our service runs across {AREA0}, {AREA1}, and {AREA2} along with other key {CITY} localities.",
   "{CITY} is one of {STATE}'s most dynamic urban centers, and the demand for premium {SERVICE_LC} bookings here has grown rapidly. Our verified network of male companions in {CITY} serves clients across {AREA0}, {AREA1}, and the surrounding metropolitan zone — with transparent pricing, no hidden charges, and complete discretion as our core promises.",
   "Looking for an authentic {SERVICE_LC} service in {CITY}? You deserve a platform that respects your time, your privacy, and your budget. Safe Companion India has built a verified male companion network specifically for {CITY} — covering iconic areas like {LANDMARK0} and residential pockets such as {AREA0}. Bookings happen on WhatsApp or Telegram, with verified profiles delivered to you in under 10 minutes.",
@@ -85,7 +85,7 @@ const heroIntros = [
 ];
 
 const whyUsBlocks = [
-  "Verification is the cornerstone of our {CITY} operations. Every {SERVICE_LC} on our platform has submitted Aadhaar and PAN documents, sat for a personal interview, and undergone reference checks. We reject roughly 60% of applicants — quality matters more than quantity. When you book through Safe Companion India in {CITY}, you are choosing the top tier of verified, professional companions.",
+  "Verification is the cornerstone of our {CITY} operations. Every {SERVICE_LC} on our platform has submitted identity documents, sat for a personal interview, and undergone reference checks. We reject roughly 60% of applicants — quality matters more than quantity. When you book through Safe Companion India in {CITY}, you are choosing the top tier of verified, professional companions.",
   "Transparent pricing is non-negotiable for our {CITY} clients. Unlike platforms that bait you with low rates and then add booking fees, travel surcharges, and premium upgrades, our {SERVICE_LC} pricing in {CITY} is final. The quote you see is the price you pay. No surprises, no awkward conversations, no hidden charges.",
   "Discretion is our promise to every {CITY} client. Your identity, photos, location, and communication history are encrypted and never shared. We do not store unnecessary data. We do not advertise on platforms where your activity could be tracked. The {SERVICE_LC} you book in {CITY} will arrive, deliver an excellent experience, and disappear from your life if that is what you want.",
   "Speed matters in {CITY}. Many of our clients are busy professionals who cannot spend days coordinating bookings. That is why our {SERVICE_LC} booking process in {CITY} takes minutes, not hours. Message us on WhatsApp, receive verified profiles in under 10 minutes, confirm your choice, and meet your companion at your preferred location.",

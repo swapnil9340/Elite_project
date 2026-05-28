@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { notFound } from "next/navigation";
 import { cities, getCityBySlug } from "../../data/cities";
 import { services } from "../../data/services";
@@ -158,9 +158,14 @@ export default function CityPage({ params }) {
         name: `Is the service in ${city.name} discreet and safe?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `Yes. We follow strict verification, confidentiality protocols, and safety standards. All companions in ${city.name} are Aadhaar-verified and background-checked.`,
+          text: `Yes. We follow strict verification, confidentiality protocols, and safety standards. All companions in ${city.name} are fully verified and background-checked.`,
         },
       },
+      ...(featured?.faqs || []).map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     ],
   };
 
@@ -325,6 +330,51 @@ export default function CityPage({ params }) {
         </section>
       )}
 
+      {featured?.areaServiceBlocks && (
+        <section className="section">
+          <h2>{city.name} Mein Area-Wise Callboy, Gigolo & Playboy Service</h2>
+          {featured.areaServiceBlocks.map((blk) => (
+            <div key={blk.area} style={{ marginBottom: 20 }}>
+              <h3>{blk.heading}</h3>
+              <p>{blk.body}</p>
+            </div>
+          ))}
+        </section>
+      )}
+
+      {featured?.testimonials && (
+        <section className="section testimonials-section">
+          <h2 className="section-title">
+            {city.name} Clients Ki Feedback
+          </h2>
+          <div className="testimonial-grid">
+            {featured.testimonials.map((t, i) => (
+              <div className="testimonial-card" key={i}>
+                <div className="stars">★★★★★</div>
+                <p className="quote">&quot;{t.text}&quot;</p>
+                <p className="author">{t.author}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {featured?.faqs && (
+        <section className="section faq-section">
+          <h2 className="section-title">
+            {city.name} Callboy / Gigolo / Playboy Service — FAQs
+          </h2>
+          <div className="faq-list">
+            {featured.faqs.map((f, i) => (
+              <details className="faq-item" key={i}>
+                <summary>{f.q}</summary>
+                <p>{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      )}
+
       <section className="section feature-section">
         <div className="feature-panel">
           <h2>Pricing in {city.name}</h2>
@@ -381,7 +431,7 @@ export default function CityPage({ params }) {
             <p>
               Yes. We follow strict verification, confidentiality protocols,
               and safety standards. All companions in {city.name} are
-              Aadhaar-verified and background-checked.
+              fully verified and background-checked.
             </p>
           </details>
         </div>

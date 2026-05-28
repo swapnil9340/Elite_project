@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { services } from "../data/services";
 import { cities } from "../data/cities";
 
@@ -149,7 +149,7 @@ export default function HindiHomePage() {
             <li>✓ 50+ Sheheron Mein Available</li>
             <li>✓ Discreet, Professional, Bharosemand</li>
             <li>✓ 24/7 WhatsApp Support — Turant Reply</li>
-            <li>✓ Aadhaar/PAN Verified Companions</li>
+            <li>✓ fully verified Companions</li>
           </ul>
         </div>
         <div className="feature-panel">

@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { notFound } from "next/navigation";
 import { jobs, getJobBySlug } from "../../data/jobs";
 import { cities } from "../../data/cities";
@@ -155,7 +155,7 @@ export default function JobApplyPage({ params }) {
           <h2>Eligibility</h2>
           <ul className="feature-list">
             <li>✓ Age: 21 - 45 years</li>
-            <li>✓ Indian citizen with valid ID (Aadhaar/PAN)</li>
+            <li>✓ Indian citizen with valid government ID</li>
             <li>✓ Good fitness, well-groomed appearance</li>
             <li>✓ Strong communication (Hindi/English)</li>
             <li>✓ Smartphone with WhatsApp + Telegram</li>

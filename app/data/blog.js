@@ -1,4 +1,4 @@
-// Hand-written + auto-generated city blogs.
+﻿// Hand-written + auto-generated city blogs.
 // 15 manual posts + 40 city-specific posts = 55 total blog articles.
 // Each article ~700-1200 words, FAQ-rich, internal links to service/city pages.
 
@@ -32,7 +32,7 @@ const manualPosts = [
         type: "ul",
         items: [
           "Age: 21 to 45 years",
-          "Indian citizen with valid government ID (Aadhaar/PAN)",
+          "Indian citizen with valid government ID",
           "Good physical fitness, well-groomed appearance",
           "Strong communication skills (English + Hindi/regional language)",
           "Polite, respectful, non-judgmental attitude",
@@ -45,7 +45,7 @@ const manualPosts = [
         items: [
           "Visit our apply page and fill the basic profile form",
           "Upload 2-3 recent clear photos (face + full body)",
-          "Verify your identity with Aadhaar/PAN",
+          "Verify your identity",
           "Complete a short telephonic interview",
           "Get profile approved within 48 hours",
           "Start receiving booking requests on WhatsApp",
@@ -388,7 +388,7 @@ const manualPosts = [
       {
         type: "ul",
         items: [
-          "Verify companion's identity (Aadhaar/PAN)",
+          "Verify companion's identity",
           "Background check on past behavior",
           "Maintain documented communication records",
           "Provide emergency support during the booking",
@@ -429,7 +429,7 @@ const manualPosts = [
           "Visit our apply page",
           "Fill the registration form with your basic details",
           "Upload 2-3 recent clear photos",
-          "Submit Aadhaar/PAN for verification",
+          "Submit ID for verification",
           "Wait 48 hours for approval",
           "Start receiving booking requests on WhatsApp",
         ],
@@ -503,7 +503,7 @@ const manualPosts = [
       { type: "h2", text: "Safety Guarantee Bhopal Mein" },
       {
         type: "p",
-        text: "Hamare sab Bhopal companions Aadhaar/PAN verified hain, background check hua hai, aur service ke baad har client se feedback liya jaata hai. Aapki identity, photos, location, aur communication 100% confidential rakhi jaati hain. Koi data leak, koi blackmail, koi judgment — bilkul nahi.",
+        text: "Hamare sab Bhopal companions fully verified hain, background check hua hai, aur service ke baad har client se feedback liya jaata hai. Aapki identity, photos, location, aur communication 100% confidential rakhi jaati hain. Koi data leak, koi blackmail, koi judgment — bilkul nahi.",
       },
     ],
   },
@@ -544,7 +544,7 @@ const manualPosts = [
       { type: "h2", text: "'Boyfriend on Rent' Ka Asli Matlab Kya Hai?" },
       {
         type: "p",
-        text: "'Boyfriend on rent' ek casual term hai jo internet par popular ho gaya hai, lekin iska asli matlab hai — ek verified male companion ka time aur attention book karna. Ismein koi obligation, koi future commitment, ya family pressure nahi hota. Bhopal mein bahut si women apne busy ya lonely schedule ke beech ek aisa saathi chahti hain jo unke saath dinner pe jaaye, ek movie dekhe, koi event attend kare, ya bas baith kar achhi baat-cheet kare. Yahi companion service ka core hai — paisa aapke saath spend kiye gaye quality time ke liye hota hai, kisi aur cheez ke liye nahi. Safe Companion India ek companion-only platform hai jahan har profile Aadhaar/PAN verified aur background-checked hota hai.",
+        text: "'Boyfriend on rent' ek casual term hai jo internet par popular ho gaya hai, lekin iska asli matlab hai — ek verified male companion ka time aur attention book karna. Ismein koi obligation, koi future commitment, ya family pressure nahi hota. Bhopal mein bahut si women apne busy ya lonely schedule ke beech ek aisa saathi chahti hain jo unke saath dinner pe jaaye, ek movie dekhe, koi event attend kare, ya bas baith kar achhi baat-cheet kare. Yahi companion service ka core hai — paisa aapke saath spend kiye gaye quality time ke liye hota hai, kisi aur cheez ke liye nahi. Safe Companion India ek companion-only platform hai jahan har profile fully verified aur background-checked hota hai.",
       },
       { type: "h2", text: "Bhopal Mein Yeh Service Kaun Book Karta Hai?" },
       {
@@ -626,7 +626,7 @@ const manualPosts = [
       { type: "h2", text: "Discretion & Safety — Aapki Privacy Sabse Pehle" },
       {
         type: "p",
-        text: "Companion service mein sabse important cheez hai trust aur privacy. Hamare sab Bhopal companions Aadhaar/PAN verified hain aur background-checked hain. Aapki identity, photos, location aur saari communication 100% confidential rakhi jaati hai. Koi data leak, koi blackmail, koi judgment — bilkul nahi. Kuch additional tips jo hum har client ko dete hain:",
+        text: "Companion service mein sabse important cheez hai trust aur privacy. Hamare sab Bhopal companions fully verified hain aur background-checked hain. Aapki identity, photos, location aur saari communication 100% confidential rakhi jaati hai. Koi data leak, koi blackmail, koi judgment — bilkul nahi. Kuch additional tips jo hum har client ko dete hain:",
       },
       {
         type: "ul",
@@ -666,7 +666,7 @@ const manualPosts = [
       { type: "h3", text: "Kya yeh safe aur confidential hai?" },
       {
         type: "p",
-        text: "Bilkul. Sab companions Aadhaar/PAN verified aur background-checked hain. Aapki identity, photos aur location strictly confidential rakhi jaati hain.",
+        text: "Bilkul. Sab companions fully verified aur background-checked hain. Aapki identity, photos aur location strictly confidential rakhi jaati hain.",
       },
       { type: "h2", text: "Conclusion — Aaj Hi Discreet Booking Karein" },
       {
@@ -792,7 +792,7 @@ const manualPosts = [
       { type: "h2", text: "5. Safety & Background Check" },
       {
         type: "p",
-        text: "Random Tinder matches dangerous ho sakte hain. Hamare companions verified hain — Aadhaar, PAN, address, past complaints — sab check ho chuke hain. Risk minimal hai.",
+        text: "Random Tinder matches dangerous ho sakte hain. Hamare companions verified hain — identity, address, past complaints — sab check ho chuke hain. Risk minimal hai.",
       },
       { type: "h2", text: "6. Transparent Pricing" },
       {
@@ -869,7 +869,7 @@ const manualPosts = [
         type: "ul",
         items: [
           "Full advance kabhi mat dena (sirf 50%)",
-          "Personal documents (Aadhaar, license) photo share mat karein",
+          "Personal ID documents ya license photo share mat karein",
           "Apne ghar ka exact address mat dena (lobby tak guide karein)",
           "Drink & drive avoid karein",
           "Companion ke saath drugs/illegal substances bilkul nahi",

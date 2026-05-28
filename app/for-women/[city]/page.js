@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   forWomenCities,
@@ -171,7 +171,7 @@ export default function ForWomenCityPage({ params }) {
         <div className="hero-stats">
           <div className="stat-card">
             <span>100% Verified</span>
-            <p>Aadhaar/PAN Checked</p>
+            <p>Fully Verified</p>
           </div>
           <div className="stat-card">
             <span>0 Hidden Charges</span>

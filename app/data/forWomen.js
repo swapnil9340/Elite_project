@@ -1,4 +1,4 @@
-// Dedicated EXTRA pages for Bhopal + Indore (priority growth cities).
+﻿// Dedicated EXTRA pages for Bhopal + Indore (priority growth cities).
 // These are ADDITIVE — existing /city/bhopal and /city/indore pages stay untouched.
 // These pages target ladies/female-client SEO intent specifically.
 
@@ -109,7 +109,7 @@ export const forWomenCities = [
       },
       {
         heading: "Bhopal Mein Discreet Booking, Night Companion Aur Home Service",
-        body: "Bhopal ki akeli, divorced ya single ladies ke liye genuine companionship aur emotional support sabse zyada matter karta hai. Hum aapko Aadhaar/PAN verified, background-checked companions ke saath connect karte hain — bilkul aapki terms pe. Night companion, hotel meeting, ya ghar baithe discreet booking — sab options available hain. Jehan Numa Palace, Courtyard Marriott jaise premium hotels se lekar aapke nazdiki safe location tak, hum aapki privacy ka pura dhyan rakhte hain. Bhopal mein safe gigolo service for women ke liye aaj hi WhatsApp ya Telegram pe contact karein.",
+        body: "Bhopal ki akeli, divorced ya single ladies ke liye genuine companionship aur emotional support sabse zyada matter karta hai. Hum aapko fully verified, background-checked companions ke saath connect karte hain — bilkul aapki terms pe. Night companion, hotel meeting, ya ghar baithe discreet booking — sab options available hain. Jehan Numa Palace, Courtyard Marriott jaise premium hotels se lekar aapke nazdiki safe location tak, hum aapki privacy ka pura dhyan rakhte hain. Bhopal mein safe gigolo service for women ke liye aaj hi WhatsApp ya Telegram pe contact karein.",
       },
     ],
     audienceSections: [
@@ -141,7 +141,7 @@ export const forWomenCities = [
       },
       {
         q: "Kya yeh service safe aur confidential hai?",
-        a: "Bilkul. Hamare sare companions Aadhaar/PAN verified hain, background checked hain. Aapki identity, location, photos sab 100% confidential rakhi jaati hain. Hum aapko WhatsApp pe profile bhejhte hain — aap select karke confirm karein.",
+        a: "Bilkul. Hamare sare companions fully verified hain, background checked hain. Aapki identity, location, photos sab 100% confidential rakhi jaati hain. Hum aapko WhatsApp pe profile bhejhte hain — aap select karke confirm karein.",
       },
       {
         q: "Booking kaise karein Bhopal mein?",
@@ -236,7 +236,7 @@ export const forWomenCities = [
       },
       {
         q: "Indore mein safe aur confidential service hai kya?",
-        a: "100% safe. Sab companions Aadhaar/PAN verified, background checked. Aapki identity, photos, location, communication — sab strictly confidential rakhi jaati hain. Hum aapse signed NDA bhi karwa sakte hain agar aap chahein.",
+        a: "100% safe. Sab companions fully verified, background checked. Aapki identity, photos, location, communication — sab strictly confidential rakhi jaati hain. Hum aapse signed NDA bhi karwa sakte hain agar aap chahein.",
       },
       {
         q: "Booking process kya hai Indore ke liye?",

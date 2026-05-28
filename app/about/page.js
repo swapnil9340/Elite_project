@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 const SITE_URL = "https://www.safecompanion.in";
 
@@ -78,7 +78,7 @@ export default function AboutPage() {
         <div className="feature-panel">
           <h2>Our Values</h2>
           <ul className="feature-list">
-            <li>✓ Verified profiles only — Aadhaar/PAN-checked</li>
+            <li>✓ Verified profiles only — fully verified</li>
             <li>✓ Transparent pricing — no hidden charges</li>
             <li>✓ Complete discretion and confidentiality</li>
             <li>✓ Zero tolerance for scams or fake bookings</li>
@@ -92,7 +92,7 @@ export default function AboutPage() {
         <div className="step-card">
           <strong>Step 1 — Identity Check</strong>
           <p>
-            Every companion submits Aadhaar/PAN for verification. We confirm
+            Every companion submits ID for verification. We confirm
             identity, age, and address.
           </p>
         </div>

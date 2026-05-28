@@ -432,6 +432,24 @@ export default function HomeContent() {
       </section>
 
       <section className="section internal-hub-section">
+        <h2 className="section-title">Indore — Verified Service (Now Active)</h2>
+        <p className="section-subtitle">
+          Indore callboy, gigolo, playboy &amp; male escort service — sirf
+          ladies, housewives aur working women ke liye. Vijay Nagar, Palasia,
+          AB Road, Rajwada, Bhanwarkuan covered. 100% discreet, transparent rates.
+        </p>
+        <div className="cities-grid">
+          <Link href="/city/indore" className="city-badge">Indore Male Service</Link>
+          <Link href="/city/indore/callboy-service" className="city-badge">Indore Callboy Service</Link>
+          <Link href="/city/indore/gigolo-service" className="city-badge">Indore Gigolo Service</Link>
+          <Link href="/city/indore/playboy-service" className="city-badge">Indore Playboy Service</Link>
+          <Link href="/city/indore/male-escort-service" className="city-badge">Indore Male Escort Service</Link>
+          <Link href="/city/indore/boyfriend-on-rent" className="city-badge">Boyfriend on Rent Indore</Link>
+          <Link href="/for-women/indore" className="city-badge">Indore Service for Women</Link>
+        </div>
+      </section>
+
+      <section className="section internal-hub-section">
         <h2 className="section-title">Apply for Jobs</h2>
         <p className="section-subtitle">
           100% free registration, 48-hour verification.

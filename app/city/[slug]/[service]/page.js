@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { cities, getCityBySlug } from "../../../data/cities";
 import { services, getServiceBySlug } from "../../../data/services";
 import { buildPageContent } from "../../../data/cityServiceContent";
+import { getFeaturedCitySeo } from "../../../data/featuredCitySeo";
 
 const SITE_URL = "https://www.safecompanion.in";
 const whatsappNumber = "9340595938";
@@ -25,6 +26,7 @@ export function generateMetadata({ params }) {
   const service = getServiceBySlug(params.service);
   if (!city || !service) return {};
 
+  const featured = getFeaturedCitySeo(city.slug);
   const title = `Best ${service.name} in ${city.name} | Top Verified, Discreet – Safe Companion India`;
   const description = `Best ${service.name.toLowerCase()} in ${city.name}, ${city.state} — top verified options. ${service.intro} No hidden charges, instant WhatsApp & Telegram booking.`;
 
@@ -32,6 +34,7 @@ export function generateMetadata({ params }) {
     title,
     description,
     keywords: [
+      ...(featured?.extraKeywords || []),
       `best ${service.name.toLowerCase()} in ${city.name}`,
       `top ${service.name.toLowerCase()} ${city.name}`,
       `best male service in ${city.name}`,
@@ -67,6 +70,8 @@ export default function CityServicePage({ params }) {
 
   const content = buildPageContent(city, service);
   const { profile, intro, whyUs, pricing, booking, safety, testimonials } = content;
+  const featured = getFeaturedCitySeo(city.slug);
+  const featuredService = featured?.perService?.[service.slug];
 
   const whatsappLink = `https://wa.me/91${whatsappNumber}?text=${encodeURIComponent(
     `Hello, I want to book ${service.name} in ${city.name}.`
@@ -228,6 +233,11 @@ export default function CityServicePage({ params }) {
           text: `We cover all major areas of ${city.name} including ${profile.areas.join(", ")}. Meetings can be arranged at hotels like ${profile.hotels[0]}, ${profile.hotels[1] || profile.hotels[0]}, or any neutral venue you prefer.`,
         },
       },
+      ...(featured?.faqs || []).map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     ],
   };
 
@@ -266,6 +276,33 @@ export default function CityServicePage({ params }) {
         <h2>Why Choose Our {service.name} in {city.name}</h2>
         <p>{whyUs}</p>
       </section>
+
+      {featuredService && (
+        <section className="section">
+          <h2>{featuredService.heading}</h2>
+          <p>{featuredService.body}</p>
+          <div className="cities-grid" style={{ marginTop: 16 }}>
+            <Link href={`/city/${city.slug}`} className="city-badge">
+              All Services in {city.name}
+            </Link>
+            <Link href={`/city/${city.slug}/callboy-service`} className="city-badge">
+              {city.name} Callboy Service
+            </Link>
+            <Link href={`/city/${city.slug}/gigolo-service`} className="city-badge">
+              {city.name} Gigolo Service
+            </Link>
+            <Link href={`/city/${city.slug}/playboy-service`} className="city-badge">
+              {city.name} Playboy Service
+            </Link>
+            <Link href={`/city/${city.slug}/male-escort-service`} className="city-badge">
+              {city.name} Male Escort Service
+            </Link>
+            <Link href={`/for-women/${city.slug}`} className="city-badge">
+              {city.name} Service for Women
+            </Link>
+          </div>
+        </section>
+      )}
 
       <section className="section feature-section">
         <div className="feature-panel">
