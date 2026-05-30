@@ -481,6 +481,10 @@ export default function HomeContent() {
           <Link href="/blog/is-it-safe-to-book-male-companion" className="city-badge">Is It Safe to Book?</Link>
           <Link href="/blog/playboy-job-apply-online" className="city-badge">Apply Playboy Online</Link>
           <Link href="/blog/boyfriend-on-rent-bhopal" className="city-badge">Boyfriend on Rent in Bhopal</Link>
+          <Link href="/blog/bhopal-callboy-direct-number-no-agency" className="city-badge">Bhopal Callboy Direct Number</Link>
+          <Link href="/blog/playboy-service-cheap-rate-bhopal" className="city-badge">Bhopal Playboy Cheap Rate</Link>
+          <Link href="/blog/indore-callboy-direct-number-no-agency" className="city-badge">Indore Callboy Direct Number</Link>
+          <Link href="/blog/playboy-service-cheap-rate-indore" className="city-badge">Indore Playboy Cheap Rate</Link>
           <Link href="/blog/best-male-companion-service-bhopal-women" className="city-badge">Bhopal Women Guide</Link>
           <Link href="/blog/best-male-companion-service-indore-women" className="city-badge">Indore Women Guide</Link>
           <Link href="/blog/why-women-bhopal-indore-choose-male-companion" className="city-badge">Why Women Choose Us</Link>

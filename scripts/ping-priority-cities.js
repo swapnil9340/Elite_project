@@ -27,6 +27,10 @@ const services = [
 
 const priorityBlogSlugs = [
   "boyfriend-on-rent-bhopal",
+  "bhopal-callboy-direct-number-no-agency",
+  "playboy-service-cheap-rate-bhopal",
+  "indore-callboy-direct-number-no-agency",
+  "playboy-service-cheap-rate-indore",
   "best-male-companion-service-bhopal-women",
   "best-male-companion-service-indore-women",
   "why-women-bhopal-indore-choose-male-companion",
