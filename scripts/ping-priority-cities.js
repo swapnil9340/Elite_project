@@ -44,6 +44,9 @@ function buildPriorityUrls() {
   for (const b of priorityBlogSlugs) {
     urls.push(`${SITE_URL}/blog/${b}`);
   }
+  // Priority RSS feed — pinging the feed URL itself makes Bing/Yandex/IndexNow
+  // fetch the feed, which in turn surfaces every URL inside with fresh pubDates.
+  urls.push(`${SITE_URL}/feed/priority.xml`);
   return urls;
 }
 

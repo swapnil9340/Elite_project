@@ -490,26 +490,29 @@ export default function HomeContent() {
       </section>
 
       <section className="section internal-hub-section">
-        <h2 className="section-title">All Service × City Combinations ({cities.length * services.length})</h2>
+        <h2 className="section-title">Featured Service × City Combinations</h2>
         <p className="section-subtitle">
-          Direct links to every city + service combo we serve.
+          High-priority city + service combos — Bhopal &amp; Indore. Other
+          cities listed on the full sitemap.
         </p>
         <div className="cities-grid">
-          {cities.flatMap((c) =>
-            services.map((s) => (
-              <Link
-                key={`${c.slug}-${s.slug}`}
-                href={`/city/${c.slug}/${s.slug}`}
-                className="city-badge"
-              >
-                {s.name} in {c.name}
-              </Link>
-            ))
-          )}
+          {cities
+            .filter((c) => c.slug === "bhopal" || c.slug === "indore")
+            .flatMap((c) =>
+              services.map((s) => (
+                <Link
+                  key={`${c.slug}-${s.slug}`}
+                  href={`/city/${c.slug}/${s.slug}`}
+                  className="city-badge"
+                >
+                  {s.name} in {c.name}
+                </Link>
+              ))
+            )}
         </div>
         <p style={{ textAlign: "center", marginTop: 16 }}>
           <Link href="/sitemap-html" className="button tertiary">
-            View Complete HTML Sitemap →
+            View All {cities.length * services.length} City × Service Combos →
           </Link>
         </p>
       </section>

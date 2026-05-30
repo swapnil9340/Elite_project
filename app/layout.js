@@ -337,6 +337,7 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://wa.me" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://t.me" crossOrigin="anonymous" />
         <link rel="alternate" type="application/rss+xml" title="Safe Companion India — Main RSS" href={`${SITE_URL}/feed.xml`} />
+        <link rel="alternate" type="application/rss+xml" title="Safe Companion India — Priority (Bhopal & Indore)" href={`${SITE_URL}/feed/priority.xml`} />
         <link rel="alternate" type="application/rss+xml" title="Safe Companion India — Blog RSS" href={`${SITE_URL}/feed/blog.xml`} />
         <link rel="alternate" type="application/rss+xml" title="Safe Companion India — Cities RSS" href={`${SITE_URL}/feed/cities.xml`} />
         <link rel="alternate" type="application/rss+xml" title="Safe Companion India — Services RSS" href={`${SITE_URL}/feed/services.xml`} />
@@ -366,14 +367,46 @@ export default function RootLayout({ children }) {
         <footer className="site-footer">
           <div className="container">
             <div className="footer-content">
-              <div className="footer-section">
+              <div className="footer-section footer-brand">
                 <h3>Safe Companion India</h3>
                 <p>
                   Genuine male companion service across 50+ Indian cities. No
                   hidden charges, transparent pricing, fully discreet bookings.
                 </p>
+                <ul className="footer-contact">
+                  <li>
+                    <span className="footer-icon">💬</span>
+                    <a href={whatsappLink} target="_blank" rel="noreferrer">
+                      WhatsApp Chat
+                    </a>
+                  </li>
+                  <li>
+                    <span className="footer-icon">📞</span>
+                    <a href={`tel:+91${whatsappNumber}`}>Call Now</a>
+                  </li>
+                  <li>
+                    <span className="footer-icon">✈️</span>
+                    <a
+                      href={`https://t.me/+91${whatsappNumber}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Telegram
+                    </a>
+                  </li>
+                  <li>
+                    <span className="footer-icon">📧</span>
+                    <a href="mailto:contact@safecompanion.in">
+                      contact@safecompanion.in
+                    </a>
+                  </li>
+                </ul>
+                <p className="footer-availability">
+                  Available 24/7 · Discreet &amp; Confidential
+                </p>
               </div>
-              <div className="footer-section quick-links">
+
+              <div className="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
                   <li><Link href="/">Home</Link></li>
@@ -384,43 +417,35 @@ export default function RootLayout({ children }) {
                   <li><Link href="/blog">Blog</Link></li>
                   <li><Link href="/about">About Us</Link></li>
                   <li><Link href="/hi">हिन्दी (Hindi)</Link></li>
-                  <li><Link href="/#how-it-works">How It Works</Link></li>
-                  <li><Link href="/#testimonials">Reviews</Link></li>
-                  <li><Link href="/#faq">FAQ</Link></li>
                   <li><Link href="/contact">Contact</Link></li>
                   <li><Link href="/privacy">Privacy Policy</Link></li>
                 </ul>
               </div>
+
               <div className="footer-section">
-                <h3>Connect With Us</h3>
-                <p>
-                  💬 WhatsApp:{" "}
-                  <a href={whatsappLink} target="_blank" rel="noreferrer">
-                    +91 93405 xxxxx
-                  </a>
-                </p>
-                <p>
-                  📞 Call:{" "}
-                  <a href={`tel:+91${whatsappNumber}`}>+91 93405 xxxxx</a>
-                </p>
-                <p>
-                  ✈️ Telegram:{" "}
-                  <a
-                    href={`https://t.me/+91${whatsappNumber}`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Open Chat
-                  </a>
-                </p>
-                <p>
-                  📧 Email:{" "}
-                  <a href="mailto:contact@safecompanion.in">
-                    contact@safecompanion.in
-                  </a>
-                </p>
-                <p>Available 24/7 for bookings</p>
-                <p>Discreet &amp; Confidential</p>
+                <h3>Bhopal — Featured</h3>
+                <ul>
+                  <li><Link href="/city/bhopal">Bhopal Male Service</Link></li>
+                  <li><Link href="/city/bhopal/callboy-service">Callboy Service</Link></li>
+                  <li><Link href="/city/bhopal/gigolo-service">Gigolo Service</Link></li>
+                  <li><Link href="/city/bhopal/playboy-service">Playboy Service</Link></li>
+                  <li><Link href="/city/bhopal/male-escort-service">Male Escort Service</Link></li>
+                  <li><Link href="/city/bhopal/boyfriend-on-rent">Boyfriend on Rent</Link></li>
+                  <li><Link href="/for-women/bhopal">Service for Women</Link></li>
+                </ul>
+              </div>
+
+              <div className="footer-section">
+                <h3>Indore — Featured</h3>
+                <ul>
+                  <li><Link href="/city/indore">Indore Male Service</Link></li>
+                  <li><Link href="/city/indore/callboy-service">Callboy Service</Link></li>
+                  <li><Link href="/city/indore/gigolo-service">Gigolo Service</Link></li>
+                  <li><Link href="/city/indore/playboy-service">Playboy Service</Link></li>
+                  <li><Link href="/city/indore/male-escort-service">Male Escort Service</Link></li>
+                  <li><Link href="/city/indore/boyfriend-on-rent">Boyfriend on Rent</Link></li>
+                  <li><Link href="/for-women/indore">Service for Women</Link></li>
+                </ul>
               </div>
             </div>
             <div className="footer-bottom">
