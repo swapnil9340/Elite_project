@@ -27,12 +27,13 @@ export default async function AdminInquiries({ searchParams }) {
 
   try {
     await ensureSchema();
+    // LIMIT/OFFSET inlined because mysql2 prepared-statement protocol mishandles them on TiDB.
+    // Safe: both values come from Math.max/parseInt and a constant, never user-controlled strings.
     rows = await query(
       `SELECT id, name, age, phone, email, city, service_preference, booking_date, budget_range, details, source_page, status, created_at
        FROM inquiries
        ORDER BY created_at DESC
-       LIMIT ? OFFSET ?`,
-      [PAGE_SIZE, offset]
+       LIMIT ${PAGE_SIZE} OFFSET ${offset}`
     );
     const c = await query("SELECT COUNT(*) AS c FROM inquiries");
     total = c[0].c;

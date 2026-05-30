@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start -p 8080",
     "ping": "node scripts/ping-search-engines.js",
-    "postbuild": "node scripts/ping-search-engines.js || true",
+    "ping:priority": "node scripts/ping-priority-cities.js",
+    "ping:all": "node scripts/ping-all.js",
+    "postbuild": "node scripts/ping-all.js",
     "db:check": "node scripts/db-check.js"
   },
   "dependencies": {

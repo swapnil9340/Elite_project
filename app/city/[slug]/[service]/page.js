@@ -27,6 +27,7 @@ export function generateMetadata({ params }) {
   if (!city || !service) return {};
 
   const featured = getFeaturedCitySeo(city.slug);
+  const featuredService = featured?.perService?.[service.slug];
   const title = `Best ${service.name} in ${city.name} | Top Verified, Discreet – Safe Companion India`;
   const description = `Best ${service.name.toLowerCase()} in ${city.name}, ${city.state} — top verified options. ${service.intro} No hidden charges, instant WhatsApp & Telegram booking.`;
 
@@ -34,6 +35,7 @@ export function generateMetadata({ params }) {
     title,
     description,
     keywords: [
+      ...(featuredService?.extraKeywords || []),
       ...(featured?.extraKeywords || []),
       `best ${service.name.toLowerCase()} in ${city.name}`,
       `top ${service.name.toLowerCase()} ${city.name}`,
@@ -231,6 +233,11 @@ export default function CityServicePage({ params }) {
         name: f.q,
         acceptedAnswer: { "@type": "Answer", text: f.a },
       })),
+      ...(featuredService?.serviceFaqs || []).map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     ],
   };
 
@@ -274,7 +281,13 @@ export default function CityServicePage({ params }) {
         <section className="section">
           <h2>{featuredService.heading}</h2>
           <p>{featuredService.body}</p>
-          <div className="cities-grid" style={{ marginTop: 16 }}>
+          {featuredService.sections?.map((sec) => (
+            <div key={sec.h3} style={{ marginTop: 20 }}>
+              <h3>{sec.h3}</h3>
+              <p>{sec.p}</p>
+            </div>
+          ))}
+          <div className="cities-grid" style={{ marginTop: 24 }}>
             <Link href={`/city/${city.slug}`} className="city-badge">
               All Services in {city.name}
             </Link>
@@ -293,6 +306,22 @@ export default function CityServicePage({ params }) {
             <Link href={`/for-women/${city.slug}`} className="city-badge">
               {city.name} Service for Women
             </Link>
+          </div>
+        </section>
+      )}
+
+      {featuredService?.serviceFaqs && (
+        <section className="section faq-section">
+          <h2 className="section-title">
+            {service.name} in {city.name} — FAQs
+          </h2>
+          <div className="faq-list">
+            {featuredService.serviceFaqs.map((f, i) => (
+              <details className="faq-item" key={i}>
+                <summary>{f.q}</summary>
+                <p>{f.a}</p>
+              </details>
+            ))}
           </div>
         </section>
       )}

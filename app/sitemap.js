@@ -6,10 +6,16 @@ import { forWomenCities } from "./data/forWomen";
 
 const SITE_URL = "https://www.safecompanion.in";
 
-// Split into 6 chunks so Google can fetch + index in parallel.
-// Each chunk has a focused content theme — better crawl efficiency.
-// 0 = main pages, 1 = services, 2 = cities, 3 = city-service combos,
-// 4 = blog, 5 = jobs + for-women
+// Priority cities — get top sitemap slot, priority 1.0, daily crawl signal.
+// Add a city slug here to give all its URLs (main + service combos + for-women)
+// maximum indexing priority.
+const PRIORITY_CITIES = ["bhopal", "indore"];
+const isPriority = (slug) => PRIORITY_CITIES.includes(slug);
+
+// Split into 7 chunks so Google can fetch + index in parallel.
+// 0 = main pages + PRIORITY-CITY URLs (highest signal), 1 = services,
+// 2 = remaining cities, 3 = remaining city-service combos,
+// 4 = blog, 5 = jobs + for-women (non-priority), 6 = reserved
 export async function generateSitemaps() {
   return [
     { id: 0 },
@@ -25,9 +31,9 @@ export default function sitemap({ id }) {
   const lastModified = new Date();
 
   if (id === 0) {
-    // Main static pages — highest priority
-    return [
-      { url: `${SITE_URL}/`, lastModified, changeFrequency: "weekly", priority: 1.0 },
+    // Main static pages + ALL priority-city URLs — highest priority, daily crawl signal.
+    const main = [
+      { url: `${SITE_URL}/`, lastModified, changeFrequency: "daily", priority: 1.0 },
       { url: `${SITE_URL}/hi`, lastModified, changeFrequency: "weekly", priority: 0.95 },
       { url: `${SITE_URL}/for-women`, lastModified, changeFrequency: "weekly", priority: 0.95 },
       { url: `${SITE_URL}/about`, lastModified, changeFrequency: "monthly", priority: 0.8 },
@@ -39,6 +45,33 @@ export default function sitemap({ id }) {
       { url: `${SITE_URL}/sitemap-html`, lastModified, changeFrequency: "weekly", priority: 0.7 },
       { url: `${SITE_URL}/privacy`, lastModified, changeFrequency: "yearly", priority: 0.4 },
     ];
+
+    // Priority city URLs — bumped to top sitemap with priority 1.0 and daily change frequency.
+    const priorityCityUrls = [];
+    for (const slug of PRIORITY_CITIES) {
+      priorityCityUrls.push({
+        url: `${SITE_URL}/city/${slug}`,
+        lastModified,
+        changeFrequency: "daily",
+        priority: 1.0,
+      });
+      priorityCityUrls.push({
+        url: `${SITE_URL}/for-women/${slug}`,
+        lastModified,
+        changeFrequency: "daily",
+        priority: 1.0,
+      });
+      for (const s of services) {
+        priorityCityUrls.push({
+          url: `${SITE_URL}/city/${slug}/${s.slug}`,
+          lastModified,
+          changeFrequency: "daily",
+          priority: 0.95,
+        });
+      }
+    }
+
+    return [...main, ...priorityCityUrls];
   }
 
   if (id === 1) {
@@ -51,17 +84,22 @@ export default function sitemap({ id }) {
   }
 
   if (id === 2) {
-    return cities.map((c) => ({
-      url: `${SITE_URL}/city/${c.slug}`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.85,
-    }));
+    // Non-priority cities only — priority cities are already in chunk 0.
+    return cities
+      .filter((c) => !isPriority(c.slug))
+      .map((c) => ({
+        url: `${SITE_URL}/city/${c.slug}`,
+        lastModified,
+        changeFrequency: "weekly",
+        priority: 0.85,
+      }));
   }
 
   if (id === 3) {
+    // Non-priority city × service combos only — priority ones are already in chunk 0.
     const entries = [];
     for (const c of cities) {
+      if (isPriority(c.slug)) continue;
       for (const s of services) {
         entries.push({
           url: `${SITE_URL}/city/${c.slug}/${s.slug}`,
@@ -79,7 +117,7 @@ export default function sitemap({ id }) {
       url: `${SITE_URL}/blog/${p.slug}`,
       lastModified: new Date(p.date),
       changeFrequency: "monthly",
-      priority: 0.75,
+      priority: p.city && isPriority(p.city) ? 0.95 : 0.75,
     }));
   }
 
@@ -91,12 +129,15 @@ export default function sitemap({ id }) {
         changeFrequency: "weekly",
         priority: 0.9,
       })),
-      ...forWomenCities.map((c) => ({
-        url: `${SITE_URL}/for-women/${c.slug}`,
-        lastModified,
-        changeFrequency: "weekly",
-        priority: 0.95,
-      })),
+      // Non-priority for-women cities only (priority ones already in chunk 0).
+      ...forWomenCities
+        .filter((c) => !isPriority(c.slug))
+        .map((c) => ({
+          url: `${SITE_URL}/for-women/${c.slug}`,
+          lastModified,
+          changeFrequency: "weekly",
+          priority: 0.95,
+        })),
     ];
   }
 
