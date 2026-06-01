@@ -6,7 +6,10 @@ import { buildRss, staggeredDate, rssResponse } from "../../data/feedBuilder";
 
 const SITE_URL = "https://www.safecompanion.in";
 
-const PRIORITY_CITIES = ["bhopal", "indore"];
+const PRIORITY_CITIES = ["bhopal", "indore", "delhi"];
+// Subset of priority cities that ALSO have a /for-women/<slug> page generated.
+// Add a slug here when you create the corresponding entry in forWomen.js.
+const FORWOMEN_CITIES = new Set(["bhopal", "indore"]);
 
 // Service-specific item templates — each title/description is packed with
 // the high-intent keyword variants (cheap rate, sasta, no advance, premium,
@@ -110,15 +113,17 @@ export function GET() {
       category: `${C} — Featured`,
     });
 
-    // For-women page
-    items.push({
-      title: `${C} Service for Women — Verified Male Companion (No Advance, Pay After Service)`,
-      link: `${SITE_URL}/for-women/${slug}`,
-      description: `${C} mein ladies, housewives, working women aur college girls ke liye verified male companion service. Cheap rate aur premium tier dono. No advance payment.`,
-      content: `${C} for women — area-wise availability, sasta + safe + premium.`,
-      pubDate: staggeredDate(`priority-forwomen-${slug}`, 5),
-      category: `${C} — For Women`,
-    });
+    // For-women page (only if the city has a /for-women/<slug> route)
+    if (FORWOMEN_CITIES.has(slug)) {
+      items.push({
+        title: `${C} Service for Women — Verified Male Companion (No Advance, Pay After Service)`,
+        link: `${SITE_URL}/for-women/${slug}`,
+        description: `${C} mein ladies, housewives, working women aur college girls ke liye verified male companion service. Cheap rate aur premium tier dono. No advance payment.`,
+        content: `${C} for women — area-wise availability, sasta + safe + premium.`,
+        pubDate: staggeredDate(`priority-forwomen-${slug}`, 5),
+        category: `${C} — For Women`,
+      });
+    }
 
     // Each service combo page
     for (const t of SERVICE_TEMPLATES) {

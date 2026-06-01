@@ -447,6 +447,18 @@ export default function RootLayout({ children }) {
                   <li><Link href="/for-women/indore">Service for Women</Link></li>
                 </ul>
               </div>
+              <div className="footer-section">
+                <h3>Delhi NCR — Featured</h3>
+                <ul>
+                  <li><Link href="/city/delhi">Delhi Male Service</Link></li>
+                  <li><Link href="/city/delhi/callboy-service">Callboy Service</Link></li>
+                  <li><Link href="/city/delhi/gigolo-service">Gigolo Service</Link></li>
+                  <li><Link href="/city/delhi/playboy-service">Playboy Service</Link></li>
+                  <li><Link href="/city/delhi/male-escort-service">Male Escort Service</Link></li>
+                  <li><Link href="/city/delhi/boyfriend-on-rent">Boyfriend on Rent</Link></li>
+                  <li><Link href="/city/delhi/ladies-service">Ladies Service</Link></li>
+                </ul>
+              </div>
             </div>
             <div className="footer-bottom">
               <p>

@@ -12,7 +12,9 @@ const SITE_URL = "https://www.safecompanion.in";
 const HOST = "www.safecompanion.in";
 const INDEXNOW_KEY = "7953420b5032cd775e967140f86c256a";
 
-const PRIORITY_CITIES = ["bhopal", "indore"];
+const PRIORITY_CITIES = ["bhopal", "indore", "delhi"];
+// Cities that have a /for-women/<slug> route generated.
+const FORWOMEN_CITIES = new Set(["bhopal", "indore"]);
 
 const services = [
   "gigolo-service",
@@ -40,7 +42,9 @@ function buildPriorityUrls() {
   const urls = [];
   for (const slug of PRIORITY_CITIES) {
     urls.push(`${SITE_URL}/city/${slug}`);
-    urls.push(`${SITE_URL}/for-women/${slug}`);
+    if (FORWOMEN_CITIES.has(slug)) {
+      urls.push(`${SITE_URL}/for-women/${slug}`);
+    }
     for (const s of services) {
       urls.push(`${SITE_URL}/city/${slug}/${s}`);
     }

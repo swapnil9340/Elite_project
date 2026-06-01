@@ -9,8 +9,10 @@ const SITE_URL = "https://www.safecompanion.in";
 // Priority cities — get top sitemap slot, priority 1.0, daily crawl signal.
 // Add a city slug here to give all its URLs (main + service combos + for-women)
 // maximum indexing priority.
-const PRIORITY_CITIES = ["bhopal", "indore"];
+const PRIORITY_CITIES = ["bhopal", "indore", "delhi"];
 const isPriority = (slug) => PRIORITY_CITIES.includes(slug);
+// Subset of priority cities that ALSO have a /for-women/<slug> route.
+const FORWOMEN_PRIORITY = new Set(["bhopal", "indore"]);
 
 // Split into 7 chunks so Google can fetch + index in parallel.
 // 0 = main pages + PRIORITY-CITY URLs (highest signal), 1 = services,
@@ -55,12 +57,14 @@ export default function sitemap({ id }) {
         changeFrequency: "daily",
         priority: 1.0,
       });
-      priorityCityUrls.push({
-        url: `${SITE_URL}/for-women/${slug}`,
-        lastModified,
-        changeFrequency: "daily",
-        priority: 1.0,
-      });
+      if (FORWOMEN_PRIORITY.has(slug)) {
+        priorityCityUrls.push({
+          url: `${SITE_URL}/for-women/${slug}`,
+          lastModified,
+          changeFrequency: "daily",
+          priority: 1.0,
+        });
+      }
       for (const s of services) {
         priorityCityUrls.push({
           url: `${SITE_URL}/city/${slug}/${s.slug}`,

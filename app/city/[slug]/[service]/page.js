@@ -4,6 +4,7 @@ import { cities, getCityBySlug } from "../../../data/cities";
 import { services, getServiceBySlug } from "../../../data/services";
 import { buildPageContent } from "../../../data/cityServiceContent";
 import { getFeaturedCitySeo } from "../../../data/featuredCitySeo";
+import FeaturedCitiesBacklinks from "../../../components/FeaturedCitiesBacklinks";
 
 const SITE_URL = "https://www.safecompanion.in";
 const whatsappNumber = "9340595938";
@@ -452,6 +453,8 @@ export default function CityServicePage({ params }) {
             ))}
         </div>
       </section>
+
+      <FeaturedCitiesBacklinks currentCity={city.slug} />
     </main>
   );
 }

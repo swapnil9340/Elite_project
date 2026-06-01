@@ -996,13 +996,21 @@ h1 {
   padding: 56px 24px 24px;
 }
 
-/* 4-column footer: Brand (wider) | Quick Links | Bhopal | Indore */
+/* Responsive footer: Brand + Quick Links + Featured Cities (Bhopal/Indore/Delhi).
+   Auto-fit so 5 columns lay out on wide screens and gracefully collapse. */
 .footer-content {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 36px;
   margin-bottom: 32px;
   align-items: start;
+}
+
+/* Brand column gets a bit wider on wide screens so the contact stack reads cleanly. */
+@media (min-width: 1100px) {
+  .footer-content {
+    grid-template-columns: 1.5fr repeat(4, 1fr);
+  }
 }
 
 .footer-section h3 {

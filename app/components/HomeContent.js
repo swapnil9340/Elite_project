@@ -450,6 +450,26 @@ export default function HomeContent() {
       </section>
 
       <section className="section internal-hub-section">
+        <h2 className="section-title">Delhi NCR — Verified Service (Now Active)</h2>
+        <p className="section-subtitle">
+          Delhi callboy, gigolo, playboy &amp; male escort service — sirf
+          ladies, housewives, working women aur college girls ke liye. South
+          Delhi, Saket, Hauz Khas, GK, Vasant Vihar, CP, Dwarka, Gurgaon, Noida
+          covered. 100% discreet, transparent rates, no advance payment.
+        </p>
+        <div className="cities-grid">
+          <Link href="/city/delhi" className="city-badge">Delhi Male Service</Link>
+          <Link href="/city/delhi/callboy-service" className="city-badge">Delhi Callboy Service</Link>
+          <Link href="/city/delhi/gigolo-service" className="city-badge">Delhi Gigolo Service</Link>
+          <Link href="/city/delhi/playboy-service" className="city-badge">Delhi Playboy Service</Link>
+          <Link href="/city/delhi/male-escort-service" className="city-badge">Delhi Male Escort Service</Link>
+          <Link href="/city/delhi/boyfriend-on-rent" className="city-badge">Boyfriend on Rent Delhi</Link>
+          <Link href="/city/delhi/ladies-service" className="city-badge">Delhi Ladies Service</Link>
+          <Link href="/city/delhi/event-companion" className="city-badge">Delhi Event Companion</Link>
+        </div>
+      </section>
+
+      <section className="section internal-hub-section">
         <h2 className="section-title">Apply for Jobs</h2>
         <p className="section-subtitle">
           100% free registration, 48-hour verification.

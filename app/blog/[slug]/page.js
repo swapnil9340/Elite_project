@@ -4,6 +4,7 @@ import { posts, getPostBySlug } from "../../data/blog";
 import { cities, getCityBySlug } from "../../data/cities";
 import { services } from "../../data/services";
 import BlogContent from "../../components/BlogContent";
+import FeaturedCitiesBacklinks from "../../components/FeaturedCitiesBacklinks";
 
 const SITE_URL = "https://www.safecompanion.in";
 
@@ -175,6 +176,8 @@ export default function BlogPostPage({ params }) {
 
       {/* Universal internal linking — services + popular cities */}
       <UniversalBlogLinks />
+
+      <FeaturedCitiesBacklinks currentCity={post.city} />
     </main>
   );
 }

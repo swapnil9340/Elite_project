@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { jobs, getJobBySlug } from "../../data/jobs";
 import { cities } from "../../data/cities";
 import ApplyForm from "../../components/ApplyForm";
+import FeaturedCitiesBacklinks from "../../components/FeaturedCitiesBacklinks";
 
 const SITE_URL = "https://www.safecompanion.in";
 const whatsappNumber = "9340595938";
@@ -210,6 +211,8 @@ export default function JobApplyPage({ params }) {
             ))}
         </div>
       </section>
+
+      <FeaturedCitiesBacklinks />
     </main>
   );
 }

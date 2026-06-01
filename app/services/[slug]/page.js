@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { services, getServiceBySlug } from "../../data/services";
 import { cities } from "../../data/cities";
+import FeaturedCitiesBacklinks from "../../components/FeaturedCitiesBacklinks";
 
 const SITE_URL = "https://www.safecompanion.in";
 const whatsappNumber = "9340595938";
@@ -203,6 +204,8 @@ export default function ServicePage({ params }) {
             ))}
         </div>
       </section>
+
+      <FeaturedCitiesBacklinks />
     </main>
   );
 }
