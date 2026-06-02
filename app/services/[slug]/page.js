@@ -5,7 +5,7 @@ import { cities } from "../../data/cities";
 import FeaturedCitiesBacklinks from "../../components/FeaturedCitiesBacklinks";
 
 const SITE_URL = "https://www.safecompanion.in";
-const whatsappNumber = "9340595938";
+const whatsappNumber = "not avalible now ";
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=Hello%2C%20I%20am%20interested%20in%20your%20premium%20companion%20service.`;
 const telegramLink = `https://t.me/+91${whatsappNumber}`;
 const callLink = `tel:+91${whatsappNumber}`;
