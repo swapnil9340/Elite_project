@@ -72,10 +72,10 @@ const contactPageJsonLd = {
   mainEntity: {
     "@type": "Organization",
     name: "Safe Companion India",
-    telephone: "+91-930595938",
+    telephone: "+91-9340595938",
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+91-930595938",
+      telephone: "+91-9340595938",
       contactType: "Bookings",
       areaServed: "IN",
       availableLanguage: ["English", "Hindi"],

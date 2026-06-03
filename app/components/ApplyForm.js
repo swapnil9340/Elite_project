@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const whatsappNumber = "91930595938";
+const whatsappNumber = "919340595938";
 
 export default function ApplyForm({ role = "Companion" }) {
   const [name, setName] = useState("");
