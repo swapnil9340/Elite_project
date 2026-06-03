@@ -7,7 +7,7 @@ import {
 import { services } from "../../data/services";
 
 const SITE_URL = "https://www.safecompanion.in";
-const whatsappNumber = "not avalible now ";
+const whatsappNumber = "930595938";
 const telegramLink = `https://t.me/+91${whatsappNumber}`;
 const callLink = `tel:+91${whatsappNumber}`;
 const emailLink = `mailto:contact@safecompanion.in?subject=Companion%20Booking%20Request`;
@@ -84,7 +84,7 @@ export default function ForWomenCityPage({ params }) {
     name: `Safe Companion India – ${city.name} (For Women)`,
     image: `${SITE_URL}/og-image.jpg`,
     url: `${SITE_URL}/for-women/${city.slug}`,
-    telephone: "+91-not avalible now ",
+    telephone: "+91-930595938",
     priceRange: "₹₹",
     description: city.metaDescription,
     address: {
