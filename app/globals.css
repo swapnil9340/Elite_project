@@ -1,3 +1,17 @@
+/* =============================================================================
+   FEATURE FLAG: WHATSAPP_HIDDEN — controlled by app/lib/featureFlags.js.
+   Jab body pe `.whatsapp-hidden` class hoti hai, saari WhatsApp links + UI
+   elements site se hide ho jaate hain. Telegram + call + booking form normal
+   rehte hain.
+   ============================================================================= */
+body.whatsapp-hidden a[href*="wa.me"],
+body.whatsapp-hidden a[href^="whatsapp:"],
+body.whatsapp-hidden .connect-card.whatsapp,
+body.whatsapp-hidden .quick-action.whatsapp,
+body.whatsapp-hidden [data-channel="whatsapp"] {
+  display: none !important;
+}
+
 :root {
   color-scheme: dark;
   color: #ffffff;

@@ -3,6 +3,7 @@ import QuickActions from "./components/QuickActions";
 import "./globals.css";
 import Link from "next/link";
 import { Inter } from "next/font/google";
+import { WHATSAPP_HIDDEN } from "./lib/featureFlags";
 // next/font auto-optimizes: self-hosted, no layout shift, no extra DNS lookup.
 // Direct Core Web Vitals improvement (CLS → 0, LCP faster).
 const inter = Inter({
@@ -13,7 +14,7 @@ const inter = Inter({
 });
 
 const SITE_URL = "https://www.safecompanion.in";
-const whatsappNumber = "9340595938";
+const whatsappNumber  = "9340595938";
 const telegramNumber = "9340595938";
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=Hello%2C%20I%20am%20interested%20in%20your%20premium%20companion%20service.`;
 
@@ -359,7 +360,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
-      <body>
+      <body className={WHATSAPP_HIDDEN ? "whatsapp-hidden" : undefined}>
         <Header />
 
         <main>{children}</main>
