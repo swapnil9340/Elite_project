@@ -1,13 +1,13 @@
 ﻿import Link from "next/link";
 import { services } from "../data/services";
 import { cities } from "../data/cities";
-
 const SITE_URL = "https://www.safecompanion.in";
 const whatsappNumber = "9340595938";
+const telegramNumber = "9340595938";
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=${encodeURIComponent(
   "Namaste, mujhe companion service book karni hai."
 )}`;
-const telegramLink = `https://t.me/+91${whatsappNumber}`;
+const telegramLink = `https://t.me/+91${telegramNumber}`;
 const callLink = `tel:+91${whatsappNumber}`;
 
 export const metadata = {

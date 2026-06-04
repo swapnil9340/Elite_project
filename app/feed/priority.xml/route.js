@@ -6,7 +6,7 @@ import { buildRss, staggeredDate, rssResponse } from "../../data/feedBuilder";
 
 const SITE_URL = "https://www.safecompanion.in";
 
-const PRIORITY_CITIES = ["bhopal", "indore", "delhi"];
+const PRIORITY_CITIES = ["bhopal", "indore", "delhi", "gurgaon", "noida", "faridabad"];
 // Subset of priority cities that ALSO have a /for-women/<slug> page generated.
 // Add a slug here when you create the corresponding entry in forWomen.js.
 const FORWOMEN_CITIES = new Set(["bhopal", "indore"]);

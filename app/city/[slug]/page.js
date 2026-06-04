@@ -5,11 +5,11 @@ import { services } from "../../data/services";
 import { buildPageContent } from "../../data/cityServiceContent";
 import { getFeaturedCitySeo } from "../../data/featuredCitySeo";
 import FeaturedCitiesBacklinks from "../../components/FeaturedCitiesBacklinks";
-
 const SITE_URL = "https://www.safecompanion.in";
 const whatsappNumber = "9340595938";
+const telegramNumber = "9340595938";
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=Hello%2C%20I%20am%20interested%20in%20your%20premium%20companion%20service.`;
-const telegramLink = `https://t.me/+91${whatsappNumber}`;
+const telegramLink = `https://t.me/+91${telegramNumber}`;
 const callLink = `tel:+91${whatsappNumber}`;
 const emailLink = `mailto:contact@safecompanion.in?subject=Companion%20Booking%20Request`;
 

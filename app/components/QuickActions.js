@@ -1,17 +1,17 @@
-'use client';
+﻿'use client';
 
 import CallIcon from '@mui/icons-material/Call';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import EmailIcon from '@mui/icons-material/Email';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-
 const whatsappNumber = "9340595938";
+const telegramNumber = "9340595938";
 
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=Hello%2C%20I%20am%20interested%20in%20your%20premium%20companion%20service.`;
 
 const callLink = `tel:+91${whatsappNumber}`;
-const telegramLink = `https://t.me/+91${whatsappNumber}`;
+const telegramLink = `https://t.me/+91${telegramNumber}`;
 const emailLink = `mailto:contact@safecompanion.in?subject=Companion%20Booking%20Request`;
 
 export default function QuickActions() {

@@ -12,7 +12,7 @@ const SITE_URL = "https://www.safecompanion.in";
 const HOST = "www.safecompanion.in";
 const INDEXNOW_KEY = "7953420b5032cd775e967140f86c256a";
 
-const PRIORITY_CITIES = ["bhopal", "indore", "delhi"];
+const PRIORITY_CITIES = ["bhopal", "indore", "delhi", "gurgaon", "noida", "faridabad"];
 // Cities that have a /for-women/<slug> route generated.
 const FORWOMEN_CITIES = new Set(["bhopal", "indore"]);
 

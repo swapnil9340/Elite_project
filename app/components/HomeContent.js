@@ -1,14 +1,14 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { faqItems } from "./faqData";
 import { services } from "../data/services";
 import { cities } from "../data/cities";
-
 const whatsappNumber = "9340595938";
+const telegramNumber = "9340595938";
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=Hello%2C%20I%20am%20interested%20in%20your%20premium%20companion%20service.`;
-const telegramLink = `https://t.me/+91${whatsappNumber}`;
+const telegramLink = `https://t.me/+91${telegramNumber}`;
 const callLink = `tel:+91${whatsappNumber}`;
 const smsLink = `sms:+91${whatsappNumber}?body=Hello%2C%20I%20want%20to%20book%20a%20companion%20service.`;
 const emailLink = `mailto:contact@safecompanion.in?subject=Companion%20Booking%20Request&body=Hello%2C%20I%20would%20like%20to%20book%20a%20companion%20service.%20Please%20share%20details.`;
@@ -450,12 +450,12 @@ export default function HomeContent() {
       </section>
 
       <section className="section internal-hub-section">
-        <h2 className="section-title">Delhi NCR — Verified Service (Now Active)</h2>
+        <h2 className="section-title">Delhi — Verified Service (Now Active)</h2>
         <p className="section-subtitle">
           Delhi callboy, gigolo, playboy &amp; male escort service — sirf
           ladies, housewives, working women aur college girls ke liye. South
-          Delhi, Saket, Hauz Khas, GK, Vasant Vihar, CP, Dwarka, Gurgaon, Noida
-          covered. 100% discreet, transparent rates, no advance payment.
+          Delhi, Saket, Hauz Khas, GK, Vasant Vihar, CP, Dwarka covered. 100%
+          discreet, transparent rates, no advance payment.
         </p>
         <div className="cities-grid">
           <Link href="/city/delhi" className="city-badge">Delhi Male Service</Link>
@@ -466,6 +466,60 @@ export default function HomeContent() {
           <Link href="/city/delhi/boyfriend-on-rent" className="city-badge">Boyfriend on Rent Delhi</Link>
           <Link href="/city/delhi/ladies-service" className="city-badge">Delhi Ladies Service</Link>
           <Link href="/city/delhi/event-companion" className="city-badge">Delhi Event Companion</Link>
+        </div>
+      </section>
+
+      <section className="section internal-hub-section">
+        <h2 className="section-title">Gurgaon — Verified Service (Now Active)</h2>
+        <p className="section-subtitle">
+          Gurgaon callboy, gigolo, playboy &amp; male escort service — sirf
+          ladies, MNC working women aur housewives ke liye. Cyber City, Golf
+          Course Road, DLF Phases, Sohna Road covered. 100% discreet, direct
+          contact, no agency, no advance.
+        </p>
+        <div className="cities-grid">
+          <Link href="/city/gurgaon" className="city-badge">Gurgaon Male Service</Link>
+          <Link href="/city/gurgaon/callboy-service" className="city-badge">Gurgaon Callboy Service</Link>
+          <Link href="/city/gurgaon/gigolo-service" className="city-badge">Gurgaon Gigolo Service</Link>
+          <Link href="/city/gurgaon/playboy-service" className="city-badge">Gurgaon Playboy Service</Link>
+          <Link href="/city/gurgaon/male-escort-service" className="city-badge">Gurgaon Male Escort Service</Link>
+          <Link href="/city/gurgaon/boyfriend-on-rent" className="city-badge">Boyfriend on Rent Gurgaon</Link>
+        </div>
+      </section>
+
+      <section className="section internal-hub-section">
+        <h2 className="section-title">Noida — Verified Service (Now Active)</h2>
+        <p className="section-subtitle">
+          Noida callboy, gigolo, playboy &amp; male escort service — sirf
+          ladies, IT working women, housewives aur college girls (JIIT, Amity)
+          ke liye. Sector 18, 62, Greater Noida, Noida Extension covered. No
+          advance, direct contact.
+        </p>
+        <div className="cities-grid">
+          <Link href="/city/noida" className="city-badge">Noida Male Service</Link>
+          <Link href="/city/noida/callboy-service" className="city-badge">Noida Callboy Service</Link>
+          <Link href="/city/noida/gigolo-service" className="city-badge">Noida Gigolo Service</Link>
+          <Link href="/city/noida/playboy-service" className="city-badge">Noida Playboy Service</Link>
+          <Link href="/city/noida/male-escort-service" className="city-badge">Noida Male Escort Service</Link>
+          <Link href="/city/noida/boyfriend-on-rent" className="city-badge">Boyfriend on Rent Noida</Link>
+        </div>
+      </section>
+
+      <section className="section internal-hub-section">
+        <h2 className="section-title">Faridabad — Verified Service (Now Active)</h2>
+        <p className="section-subtitle">
+          Faridabad callboy, gigolo, playboy &amp; male escort service — sirf
+          ladies, housewives aur working women ke liye. Sector 14, Sector 21,
+          NIT Faridabad, Greater Faridabad covered. Affordable, direct contact,
+          no advance.
+        </p>
+        <div className="cities-grid">
+          <Link href="/city/faridabad" className="city-badge">Faridabad Male Service</Link>
+          <Link href="/city/faridabad/callboy-service" className="city-badge">Faridabad Callboy Service</Link>
+          <Link href="/city/faridabad/gigolo-service" className="city-badge">Faridabad Gigolo Service</Link>
+          <Link href="/city/faridabad/playboy-service" className="city-badge">Faridabad Playboy Service</Link>
+          <Link href="/city/faridabad/male-escort-service" className="city-badge">Faridabad Male Escort Service</Link>
+          <Link href="/city/faridabad/boyfriend-on-rent" className="city-badge">Boyfriend on Rent Faridabad</Link>
         </div>
       </section>
 

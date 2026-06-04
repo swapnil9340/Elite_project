@@ -9,7 +9,7 @@ const SITE_URL = "https://www.safecompanion.in";
 // Priority cities — get top sitemap slot, priority 1.0, daily crawl signal.
 // Add a city slug here to give all its URLs (main + service combos + for-women)
 // maximum indexing priority.
-const PRIORITY_CITIES = ["bhopal", "indore", "delhi"];
+const PRIORITY_CITIES = ["bhopal", "indore", "delhi", "gurgaon", "noida", "faridabad"];
 const isPriority = (slug) => PRIORITY_CITIES.includes(slug);
 // Subset of priority cities that ALSO have a /for-women/<slug> route.
 const FORWOMEN_PRIORITY = new Set(["bhopal", "indore"]);

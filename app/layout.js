@@ -1,9 +1,8 @@
-import Header from "./components/Header";
+﻿import Header from "./components/Header";
 import QuickActions from "./components/QuickActions";
 import "./globals.css";
 import Link from "next/link";
 import { Inter } from "next/font/google";
-
 // next/font auto-optimizes: self-hosted, no layout shift, no extra DNS lookup.
 // Direct Core Web Vitals improvement (CLS → 0, LCP faster).
 const inter = Inter({
@@ -15,6 +14,7 @@ const inter = Inter({
 
 const SITE_URL = "https://www.safecompanion.in";
 const whatsappNumber = "9340595938";
+const telegramNumber = "9340595938";
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=Hello%2C%20I%20am%20interested%20in%20your%20premium%20companion%20service.`;
 
 export const metadata = {
@@ -387,7 +387,7 @@ export default function RootLayout({ children }) {
                   <li>
                     <span className="footer-icon">✈️</span>
                     <a
-                      href={`https://t.me/+91${whatsappNumber}`}
+                      href={`https://t.me/+91${telegramNumber}`}
                       target="_blank"
                       rel="noreferrer"
                     >

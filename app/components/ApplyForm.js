@@ -1,8 +1,8 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
-
-const whatsappNumber = "919340595938";
+const whatsappNumber = "9340595938";
+const telegramNumber = "9340595938";
 
 export default function ApplyForm({ role = "Companion" }) {
   const [name, setName] = useState("");

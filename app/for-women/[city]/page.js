@@ -5,10 +5,10 @@ import {
   getForWomenBySlug,
 } from "../../data/forWomen";
 import { services } from "../../data/services";
-
 const SITE_URL = "https://www.safecompanion.in";
 const whatsappNumber = "9340595938";
-const telegramLink = `https://t.me/+91${whatsappNumber}`;
+const telegramNumber = "9340595938";
+const telegramLink = `https://t.me/+91${telegramNumber}`;
 const callLink = `tel:+91${whatsappNumber}`;
 const emailLink = `mailto:contact@safecompanion.in?subject=Companion%20Booking%20Request`;
 
