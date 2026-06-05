@@ -4,11 +4,10 @@ import { services, getServiceBySlug } from "../../data/services";
 import { cities } from "../../data/cities";
 import FeaturedCitiesBacklinks from "../../components/FeaturedCitiesBacklinks";
 const SITE_URL = "https://www.safecompanion.in";
-const whatsappNumber = "9340595938";
+const whatsappNumber = "8109156664";
 const telegramNumber = "9340595938";
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=Hello%2C%20I%20am%20interested%20in%20your%20premium%20companion%20service.`;
 const telegramLink = `https://t.me/+91${telegramNumber}`;
-const callLink = `tel:+91${whatsappNumber}`;
 const emailLink = `mailto:contact@safecompanion.in?subject=Companion%20Booking%20Request`;
 
 export function generateStaticParams() {
@@ -127,9 +126,6 @@ export default function ServicePage({ params }) {
           >
             ✈️ Telegram
           </a>
-          <a className="button secondary" href={callLink}>
-            📞 Call
-          </a>
           <Link className="button tertiary" href="/contact">
             📝 Booking Form
           </Link>
@@ -148,11 +144,6 @@ export default function ServicePage({ params }) {
             <span className="connect-icon">💬</span>
             <strong>WhatsApp</strong>
             <span className="connect-sub">Fastest reply · 24/7</span>
-          </a>
-          <a className="connect-card call" href={callLink}>
-            <span className="connect-icon">📞</span>
-            <strong>Direct Call</strong>
-            <span className="connect-sub">Talk to us now</span>
           </a>
           <a
             className="connect-card telegram"

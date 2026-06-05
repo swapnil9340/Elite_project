@@ -14,7 +14,7 @@ const inter = Inter({
 });
 
 const SITE_URL = "https://www.safecompanion.in";
-const whatsappNumber  = "9340595938";
+const whatsappNumber = "8109156664";
 const telegramNumber = "9340595938";
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=Hello%2C%20I%20am%20interested%20in%20your%20premium%20companion%20service.`;
 
@@ -206,7 +206,7 @@ const organizationJsonLd = {
   contactPoint: [
     {
       "@type": "ContactPoint",
-      telephone: "+91-9340595938",
+      telephone: "+91-8109156664",
       contactType: "customer service",
       areaServed: "IN",
       availableLanguage: ["English", "Hindi"],
@@ -214,7 +214,7 @@ const organizationJsonLd = {
     },
     {
       "@type": "ContactPoint",
-      telephone: "+91-9340595938",
+      telephone: "+91-8109156664",
       contactType: "reservations",
       areaServed: "IN",
       availableLanguage: ["English", "Hindi"],
@@ -224,7 +224,7 @@ const organizationJsonLd = {
   // These are placeholder URLs — update with your real social profiles when created.
   sameAs: [
     "https://t.me/safecompanion",
-    "https://wa.me/919340595938",
+    "https://wa.me/918109156664",
     "https://www.instagram.com/safecompanionindia",
     "https://www.facebook.com/safecompanionindia",
     "https://twitter.com/safecompanionin",
@@ -252,7 +252,7 @@ const localBusinessJsonLd = {
   name: "Safe Companion India",
   image: `${SITE_URL}/og-image.jpg`,
   url: SITE_URL,
-  telephone: "+91-9340595938",
+  telephone: "+91-8109156664",
   priceRange: "₹₹",
   description:
     "Verified male companion service for women across India – Bhopal, Indore, Mumbai, Delhi, Bangalore and 45+ more cities.",
@@ -384,10 +384,6 @@ export default function RootLayout({ children }) {
                     <a href={whatsappLink} target="_blank" rel="noreferrer">
                       WhatsApp Chat
                     </a>
-                  </li>
-                  <li>
-                    <span className="footer-icon">📞</span>
-                    <a href={`tel:+91${whatsappNumber}`}>Call Now</a>
                   </li>
                   <li>
                     <span className="footer-icon">✈️</span>

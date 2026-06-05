@@ -6,10 +6,9 @@ import { buildPageContent } from "../../../data/cityServiceContent";
 import { getFeaturedCitySeo } from "../../../data/featuredCitySeo";
 import FeaturedCitiesBacklinks from "../../../components/FeaturedCitiesBacklinks";
 const SITE_URL = "https://www.safecompanion.in";
-const whatsappNumber = "9340595938";
+const whatsappNumber = "8109156664";
 const telegramNumber = "9340595938";
 const telegramLink = `https://t.me/+91${telegramNumber}`;
-const callLink = `tel:+91${whatsappNumber}`;
 const emailLink = `mailto:contact@safecompanion.in?subject=Companion%20Booking%20Request`;
 
 export function generateStaticParams() {
@@ -120,7 +119,7 @@ export default function CityServicePage({ params }) {
     name: `Safe Companion India — ${service.name} in ${city.name}`,
     image: `${SITE_URL}/og-image.jpg`,
     url: `${SITE_URL}/city/${city.slug}/${service.slug}`,
-    telephone: "+91-9340595938",
+    telephone: "+91-8109156664",
     priceRange: "₹₹",
     description: intro,
     address: {
@@ -269,7 +268,6 @@ export default function CityServicePage({ params }) {
           <a className="button secondary" href={telegramLink} target="_blank" rel="noreferrer">
             ✈️ Telegram
           </a>
-          <a className="button secondary" href={callLink}>📞 Call</a>
         </div>
       </section>
 
@@ -382,11 +380,6 @@ export default function CityServicePage({ params }) {
             <span className="connect-icon">💬</span>
             <strong>WhatsApp</strong>
             <span className="connect-sub">Pre-filled message · 24/7</span>
-          </a>
-          <a className="connect-card call" href={callLink}>
-            <span className="connect-icon">📞</span>
-            <strong>Direct Call</strong>
-            <span className="connect-sub">Talk to us now</span>
           </a>
           <a className="connect-card telegram" href={telegramLink} target="_blank" rel="noreferrer">
             <span className="connect-icon">✈️</span>

@@ -5,11 +5,10 @@ import { useEffect, useState } from "react";
 import { faqItems } from "./faqData";
 import { services } from "../data/services";
 import { cities } from "../data/cities";
-const whatsappNumber = "9340595938";
+const whatsappNumber = "8109156664";
 const telegramNumber = "9340595938";
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=Hello%2C%20I%20am%20interested%20in%20your%20premium%20companion%20service.`;
 const telegramLink = `https://t.me/+91${telegramNumber}`;
-const callLink = `tel:+91${whatsappNumber}`;
 const smsLink = `sms:+91${whatsappNumber}?body=Hello%2C%20I%20want%20to%20book%20a%20companion%20service.`;
 const emailLink = `mailto:contact@safecompanion.in?subject=Companion%20Booking%20Request&body=Hello%2C%20I%20would%20like%20to%20book%20a%20companion%20service.%20Please%20share%20details.`;
 
@@ -303,11 +302,6 @@ export default function HomeContent() {
             <span className="connect-icon">💬</span>
             <strong>WhatsApp</strong>
             <span className="connect-sub">Fastest reply · 24/7</span>
-          </a>
-          <a className="connect-card call" href={callLink}>
-            <span className="connect-icon">📞</span>
-            <strong>Direct Call</strong>
-            <span className="connect-sub">Talk to us now</span>
           </a>
           <a
             className="connect-card telegram"

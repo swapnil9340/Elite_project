@@ -120,7 +120,7 @@ export default async function Image({ params }) {
             color: "#10b981",
           }}
         >
-          💬 WhatsApp · ✈️ Telegram · 📞 Call · No Hidden Charges
+          💬 WhatsApp · ✈️ Telegram · No Hidden Charges
         </div>
       </div>
     ),

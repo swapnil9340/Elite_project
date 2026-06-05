@@ -115,7 +115,7 @@ export default async function Image({ params }) {
             color: "#10b981",
           }}
         >
-          💬 WhatsApp · ✈️ Telegram · 📞 Call · 24/7
+          💬 WhatsApp · ✈️ Telegram · 24/7
         </div>
       </div>
     ),

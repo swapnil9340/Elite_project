@@ -6,10 +6,9 @@ import {
 } from "../../data/forWomen";
 import { services } from "../../data/services";
 const SITE_URL = "https://www.safecompanion.in";
-const whatsappNumber = "9340595938";
+const whatsappNumber = "8109156664";
 const telegramNumber = "9340595938";
 const telegramLink = `https://t.me/+91${telegramNumber}`;
-const callLink = `tel:+91${whatsappNumber}`;
 const emailLink = `mailto:contact@safecompanion.in?subject=Companion%20Booking%20Request`;
 
 export function generateStaticParams() {
@@ -84,7 +83,7 @@ export default function ForWomenCityPage({ params }) {
     name: `Safe Companion India – ${city.name} (For Women)`,
     image: `${SITE_URL}/og-image.jpg`,
     url: `${SITE_URL}/for-women/${city.slug}`,
-    telephone: "+91-9340595938",
+    telephone: "+91-8109156664",
     priceRange: "₹₹",
     description: city.metaDescription,
     address: {
@@ -162,9 +161,6 @@ export default function ForWomenCityPage({ params }) {
             rel="noreferrer"
           >
             ✈️ Telegram
-          </a>
-          <a className="button secondary" href={callLink}>
-            📞 Call
           </a>
         </div>
 
@@ -273,11 +269,6 @@ export default function ForWomenCityPage({ params }) {
             <span className="connect-sub">
               {city.name} pe pre-filled msg · 24/7
             </span>
-          </a>
-          <a className="connect-card call" href={callLink}>
-            <span className="connect-icon">📞</span>
-            <strong>Direct Call</strong>
-            <span className="connect-sub">Direct baat karein</span>
           </a>
           <a
             className="connect-card telegram"
