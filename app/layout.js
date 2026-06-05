@@ -344,6 +344,10 @@ export default function RootLayout({ children }) {
         <link rel="alternate" type="application/rss+xml" title="Safe Companion India — Services RSS" href={`${SITE_URL}/feed/services.xml`} />
         <link rel="alternate" type="application/rss+xml" title="Safe Companion India — Jobs RSS" href={`${SITE_URL}/feed/jobs.xml`} />
         <link rel="alternate" type="application/atom+xml" title="Safe Companion India — Atom" href={`${SITE_URL}/atom.xml`} />
+        {/* llms.txt — LLM/AI search discovery hint (https://llmstxt.org standard).
+            Helps OAI-SearchBot, PerplexityBot, Claude, Gemini, etc. find the
+            machine-readable site summary used when answering AI queries. */}
+        <link rel="llms-txt" type="text/markdown" href={`${SITE_URL}/llms.txt`} />
         <meta name="theme-color" content="#070b14" />
         <meta name="geo.region" content="IN" />
         <meta name="geo.placename" content="India" />

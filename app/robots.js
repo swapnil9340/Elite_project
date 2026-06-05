@@ -23,13 +23,34 @@ export default function robots() {
       { userAgent: "Baiduspider", allow: "/" },
       { userAgent: "facebookexternalhit", allow: "/" },
       { userAgent: "Twitterbot", allow: "/" },
-      // Block known AI/scraper bots that waste budget without benefit
-      { userAgent: "GPTBot", disallow: "/" },
-      { userAgent: "CCBot", disallow: "/" },
-      { userAgent: "Bytespider", disallow: "/" },
-      { userAgent: "AhrefsBot", disallow: "/" },
-      { userAgent: "SemrushBot", disallow: "/" },
-      { userAgent: "MJ12bot", disallow: "/" },
+
+      // ===== AI SEARCH BOTS — ALLOWED =====
+      // These power Google AI Overviews, ChatGPT Search, Claude search,
+      // Perplexity answers. Allowing them = our pages can appear inside
+      // AI-generated answers (the new "AI search" surface area).
+      { userAgent: "Google-Extended", allow: "/" },   // Google AI Overviews / Gemini
+      { userAgent: "OAI-SearchBot", allow: "/" },     // ChatGPT Search results
+      { userAgent: "ChatGPT-User", allow: "/" },      // ChatGPT user-triggered browsing
+      { userAgent: "PerplexityBot", allow: "/" },     // Perplexity AI answers
+      { userAgent: "Perplexity-User", allow: "/" },   // Perplexity user-triggered fetch
+      { userAgent: "ClaudeBot", allow: "/" },         // Anthropic Claude
+      { userAgent: "Claude-Web", allow: "/" },        // Claude web browsing
+      { userAgent: "anthropic-ai", allow: "/" },      // Anthropic legacy UA
+      { userAgent: "Applebot", allow: "/" },          // Apple Intelligence / Siri
+      { userAgent: "Applebot-Extended", allow: "/" }, // Apple AI surfaces
+      { userAgent: "Meta-ExternalAgent", allow: "/" },// Meta AI search
+      { userAgent: "Amazonbot", allow: "/" },         // Amazon Alexa / Q
+      { userAgent: "YouBot", allow: "/" },            // You.com AI search
+
+      // ===== TRAINING-ONLY / LOW-VALUE SCRAPERS — STILL BLOCKED =====
+      // Pure-training crawlers (no search surface) and SEO tool scrapers
+      // waste crawl budget without driving any visitor traffic.
+      { userAgent: "GPTBot", disallow: "/" },         // OpenAI training (separate from search)
+      { userAgent: "CCBot", disallow: "/" },          // Common Crawl
+      { userAgent: "Bytespider", disallow: "/" },     // ByteDance scraping
+      { userAgent: "AhrefsBot", disallow: "/" },      // SEO tool
+      { userAgent: "SemrushBot", disallow: "/" },     // SEO tool
+      { userAgent: "MJ12bot", disallow: "/" },        // Majestic crawler
     ],
     // Only declare actual XML sitemaps here.
     // RSS/Atom feeds are NOT sitemaps — Google tries to treat them as such
