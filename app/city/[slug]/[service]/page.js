@@ -6,7 +6,7 @@ import { buildPageContent } from "../../../data/cityServiceContent";
 import { getFeaturedCitySeo } from "../../../data/featuredCitySeo";
 import FeaturedCitiesBacklinks from "../../../components/FeaturedCitiesBacklinks";
 const SITE_URL = "https://www.safecompanion.in";
-const whatsappNumber = "8109156664";
+const whatsappNumber = "9340595938";
 const telegramNumber = "9340595938";
 const telegramLink = `https://t.me/+91${telegramNumber}`;
 const emailLink = `mailto:contact@safecompanion.in?subject=Companion%20Booking%20Request`;
@@ -119,7 +119,7 @@ export default function CityServicePage({ params }) {
     name: `Safe Companion India — ${service.name} in ${city.name}`,
     image: `${SITE_URL}/og-image.jpg`,
     url: `${SITE_URL}/city/${city.slug}/${service.slug}`,
-    telephone: "+91-8109156664",
+    telephone: "+91-9340595938",
     priceRange: "₹₹",
     description: intro,
     address: {
