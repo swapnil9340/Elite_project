@@ -420,6 +420,7 @@ export default function HomeContent() {
           <Link href="/city/bhopal/playboy-service" className="city-badge">Bhopal Playboy Service</Link>
           <Link href="/city/bhopal/male-escort-service" className="city-badge">Bhopal Male Escort Service</Link>
           <Link href="/city/bhopal/boyfriend-on-rent" className="city-badge">Boyfriend on Rent Bhopal</Link>
+          <Link href="/city/bhopal/lesbian-companion-service" className="city-badge">Bhopal Lesbian Companion Service</Link>
           <Link href="/for-women/bhopal" className="city-badge">Bhopal Service for Women</Link>
           <Link href="/blog/boyfriend-on-rent-bhopal" className="city-badge">Bhopal Booking Guide 2026</Link>
         </div>
@@ -439,6 +440,7 @@ export default function HomeContent() {
           <Link href="/city/indore/playboy-service" className="city-badge">Indore Playboy Service</Link>
           <Link href="/city/indore/male-escort-service" className="city-badge">Indore Male Escort Service</Link>
           <Link href="/city/indore/boyfriend-on-rent" className="city-badge">Boyfriend on Rent Indore</Link>
+          <Link href="/city/indore/lesbian-companion-service" className="city-badge">Indore Lesbian Companion Service</Link>
           <Link href="/for-women/indore" className="city-badge">Indore Service for Women</Link>
         </div>
       </section>
@@ -459,6 +461,7 @@ export default function HomeContent() {
           <Link href="/city/delhi/male-escort-service" className="city-badge">Delhi Male Escort Service</Link>
           <Link href="/city/delhi/boyfriend-on-rent" className="city-badge">Boyfriend on Rent Delhi</Link>
           <Link href="/city/delhi/ladies-service" className="city-badge">Delhi Ladies Service</Link>
+          <Link href="/city/delhi/lesbian-companion-service" className="city-badge">Delhi Lesbian Companion Service</Link>
           <Link href="/city/delhi/event-companion" className="city-badge">Delhi Event Companion</Link>
         </div>
       </section>
@@ -478,6 +481,7 @@ export default function HomeContent() {
           <Link href="/city/gurgaon/playboy-service" className="city-badge">Gurgaon Playboy Service</Link>
           <Link href="/city/gurgaon/male-escort-service" className="city-badge">Gurgaon Male Escort Service</Link>
           <Link href="/city/gurgaon/boyfriend-on-rent" className="city-badge">Boyfriend on Rent Gurgaon</Link>
+          <Link href="/city/gurgaon/lesbian-companion-service" className="city-badge">Gurgaon Lesbian Companion Service</Link>
         </div>
       </section>
 
@@ -496,6 +500,7 @@ export default function HomeContent() {
           <Link href="/city/noida/playboy-service" className="city-badge">Noida Playboy Service</Link>
           <Link href="/city/noida/male-escort-service" className="city-badge">Noida Male Escort Service</Link>
           <Link href="/city/noida/boyfriend-on-rent" className="city-badge">Boyfriend on Rent Noida</Link>
+          <Link href="/city/noida/lesbian-companion-service" className="city-badge">Noida Lesbian Companion Service</Link>
         </div>
       </section>
 
@@ -514,6 +519,7 @@ export default function HomeContent() {
           <Link href="/city/faridabad/playboy-service" className="city-badge">Faridabad Playboy Service</Link>
           <Link href="/city/faridabad/male-escort-service" className="city-badge">Faridabad Male Escort Service</Link>
           <Link href="/city/faridabad/boyfriend-on-rent" className="city-badge">Boyfriend on Rent Faridabad</Link>
+          <Link href="/city/faridabad/lesbian-companion-service" className="city-badge">Faridabad Lesbian Companion Service</Link>
         </div>
       </section>
 

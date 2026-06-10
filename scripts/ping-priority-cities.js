@@ -25,6 +25,7 @@ const services = [
   "ladies-service",
   "event-companion",
   "travel-companion",
+  "lesbian-companion-service",
 ];
 
 const priorityBlogSlugs = [
