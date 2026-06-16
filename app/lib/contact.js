@@ -11,5 +11,5 @@ export const PHONE_NUMBER = "8839247620";
 // Country code (bina + ke)
 export const COUNTRY_CODE = "91";
 
-// Telegram — number se chat (jaise pehle tha)
+// Telegram — number se chat link
 export const telegramLink = `https://t.me/+${COUNTRY_CODE}${PHONE_NUMBER}`;
