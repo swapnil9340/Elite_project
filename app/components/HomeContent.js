@@ -8,7 +8,7 @@ import { cities } from "../data/cities";
 const whatsappNumber = "8839247620";
 const telegramNumber = "8839247620";
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=Hello%2C%20I%20am%20interested%20in%20your%20premium%20companion%20service.`;
-const telegramLink = `https://t.me/+91${telegramNumber}`;
+const telegramLink = `https://t.me/safecompanion`;
 const smsLink = `sms:+91${whatsappNumber}?body=Hello%2C%20I%20want%20to%20book%20a%20companion%20service.`;
 const emailLink = `mailto:contact@safecompanion.in?subject=Companion%20Booking%20Request&body=Hello%2C%20I%20would%20like%20to%20book%20a%20companion%20service.%20Please%20share%20details.`;
 

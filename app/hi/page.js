@@ -7,7 +7,7 @@ const telegramNumber = "8839247620";
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=${encodeURIComponent(
   "Namaste, mujhe companion service book karni hai."
 )}`;
-const telegramLink = `https://t.me/+91${telegramNumber}`;
+const telegramLink = `https://t.me/safecompanion`;
 export const metadata = {
   title:
     "Safe Companion India | Asli Gigolo, Playboy & Callboy Service – Bina Hidden Charges",

@@ -388,7 +388,7 @@ export default function RootLayout({ children }) {
                   <li>
                     <span className="footer-icon">✈️</span>
                     <a
-                      href={`https://t.me/+91${telegramNumber}`}
+                      href={`https://t.me/safecompanion`}
                       target="_blank"
                       rel="noreferrer"
                     >

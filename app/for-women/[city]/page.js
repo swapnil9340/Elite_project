@@ -8,7 +8,7 @@ import { services } from "../../data/services";
 const SITE_URL = "https://www.safecompanion.in";
 const whatsappNumber = "8839247620";
 const telegramNumber = "8839247620";
-const telegramLink = `https://t.me/+91${telegramNumber}`;
+const telegramLink = `https://t.me/safecompanion`;
 const emailLink = `mailto:contact@safecompanion.in?subject=Companion%20Booking%20Request`;
 
 export function generateStaticParams() {

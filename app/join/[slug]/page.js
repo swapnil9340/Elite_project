@@ -8,7 +8,7 @@ const SITE_URL = "https://www.safecompanion.in";
 const whatsappNumber = "8839247620";
 const telegramNumber = "8839247620";
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=Hello%2C%20I%20want%20to%20apply%20for%20a%20job.`;
-const telegramLink = `https://t.me/+91${telegramNumber}`;
+const telegramLink = `https://t.me/safecompanion`;
 
 export function generateStaticParams() {
   return jobs.map((j) => ({ slug: j.slug }));
