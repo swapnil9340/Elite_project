@@ -223,7 +223,7 @@ const organizationJsonLd = {
   // sameAs lets Google verify brand identity across the web (E-E-A-T signal).
   // These are placeholder URLs — update with your real social profiles when created.
   sameAs: [
-    "https://t.me/+918839247620",
+    "https://t.me/safecampanion",
     "https://wa.me/918839247620",
     "https://www.instagram.com/safecompanionindia",
     "https://www.facebook.com/safecompanionindia",
