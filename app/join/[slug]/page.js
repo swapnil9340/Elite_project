@@ -5,10 +5,9 @@ import { cities } from "../../data/cities";
 import ApplyForm from "../../components/ApplyForm";
 import FeaturedCitiesBacklinks from "../../components/FeaturedCitiesBacklinks";
 const SITE_URL = "https://www.safecompanion.in";
-const whatsappNumber = "8839247620";
-const telegramNumber = "8839247620";
+import { PHONE_NUMBER, telegramLink } from "../../lib/contact";
+const whatsappNumber = PHONE_NUMBER;
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=Hello%2C%20I%20want%20to%20apply%20for%20a%20job.`;
-const telegramLink = `https://t.me/safecompanion`;
 
 export function generateStaticParams() {
   return jobs.map((j) => ({ slug: j.slug }));

@@ -1,8 +1,8 @@
 ﻿"use client";
 
 import { useState } from "react";
-const whatsappNumber = "8839247620";
-const telegramNumber = "8839247620";
+import { PHONE_NUMBER } from "../lib/contact";
+const whatsappNumber = PHONE_NUMBER;
 
 export default function ContactForm() {
   const [name, setName] = useState("");

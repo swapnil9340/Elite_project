@@ -4,6 +4,7 @@ import "./globals.css";
 import Link from "next/link";
 import { Inter } from "next/font/google";
 import { WHATSAPP_HIDDEN } from "./lib/featureFlags";
+import { PHONE_NUMBER, telegramLink } from "./lib/contact";
 // next/font auto-optimizes: self-hosted, no layout shift, no extra DNS lookup.
 // Direct Core Web Vitals improvement (CLS → 0, LCP faster).
 const inter = Inter({
@@ -14,8 +15,7 @@ const inter = Inter({
 });
 
 const SITE_URL = "https://www.safecompanion.in";
-const whatsappNumber = "8839247620";
-const telegramNumber = "8839247620";
+const whatsappNumber = PHONE_NUMBER;
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=Hello%2C%20I%20am%20interested%20in%20your%20premium%20companion%20service.`;
 
 export const metadata = {
@@ -388,7 +388,7 @@ export default function RootLayout({ children }) {
                   <li>
                     <span className="footer-icon">✈️</span>
                     <a
-                      href={`https://t.me/safecompanion`}
+                      href={telegramLink}
                       target="_blank"
                       rel="noreferrer"
                     >

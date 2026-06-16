@@ -2,12 +2,11 @@
 import { services } from "../data/services";
 import { cities } from "../data/cities";
 const SITE_URL = "https://www.safecompanion.in";
-const whatsappNumber = "8839247620";
-const telegramNumber = "8839247620";
+import { PHONE_NUMBER, telegramLink } from "../lib/contact";
+const whatsappNumber = PHONE_NUMBER;
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=${encodeURIComponent(
   "Namaste, mujhe companion service book karni hai."
 )}`;
-const telegramLink = `https://t.me/safecompanion`;
 export const metadata = {
   title:
     "Safe Companion India | Asli Gigolo, Playboy & Callboy Service – Bina Hidden Charges",

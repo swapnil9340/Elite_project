@@ -4,10 +4,9 @@ import { services, getServiceBySlug } from "../../data/services";
 import { cities } from "../../data/cities";
 import FeaturedCitiesBacklinks from "../../components/FeaturedCitiesBacklinks";
 const SITE_URL = "https://www.safecompanion.in";
-const whatsappNumber = "8839247620";
-const telegramNumber = "8839247620";
+import { PHONE_NUMBER, telegramLink } from "../../lib/contact";
+const whatsappNumber = PHONE_NUMBER;
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=Hello%2C%20I%20am%20interested%20in%20your%20premium%20companion%20service.`;
-const telegramLink = `https://t.me/safecompanion`;
 const emailLink = `mailto:contact@safecompanion.in?subject=Companion%20Booking%20Request`;
 
 export function generateStaticParams() {
