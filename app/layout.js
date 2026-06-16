@@ -14,8 +14,8 @@ const inter = Inter({
 });
 
 const SITE_URL = "https://www.safecompanion.in";
-const whatsappNumber = "9340595938";
-const telegramNumber = "9340595938";
+const whatsappNumber = "8839247620";
+const telegramNumber = "8839247620";
 const whatsappLink = `https://wa.me/91${whatsappNumber}?text=Hello%2C%20I%20am%20interested%20in%20your%20premium%20companion%20service.`;
 
 export const metadata = {
@@ -206,7 +206,7 @@ const organizationJsonLd = {
   contactPoint: [
     {
       "@type": "ContactPoint",
-      telephone: "+91-9340595938",
+      telephone: "+91-8839247620",
       contactType: "customer service",
       areaServed: "IN",
       availableLanguage: ["English", "Hindi"],
@@ -214,7 +214,7 @@ const organizationJsonLd = {
     },
     {
       "@type": "ContactPoint",
-      telephone: "+91-9340595938",
+      telephone: "+91-8839247620",
       contactType: "reservations",
       areaServed: "IN",
       availableLanguage: ["English", "Hindi"],
@@ -224,7 +224,7 @@ const organizationJsonLd = {
   // These are placeholder URLs — update with your real social profiles when created.
   sameAs: [
     "https://t.me/safecompanion",
-    "https://wa.me/919340595938",
+    "https://wa.me/918839247620",
     "https://www.instagram.com/safecompanionindia",
     "https://www.facebook.com/safecompanionindia",
     "https://twitter.com/safecompanionin",
@@ -252,7 +252,7 @@ const localBusinessJsonLd = {
   name: "Safe Companion India",
   image: `${SITE_URL}/og-image.jpg`,
   url: SITE_URL,
-  telephone: "+91-9340595938",
+  telephone: "+91-8839247620",
   priceRange: "₹₹",
   description:
     "Verified male companion service for women across India – Bhopal, Indore, Mumbai, Delhi, Bangalore and 45+ more cities.",
