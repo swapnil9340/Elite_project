@@ -9,5 +9,5 @@
 // true  → SAARI WhatsApp buttons site se HIDE ho jayengi (footer / hero /
 //         connect cards / quick actions / city pages / blog / sab jagah).
 //         Telegram + Call + Booking form unaffected rahenge.
-export const WHATSAPP_HIDDEN = false
+export const WHATSAPP_HIDDEN = true
   ;
