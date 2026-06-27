@@ -21,6 +21,7 @@ export async function POST(request) {
     const body = await request.json().catch(() => ({}));
 
     const name = String(body.name || "").trim().slice(0, 120);
+    const gender = String(body.gender || "").trim().slice(0, 20);
     const phone = String(body.phone || "").trim().slice(0, 20);
     const email = String(body.email || "").trim().slice(0, 150);
     const city = String(body.city || "").trim().slice(0, 80);
@@ -33,7 +34,7 @@ export async function POST(request) {
     const sourcePage = String(body.sourcePage || "").trim().slice(0, 255);
 
     if (!name) return badRequest("Name is required");
-    if (!phone && !email) return badRequest("Phone or email is required");
+    if (!phone) return badRequest("Mobile number is required");
 
     // Honeypot: bots fill hidden fields; humans don't
     if (body.website || body.companyName) {
@@ -59,9 +60,9 @@ export async function POST(request) {
 
     const result = await query(
       `INSERT INTO inquiries
-        (name, age, phone, email, city, service_preference, booking_date, budget_range, details, source_page, ip_hash, user_agent)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-      [name, age, phone, email, city, service, bookingDate, budget, details, sourcePage, ipHash, ua]
+        (name, age, gender, phone, email, city, service_preference, booking_date, budget_range, details, source_page, ip_hash, user_agent)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [name, age, gender, phone, email, city, service, bookingDate, budget, details, sourcePage, ipHash, ua]
     );
 
     return Response.json({ ok: true, id: result.insertId });

@@ -49,6 +49,7 @@ export async function ensureSchema() {
       id BIGINT PRIMARY KEY AUTO_INCREMENT,
       name VARCHAR(120) NOT NULL,
       age INT,
+      gender VARCHAR(20),
       phone VARCHAR(20),
       email VARCHAR(150),
       city VARCHAR(80),
@@ -101,6 +102,21 @@ export async function ensureSchema() {
   for (const stmt of sql) {
     await getPool().query(stmt);
   }
+
+  // Idempotent migrations for tables created before a column existed.
+  // TiDB/MySQL 8 support ADD COLUMN IF NOT EXISTS.
+  const migrations = [
+    `ALTER TABLE inquiries ADD COLUMN IF NOT EXISTS gender VARCHAR(20) AFTER age`,
+  ];
+  for (const stmt of migrations) {
+    try {
+      await getPool().query(stmt);
+    } catch (err) {
+      // Ignore "duplicate column" on engines without IF NOT EXISTS support.
+      if (!/duplicate column/i.test(err.message || "")) throw err;
+    }
+  }
+
   bootstrapped = true;
 }
 

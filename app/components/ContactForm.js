@@ -7,6 +7,7 @@ const whatsappNumber = PHONE_NUMBER;
 export default function ContactForm() {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
+  const [gender, setGender] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [city, setCity] = useState("");
@@ -20,7 +21,7 @@ export default function ContactForm() {
   const [errMsg, setErrMsg] = useState("");
 
   const message = encodeURIComponent(
-    `Hello, I would like to book a companion service.\nName: ${name}\nAge: ${age}\nPhone: ${phone}\nEmail: ${email}\nCity: ${city}\nPreference: ${preferences}\nDate: ${bookingDate}\nBudget: ${budget}\nDetails: ${details}`
+    `Hello, I would like to book a companion service.\nName: ${name}\nAge: ${age}\nGender: ${gender}\nPhone: ${phone}\nEmail: ${email}\nCity: ${city}\nPreference: ${preferences}\nDate: ${bookingDate}\nBudget: ${budget}\nDetails: ${details}`
   );
 
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
@@ -40,6 +41,7 @@ export default function ContactForm() {
         body: JSON.stringify({
           name,
           age,
+          gender,
           phone,
           email,
           city,
@@ -59,7 +61,7 @@ export default function ContactForm() {
       } else {
         setStatus("ok");
         // Reset form on success
-        setName(""); setAge(""); setPhone(""); setEmail(""); setCity("");
+        setName(""); setAge(""); setGender(""); setPhone(""); setEmail(""); setCity("");
         setPreferences(""); setBookingDate(""); setBudget(""); setDetails("");
       }
     } catch (err) {
@@ -154,12 +156,29 @@ export default function ContactForm() {
             </label>
 
             <label>
-              Phone (WhatsApp)
+              Gender
+              <select
+                value={gender}
+                onChange={(e) => setGender(e.target.value)}
+                required
+              >
+                <option value="">-- Select --</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+                <option>Prefer not to say</option>
+              </select>
+            </label>
+
+            <label>
+              Mobile Number (WhatsApp)
               <input
                 type="tel"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="+91 XXXXX XXXXX"
+                pattern="[0-9+\s-]{7,20}"
+                required
               />
             </label>
 

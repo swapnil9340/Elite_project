@@ -3,7 +3,9 @@
 // Each article ~700-1200 words, FAQ-rich, internal links to service/city pages.
 
 import { cities } from "./cities";
+import { services } from "./services";
 import { buildCityBlogPosts } from "./cityBlogs";
+import { buildCityServiceBlogPosts } from "./cityServiceBlogs";
 
 const manualPosts = [
   {
@@ -1373,6 +1375,17 @@ const manualPosts = [
 // so structure varies city-to-city and content is fully unique per location.
 const cityPosts = buildCityBlogPosts(cities);
 
-export const posts = [...manualPosts, ...cityPosts];
+// City × Service long-tail blogs (40 cities × 9 services). Generated, fully
+// city- and service-specific. Auto-included in the sitemap (blog chunk).
+const cityServicePosts = buildCityServiceBlogPosts(cities, services);
+
+// Merge all sources, then drop any duplicate slugs (manual posts win, then
+// city posts, then city-service) so generated slugs never shadow hand-written ones.
+const seenSlugs = new Set();
+export const posts = [...manualPosts, ...cityPosts, ...cityServicePosts].filter((p) => {
+  if (seenSlugs.has(p.slug)) return false;
+  seenSlugs.add(p.slug);
+  return true;
+});
 
 export const getPostBySlug = (slug) => posts.find((p) => p.slug === slug);
