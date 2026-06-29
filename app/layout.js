@@ -177,9 +177,14 @@ export const metadata = {
     google: "92d3a666e2b38f5e",
   },
   icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
-    shortcut: ["/icon.svg"],
-    apple: [{ url: "/apple-icon.svg", type: "image/svg+xml" }],
+    // Raster PNG first — Google Search + older browsers pick this most reliably;
+    // SVG kept as a crisp fallback for modern browsers.
+    icon: [
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon.svg", type: "image/svg+xml", sizes: "any" },
+    ],
+    shortcut: [{ url: "/icon-192.png", type: "image/png" }],
+    apple: [{ url: "/icon-192.png", sizes: "192x192" }],
   },
   manifest: "/site.webmanifest",
   other: {
