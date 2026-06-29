@@ -176,6 +176,11 @@ export const metadata = {
   verification: {
     google: "92d3a666e2b38f5e",
   },
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: ["/icon.svg"],
+    apple: [{ url: "/apple-icon.svg", type: "image/svg+xml" }],
+  },
   manifest: "/site.webmanifest",
   other: {
     // Help mobile carriers render previews correctly
