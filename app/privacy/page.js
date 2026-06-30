@@ -49,7 +49,7 @@ const breadcrumbJsonLd = {
 
 export default function PrivacyPage() {
   return (
-    <main className="page-shell">
+    <main className="page-shell loaded">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}

@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx next *)"
+      "Bash(npx next *)",
+      "WebFetch(domain:en.wikipedia.org)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\USER\\.claude\\projects\\c--Users-USER-Desktop-personal-PRoject-Elite-project\\memory"
     ]
   }
 }
